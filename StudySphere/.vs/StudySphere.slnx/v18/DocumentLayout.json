@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\authentication\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\authentication\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\authentication\\authviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\authentication\\authviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\authentication\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\authentication\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthViewModel.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Authentication\\AuthViewModel.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Authentication\\AuthViewModel.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Authentication\\AuthViewModel.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Authentication\\AuthViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAxwAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:42:01.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Authentication\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Authentication\\LoginViewModel.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Authentication\\LoginViewModel.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Authentication\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:28:09.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "StudySphere\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:27:45.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-12T17:39:49.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T17:37:12.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Authentication\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Authentication\\RegisterViewModel.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Authentication\\RegisterViewModel.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Authentication\\RegisterViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA2wCgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:41:22.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T19:11:16.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Program.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Program.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Program.cs",
+              "RelativeToolTip": "StudySphere\\Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T19:14:08.863Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

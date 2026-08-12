@@ -1,0 +1,592 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+@model StudySphere.ViewModels.Authentication.AuthViewModel
+<main class="auth-container">
+
+    <!-- =========================
+            LEFT SIDE
+    ========================== -->
+    <section class="brand-section">
+
+        <div class="brand-content">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <span>StudySphere</span>
+            </div>
+
+            <div class="brand-text">
+                <span class="eyebrow">LEARN • GROW • ACHIEVE</span>
+
+                <h1>
+                    Your learning
+                    <span>journey</span>
+                    starts here.
+                </h1>
+
+                <p>
+                    Learn from expert instructors, track your progress,
+                    and build the skills that shape your future.
+                </p>
+            </div>
+
+            <!-- Decorative course cards -->
+            <div class="floating-cards">
+
+                <div class="mini-card card-one">
+                    <div class="mini-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div>
+                        <strong>Web Development</strong>
+                        <small>Continue learning</small>
+                    </div>
+
+                    <span class="progress">72%</span>
+                </div>
+
+                <div class="mini-card card-two">
+                    <div class="mini-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <div>
+                        <strong>Database Systems</strong>
+                        <small>8 lessons completed</small>
+                    </div>
+
+                    <span class="progress">64%</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+            RIGHT SIDE
+    ========================== -->
+    <section class="form-section">
+
+        <div class="form-wrapper">
+
+            <!-- Mobile Logo -->
+            <div class="mobile-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <span>StudySphere</span>
+            </div>
+
+
+            <!-- =========================
+                    AUTH TOGGLE
+            ========================== -->
+            <div class="auth-toggle">
+
+                <button type="button"
+                        class="toggle-btn active"
+                        id="signInTab">
+
+                    Sign In
+
+                </button>
+
+                <button type="button"
+                        class="toggle-btn"
+                        id="signUpTab">
+
+                    Sign Up
+
+                </button>
+
+                <div class="toggle-slider" id="toggleSlider"></div>
+
+            </div>
+
+
+            <!-- =========================
+                    SIGN IN
+            ========================== -->
+            <form id="signInForm" class="auth-form active-form" asp-controller="Account" asp-action="Login">
+
+                <div class="form-heading">
+
+                    <h2>Welcome back</h2>
+
+                    <p>
+                        Sign in to continue your learning journey.
+                    </p>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input type="email"
+                                id="loginEmail"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                asp-for="Login.Email"
+                                required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <div class="label-row">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <a href="#" class="forgot-password">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                               asp-for="Login.Password"
+                                required>
+
+                        <button type="button"
+                                class="password-toggle"
+                                data-target="loginPassword"
+                                aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember -->
+                <div class="remember-row">
+
+                    <label class="checkbox-container">
+
+                        <input type="checkbox">
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Login Button -->
+                <button type="submit" class="primary-btn">
+
+                    <span>Sign In</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div class="switch-text">
+
+                    Don't have an account?
+
+                    <button type="button"
+                            class="switch-link"
+                            id="goToSignUp">
+
+                        Create one
+
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- =========================
+                    SIGN UP
+            ========================== -->
+            <form id="signUpForm" class="auth-form" asp-controller="Account" asp-action="Register">
+
+                <div class="form-heading">
+
+                    <h2>Create your account</h2>
+
+                    <p>
+                        Join StudySphere and start learning today.
+                    </p>
+
+                </div>
+
+
+                <!-- Full Name -->
+                <div class="input-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-user input-icon"></i>
+
+                        <input type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                asp-for="Register.FullName"
+                                required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="signupEmail">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input type="email"
+                                id="signupEmail"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                asp-for="Register.Email"
+                                required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Phone -->
+                <div class="input-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-phone input-icon"></i>
+
+                        <input type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                asp-for="Register.PhoneNumber"
+                                required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Role -->
+                <div class="input-group">
+
+                    <label>
+                        I am a
+                    </label>
+
+                    <div class="role-selection">
+
+                        <label class="role-card active" id="studentRole">
+
+                            <input type="radio"
+                                    name="role"
+                                    value="Student"
+                                    asp-for="Register.Role"
+                                    checked>
+
+                            <div class="role-icon">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+
+                            <div class="role-info">
+                                <strong>Student</strong>
+                                <small>Learn & grow</small>
+                            </div>
+
+                            <i class="fa-solid fa-check role-check"></i>
+
+                        </label>
+
+
+                        <label class="role-card" id="instructorRole">
+
+                            <input type="radio"
+                                    name="role"
+                                    asp-for="Register.Role"
+                                    value="Instructor">
+
+                            <div class="role-icon instructor-icon">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+
+                            <div class="role-info">
+                                <strong>Instructor</strong>
+                                <small>Teach & inspire</small>
+                            </div>
+
+                            <i class="fa-solid fa-check role-check"></i>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                        INSTRUCTOR DETAILS
+                ========================== -->
+                <div class="instructor-details"
+                        id="instructorDetails">
+
+                    <div class="section-label">
+                        <span></span>
+                        Professional Information
+                        <span></span>
+                    </div>
+
+
+                    <!-- Professional Title -->
+                    <div class="input-group">
+
+                        <label for="professionalTitle">
+                            Professional Title
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-briefcase input-icon"></i>
+
+                            <input type="text"
+                                    id="professionalTitle"
+                                    placeholder="e.g. Software Developer"
+                                    asp-for="Register.ProfessionalTitle">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Area of Expertise -->
+                    <div class="input-group">
+
+                        <label for="expertise">
+                            Area of Expertise
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lightbulb input-icon"></i>
+
+                            <input type="text"
+                                    id="expertise"
+                                    placeholder="e.g. C#, .NET, Web Development"
+                                    asp-for="Register.AreaOfExpertise">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Qualification -->
+                    <div class="input-group">
+
+                        <label for="qualification">
+                            Qualification
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-graduation-cap input-icon"></i>
+
+                            <input type="text"
+                                    id="qualification"
+                                    placeholder="e.g. M.Tech Computer Engineering"
+                                    asp-for="Register.Qualification">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input type="password"
+                                id="signupPassword"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                asp-for="Register.Password"
+                                required>
+
+                        <button type="button"
+                                class="password-toggle"
+                                data-target="signupPassword"
+                                aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength">
+
+                        <div class="strength-bars">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <small id="strengthText">
+                            Use 8+ characters
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                               asp-for="Register.ConfirmPassword"
+                                required>
+
+                        <button type="button"
+                                class="password-toggle"
+                                data-target="confirmPassword"
+                                aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                    <small class="password-match"
+                            id="passwordMatch">
+                    </small>
+
+                </div>
+
+
+                <!-- Terms -->
+                <label class="checkbox-container terms">
+
+                    <input type="checkbox"
+                            id="terms"
+                            required>
+
+                    <span class="custom-checkbox"></span>
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms & Conditions</a>
+                        and
+                        <a href="#">Privacy Policy</a>
+                    </span>
+
+                </label>
+
+
+                <!-- Sign Up Button -->
+                <button type="submit" class="primary-btn">
+
+                    <span>Create Account</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div class="switch-text">
+
+                    Already have an account?
+
+                    <button type="button"
+                            class="switch-link"
+                            id="goToSignIn">
+
+                        Sign in
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
