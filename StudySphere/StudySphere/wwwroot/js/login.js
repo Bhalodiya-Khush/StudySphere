@@ -319,32 +319,32 @@ function checkPasswordMatch() {
    Later .NET backend will handle this.
    ========================================= */
 
-signInForm.addEventListener(
-    "submit",
-    function (event) {
+// signInForm.addEventListener(
+//     "submit",
+//     function (event) {
 
-        event.preventDefault();
+//         event.preventDefault();
 
-        console.log("Sign in UI submitted");
+//         console.log("Sign in UI submitted");
 
-        /*
-            Later:
+//         /*
+//             Later:
 
-            POST /Account/Login
+//             POST /Account/Login
 
-            Backend checks:
-            Email
-            Password
-            User Role
+//             Backend checks:
+//             Email
+//             Password
+//             User Role
 
-            Then redirects to:
+//             Then redirects to:
 
-            Student Dashboard
-            OR
-            Instructor Dashboard
-        */
-    }
-);
+//             Student Dashboard
+//             OR
+//             Instructor Dashboard
+//         */
+//     }
+// );
 
 
 signUpForm.addEventListener(

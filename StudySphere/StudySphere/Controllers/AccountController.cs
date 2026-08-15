@@ -12,17 +12,42 @@ namespace StudySphere.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Login(LoginViewModel model)
+        public IActionResult Login(AuthViewModel model)
         {
-            if (!ModelState.IsValid)
+            // TEMPORARY DEBUG
+            Console.WriteLine("LOGIN POST CALLED");
+            Console.WriteLine($"Email: {model.Login?.Email}");
+            Console.WriteLine($"Password: {model.Login?.Password}");
+
+            if (model.Login?.Email == "student@gmail.com" &&
+                model.Login.Password == "123456")
             {
-                return View(model);
+                Console.WriteLine("STUDENT CREDENTIALS MATCHED");
+
+                return RedirectToAction(
+                    "Index",
+                    "StudentDashboard");
             }
 
-            // Authentication logic later
+            if (model.Login?.Email == "instructor@gmail.com" &&
+                model.Login.Password == "123456")
+            {
+                return RedirectToAction(
+                    "Index",
+                    "InstructorDashboard");
+            }
 
-            return RedirectToAction("Index", "Home");
+            if (model.Login?.Email == "admin@gmail.com" &&
+                model.Login.Password == "123456")
+            {
+                return RedirectToAction(
+                    "Index",
+                    "AdminDashboard");
+            }
+
+            ViewBag.ErrorMessage = "Invalid email or password.";
+
+            return View(model);
         }
     }
 }

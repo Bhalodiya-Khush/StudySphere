@@ -1,7 +1,9 @@
+wwwroot\css\home.css
 wwwroot\css\login.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\js\login.js
+wwwroot\images\student-hero.png
+wwwroot\js\home.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -63,10 +65,12 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\js\login.js
+wwwroot\js\login.js
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\home.css
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\login.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\site.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\favicon.ico
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\login.css
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\js\home.js
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\js\site.js
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -127,3 +131,4 @@ D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.slim.j
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\LICENSE.txt
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\js\login.js

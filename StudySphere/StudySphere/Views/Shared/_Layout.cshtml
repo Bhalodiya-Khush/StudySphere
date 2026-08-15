@@ -1,50 +1,333 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
     <title>@ViewData["Title"] - StudySphere</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <meta name="description"
+          content="StudySphere - Online Learning Platform" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Site CSS -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/StudySphere.styles.css" asp-append-version="true" />
+
+    @await RenderSectionAsync("Styles", required: false)
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">StudySphere</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <div class="nav-container">
+
+                <!-- Logo -->
+
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="brand">
+
+                    <span class="brand-mark">S</span>
+
+                    <span class="brand-text">
+                        Study<span>Sphere</span>
+                    </span>
+
+                </a>
+
+
+                <!-- Desktop Navigation -->
+
+                <div class="nav-links">
+
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="nav-link active">
+                        Home
+                    </a>
+
+                    <!-- Temporary -->
+                    <a href="#courses"
+                       class="nav-link">
+                        Courses
+                    </a>
+
+                    <!-- Temporary -->
+                    <a href="#learning"
+                       class="nav-link">
+                        My Learning
+                    </a>
+
+                    <!-- Temporary -->
+                    <a href="#progress"
+                       class="nav-link">
+                        Progress
+                    </a>
+
                 </div>
+
+
+                <!-- Right Navigation -->
+
+                <div class="nav-actions">
+
+                    <!-- Temporary Notification -->
+
+                    <button class="icon-button"
+                            type="button"
+                            title="Notifications"
+                            onclick="showComingSoon('Notifications')">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+
+                            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+
+                        </svg>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <!-- Temporary Profile -->
+
+                    <button class="profile-button"
+                            type="button"
+                            onclick="toggleProfileMenu()">
+
+                        <span class="profile-avatar">
+                            S
+                        </span>
+
+                        <span class="profile-name">
+                            Student
+                        </span>
+
+                        <svg class="profile-arrow"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path d="m6 9 6 6 6-6" />
+
+                        </svg>
+
+                    </button>
+
+
+                    <!-- Temporary Profile Dropdown -->
+
+                    <div id="profileMenu"
+                         class="profile-menu">
+
+                        <div class="profile-menu-header">
+
+                            <div class="profile-avatar large">
+                                S
+                            </div>
+
+                            <div>
+                                <strong>Student</strong>
+                                <small>student@studysphere.com</small>
+                            </div>
+
+                        </div>
+
+                        <div class="profile-divider"></div>
+
+                        <a href="#profile"
+                           onclick="showComingSoon('Profile')">
+                            My Profile
+                        </a>
+
+                        <a href="#settings"
+                           onclick="showComingSoon('Settings')">
+                            Settings
+                        </a>
+
+                        <a href="#help"
+                           onclick="showComingSoon('Help & Support')">
+                            Help & Support
+                        </a>
+
+                        <div class="profile-divider"></div>
+
+                        <!-- Temporary logout -->
+
+                        <a href="#logout"
+                           class="logout-link"
+                           onclick="showComingSoon('Logout')">
+                            Sign Out
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Mobile Menu Button -->
+
+                <button class="mobile-menu-button"
+                        type="button"
+                        onclick="toggleMobileMenu()"
+                        aria-label="Toggle navigation">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
             </div>
+
+
+            <!-- Mobile Navigation -->
+
+            <div id="mobileMenu"
+                 class="mobile-menu">
+
+                <a asp-controller="Home"
+                   asp-action="Index">
+                    Home
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#learning">
+                    My Learning
+                </a>
+
+                <a href="#progress">
+                    Progress
+                </a>
+
+                <a href="#profile"
+                   onclick="showComingSoon('Profile')">
+                    Profile
+                </a>
+
+                <a href="#settings"
+                   onclick="showComingSoon('Settings')">
+                    Settings
+                </a>
+
+            </div>
+
         </nav>
+
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand">
+
+                    <span class="brand-mark">S</span>
+
+                    <span class="brand-text">
+                        Study<span>Sphere</span>
+                    </span>
+
+                </div>
+
+                <p>
+                    Learn. Grow. Achieve.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#about"
+                   onclick="showComingSoon('About')">
+                    About
+                </a>
+
+                <a href="#contact"
+                   onclick="showComingSoon('Contact')">
+                    Contact
+                </a>
+
+                <a href="#privacy"
+                   onclick="showComingSoon('Privacy Policy')">
+                    Privacy
+                </a>
+
+                <a href="#terms"
+                   onclick="showComingSoon('Terms')">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © @DateTime.Now.Year StudySphere.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast -->
+
+    <div id="toast"
+         class="toast">
+
+        <span id="toastMessage"></span>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - StudySphere - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Site JS -->
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using StudySphere.Models;
+using StudySphere.Models.Dashboard;
 using System.Diagnostics;
 
 namespace StudySphere.Controllers
@@ -19,7 +19,7 @@ namespace StudySphere.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new StudentDashboardViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

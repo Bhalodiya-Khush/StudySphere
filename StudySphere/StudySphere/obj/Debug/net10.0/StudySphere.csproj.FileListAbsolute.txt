@@ -21,7 +21,6 @@ D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\rjsmcshtml.dswa.cac
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\bundle\StudySphere.styles.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\projectbundle\StudySphere.bundle.scp.css
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\skjy962was-{0}-b9sayid5wm-b9sayid5wm.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\gipk86so3w-{0}-61n19gt1b8-61n19gt1b8.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\g0la1yhq4n-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\rvpnkh5gl6-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -97,5 +96,8 @@ D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\ref\StudySphere.dll
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\Views\Shared\_AuthLayout.cshtml.rz.scp.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\37qhbephri-{0}-ig6c2n8luu-ig6c2n8luu.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\6mqf8h1pj9-{0}-ig6c2n8luu-ig6c2n8luu.gz
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\x5b3s1dwa1-{0}-pk18b7pjaq-pk18b7pjaq.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\mjqsb27vjs-{0}-tmnnd5jxyy-tmnnd5jxyy.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\3zqngxwe0d-{0}-na0pwp6zxs-na0pwp6zxs.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\u1ks1bkv9q-{0}-7lo37smpfq-7lo37smpfq.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\skjy962was-{0}-9a3ad10kyx-9a3ad10kyx.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\x5b3s1dwa1-{0}-ccthx2fs15-ccthx2fs15.gz
