@@ -27,16 +27,16 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Dashboard/Admin/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkbWluXGluZGV4LmNzaHRtbA==
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Dashboard/AdminDashboard/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkbWluRGFzaGJvYXJkXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Dashboard/Instructor/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluc3RydWN0b3JcaW5kZXguY3NodG1s
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Dashboard/InstructorDashboard/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluc3RydWN0b3JEYXNoYm9hcmRcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Dashboard/Student/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFN0dWRlbnRcaW5kZXguY3NodG1s
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Dashboard/StudentDashboard/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFN0dWRlbnREYXNoYm9hcmRcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Home/index.cshtml]
@@ -45,6 +45,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Profile/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Shared/Error.cshtml]

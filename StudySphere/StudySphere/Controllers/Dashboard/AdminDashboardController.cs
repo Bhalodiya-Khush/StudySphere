@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudySphere.Models.Dashboard;
-[Authorize(Roles = "Admin")]
+//[Authorize(Roles = "Admin")]
 public class AdminDashboardController : Controller
 {
     public IActionResult Index()
@@ -15,6 +15,6 @@ public class AdminDashboardController : Controller
             //TotalCategories = 10
         };
 
-        return View("~/Views/Dashboard/Admin/Index.cshtml", model);
+        return View("~/Views/Dashboard/AdminDashboard/Index.cshtml", model);
     }
 }

@@ -1,0 +1,444 @@
+﻿@{
+    ViewData["Title"] = "My Profile";
+}
+
+<link rel="stylesheet" href="~/css/profile.css" />
+
+<div class="profile-page">
+
+    <!-- Profile Hero -->
+    <section class="profile-hero">
+
+        <div class="profile-cover">
+            <div class="cover-shape shape-one"></div>
+            <div class="cover-shape shape-two"></div>
+            <div class="cover-shape shape-three"></div>
+        </div>
+
+        <div class="profile-header">
+
+            <div class="profile-main">
+
+                <div class="profile-image-wrapper">
+                    <img src="https://i.pravatar.cc/180?img=12"
+                         alt="Profile Picture"
+                         class="profile-image">
+
+                    <span class="profile-status"></span>
+                </div>
+
+                <div class="profile-basic">
+
+                    <div class="name-row">
+                        <h1>Alex Johnson</h1>
+                        <span class="role-badge">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Student
+                        </span>
+                    </div>
+
+                    <p class="profile-headline">
+                        Computer Engineering Student
+                    </p>
+
+                    <p class="profile-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Gujarat, India
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn-primary" id="editProfileBtn">
+                    <i class="fa-solid fa-pen"></i>
+                    Edit Profile
+                </button>
+
+                <button class="btn-outline">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    Share
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Profile Statistics -->
+    <section class="profile-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div>
+                <span class="stat-number">8</span>
+                <span class="stat-label">Enrolled Courses</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+                <span class="stat-number">5</span>
+                <span class="stat-label">Completed</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <div>
+                <span class="stat-number">42h</span>
+                <span class="stat-label">Learning Time</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-certificate"></i>
+            </div>
+
+            <div>
+                <span class="stat-number">3</span>
+                <span class="stat-label">Certificates</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Main Content -->
+    <section class="profile-content">
+
+        <!-- Left Column -->
+        <div class="profile-left">
+
+            <!-- About -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+                    <div>
+                        <span class="section-label">PROFILE</span>
+                        <h2>About Me</h2>
+                    </div>
+
+                    <button class="icon-btn">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+
+                <p class="about-text">
+                    I'm a passionate Computer Engineering student who enjoys
+                    building web applications, learning new technologies and
+                    solving programming problems. I'm currently focusing on
+                    improving my skills in C#, .NET, Java and modern web
+                    development.
+                </p>
+
+            </div>
+
+
+            <!-- Skills -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+                    <div>
+                        <span class="section-label">EXPERTISE</span>
+                        <h2>Skills & Technologies</h2>
+                    </div>
+                </div>
+
+                <div class="skills">
+
+                    <span class="skill">
+                        <i class="fa-brands fa-html5"></i>
+                        HTML
+                    </span>
+
+                    <span class="skill">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        CSS
+                    </span>
+
+                    <span class="skill">
+                        <i class="fa-brands fa-js"></i>
+                        JavaScript
+                    </span>
+
+                    <span class="skill">
+                        <i class="fa-solid fa-code"></i>
+                        C++
+                    </span>
+
+                    <span class="skill">
+                        <i class="fa-brands fa-java"></i>
+                        Java
+                    </span>
+
+                    <span class="skill">
+                        <i class="fa-solid fa-database"></i>
+                        MySQL
+                    </span>
+
+                    <span class="skill">
+                        <i class="fa-brands fa-microsoft"></i>
+                        .NET
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Recent Courses -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="section-label">LEARNING</span>
+                        <h2>Recent Courses</h2>
+                    </div>
+
+                    <a href="#" class="view-all">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="course-list">
+
+                    <div class="course-item">
+
+                        <div class="course-color web"></div>
+
+                        <div class="course-info">
+                            <h3>Web Development</h3>
+                            <p>12 of 18 lessons completed</p>
+
+                            <div class="progress">
+                                <div class="progress-value" style="width: 68%;"></div>
+                            </div>
+                        </div>
+
+                        <span class="course-percent">
+                            68%
+                        </span>
+
+                    </div>
+
+
+                    <div class="course-item">
+
+                        <div class="course-color java"></div>
+
+                        <div class="course-info">
+                            <h3>Java Programming</h3>
+                            <p>8 of 16 lessons completed</p>
+
+                            <div class="progress">
+                                <div class="progress-value" style="width: 50%;"></div>
+                            </div>
+                        </div>
+
+                        <span class="course-percent">
+                            50%
+                        </span>
+
+                    </div>
+
+
+                    <div class="course-item">
+
+                        <div class="course-color database"></div>
+
+                        <div class="course-info">
+                            <h3>Database Systems</h3>
+                            <p>7 of 12 lessons completed</p>
+
+                            <div class="progress">
+                                <div class="progress-value" style="width: 58%;"></div>
+                            </div>
+                        </div>
+
+                        <span class="course-percent">
+                            58%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Column -->
+        <div class="profile-right">
+
+            <!-- Personal Information -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="section-label">PERSONAL</span>
+                        <h2>Personal Information</h2>
+                    </div>
+
+                    <button class="icon-btn">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="information-list">
+
+                    <div class="information-item">
+                        <div class="information-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <span>Email Address</span>
+                            <strong>alex.johnson@example.com</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="information-item">
+                        <div class="information-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <span>Phone Number</span>
+                            <strong>+91 98765 43210</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="information-item">
+                        <div class="information-icon">
+                            <i class="fa-solid fa-calendar"></i>
+                        </div>
+
+                        <div>
+                            <span>Date Joined</span>
+                            <strong>August 2026</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="information-item">
+                        <div class="information-icon">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+
+                        <div>
+                            <span>Language</span>
+                            <strong>English</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Account -->
+            <div class="profile-card account-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="section-label">ACCOUNT</span>
+                        <h2>Account Settings</h2>
+                    </div>
+
+                </div>
+
+                <button class="setting-button">
+                    <span>
+                        <i class="fa-solid fa-lock"></i>
+                        Change Password
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+
+                <button class="setting-button">
+                    <span>
+                        <i class="fa-solid fa-bell"></i>
+                        Notification Preferences
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+
+                <button class="setting-button">
+                    <span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Privacy & Security
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+
+            <!-- Profile Completion -->
+            <div class="completion-card">
+
+                <div class="completion-top">
+
+                    <div>
+                        <span>Profile Completion</span>
+                        <strong>80%</strong>
+                    </div>
+
+                    <div class="completion-circle">
+                        <span>80%</span>
+                    </div>
+
+                </div>
+
+                <p>
+                    Complete your profile to get better course recommendations.
+                </p>
+
+                <button>
+                    Complete Profile
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="~/js/profile.js"></script>

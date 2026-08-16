@@ -109,9 +109,9 @@
 
                     <!-- Temporary Profile -->
 
-                    <button class="profile-button"
-                            type="button"
-                            onclick="toggleProfileMenu()">
+                    <a asp-controller="Profile"
+                       asp-action="Index"
+                       class="profile-button">
 
                         <span class="profile-avatar">
                             S
@@ -131,7 +131,7 @@
 
                         </svg>
 
-                    </button>
+                    </a>
 
 
                     <!-- Temporary Profile Dropdown -->
@@ -222,8 +222,8 @@
                     Progress
                 </a>
 
-                <a href="#profile"
-                   onclick="showComingSoon('Profile')">
+                <a asp-controller="Home"
+                   asp-action="Index">
                     Profile
                 </a>
 
