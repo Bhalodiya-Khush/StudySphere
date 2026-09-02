@@ -6,7 +6,7 @@ public class AdminDashboardController : Controller
 {
     public IActionResult Index()
     {
-        var model = new AdminDashboardViewModel
+        var model = new Users
         {
             //TotalUsers = 850,
             //TotalStudents = 720,

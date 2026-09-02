@@ -1,6 +1,6 @@
 namespace StudySphere.Models.Dashboard
 {
-    public class AdminDashboardViewModel
+    public class Users
     {
         public string? RequestId { get; set; }
 
