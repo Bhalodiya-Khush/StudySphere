@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudySphere.Models
 {
-    public class Student
+    public class StudentDashboardViewModels
     {
         [Key]
         [ForeignKey(nameof(User))]

@@ -1,0 +1,29 @@
+﻿@model StudySphere.Models.Course
+
+<div class="course-card">
+
+    <img src="@Model.ThumbnailUrl"
+         class="course-thumbnail"
+         alt="@Model.Title">
+
+    <div class="course-card-body">
+
+        <span class="course-category">
+            @Model.Category
+        </span>
+
+        <h5 class="course-title">
+            @Model.Title
+        </h5>
+
+        <p class="course-description">
+            @Model.Description
+        </p>
+
+        <a href="#" class="btn btn-sm btn-success">
+            View Course
+        </a>
+
+    </div>
+
+</div>

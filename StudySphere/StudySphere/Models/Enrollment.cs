@@ -28,7 +28,7 @@ namespace StudySphere.Models
 
         // Navigation properties
         [ForeignKey(nameof(StudentId))]
-        public Student Student { get; set; } = null!;
+        public StudentDashboardViewModels Student { get; set; } = null!;
 
         [ForeignKey(nameof(CourseId))]
         public Course Course { get; set; } = null!;

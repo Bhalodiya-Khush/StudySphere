@@ -90,8 +90,6 @@ D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\80tfekqf
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\gseexdmulg-{0}-muycvpuwrr-muycvpuwrr.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\v1097b54xs-{0}-87fc7y1x7t-87fc7y1x7t.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\090eo3hq9n-{0}-mlv21k5csn-mlv21k5csn.gz
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\37qhbephri-{0}-ig6c2n8luu-ig6c2n8luu.gz
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\6mqf8h1pj9-{0}-ig6c2n8luu-ig6c2n8luu.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\staticwebassets.build.json
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\staticwebassets.build.json.cache
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\staticwebassets.development.json
@@ -103,4 +101,7 @@ D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\refint\StudySphere.
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.pdb
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.genruntimeconfig.cache
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\ref\StudySphere.dll
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cl0iysj27h-{0}-fsgu3yvg1p-fsgu3yvg1p.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\Views\Shared\_CourseCard.cshtml.rz.scp.css
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\37qhbephri-{0}-ezjvu0xghi-ezjvu0xghi.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\6mqf8h1pj9-{0}-ezjvu0xghi-ezjvu0xghi.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\f2pryvcx7r-{0}-o8tjupnk2e-o8tjupnk2e.gz

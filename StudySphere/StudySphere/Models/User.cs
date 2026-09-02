@@ -33,7 +33,7 @@ namespace StudySphere.Models
         public bool IsActive { get; set; } = true;
 
         // Navigation properties
-        public Student? Student { get; set; }
+        public StudentDashboardViewModels? Student { get; set; }
 
         public Instructor? Instructor { get; set; }
 

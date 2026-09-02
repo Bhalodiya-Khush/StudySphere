@@ -1,0 +1,150 @@
+﻿@model StudySphere.Models.ViewModels.StudentDashboardViewModel
+
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+
+<div class="container py-4">
+
+    <!-- Welcome -->
+    <div class="mb-4">
+        <h2 class="fw-bold">
+            Welcome back, @Model.StudentName 👋
+        </h2>
+
+        <p class="text-muted">
+            Continue learning and explore new courses.
+        </p>
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- MY ENROLLED COURSES -->
+    <!-- ============================= -->
+
+    <section class="mb-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <div>
+                <h3 class="fw-bold mb-1">
+                    My Courses
+                </h3>
+
+                <p class="text-muted mb-0">
+                    Continue where you left off
+                </p>
+            </div>
+
+            <a href="#" class="btn btn-outline-success btn-sm">
+                View All
+            </a>
+
+        </div>
+
+
+        <div class="course-scroll">
+
+            @foreach (var course in Model.EnrolledCourses)
+            {
+                <partial name="_CourseCard" model="course" />
+            }
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- ALL COURSES -->
+    <!-- ============================= -->
+
+    <section class="mb-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <div>
+                <h3 class="fw-bold mb-1">
+                    Explore Courses
+                </h3>
+
+                <p class="text-muted mb-0">
+                    Discover something new to learn
+                </p>
+            </div>
+
+            <a href="#" class="btn btn-outline-success btn-sm">
+                View All
+            </a>
+
+        </div>
+
+
+        <div class="course-scroll">
+
+            @foreach (var course in Model.AllCourses)
+            {
+                <partial name="_CourseCard" model="course" />
+            }
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================= -->
+    <!-- CATEGORIES -->
+    <!-- ============================= -->
+
+    <section>
+
+        <div class="mb-3">
+
+            <h3 class="fw-bold mb-1">
+                Browse by Category
+            </h3>
+
+            <p class="text-muted">
+                Find courses based on your interests
+            </p>
+
+        </div>
+
+
+        <div class="row g-3">
+
+            @foreach (var category in Model.Categories)
+            {
+                <div class="col-6 col-md-3">
+
+                    <a href="#"
+                       class="text-decoration-none">
+
+                        <div class="category-card">
+
+                            <div class="category-icon">
+                                📚
+                            </div>
+
+                            <h5 class="mb-0">
+                                @category
+                            </h5>
+
+                            <small class="text-muted">
+                                Explore courses
+                            </small>
+
+                        </div>
+
+                    </a>
+
+                </div>
+            }
+
+        </div>
+
+    </section>
+
+</div>
