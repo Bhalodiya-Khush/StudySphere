@@ -8,7 +8,32 @@ namespace StudySphere.Controllers
     {
         public IActionResult Index()
         {
-            var allCourses = new List<Course>
+            var allCourses = GetAllCourses();
+
+            var enrolledCourses = GetEnrolledCourses();
+
+            var model = new StudentDashboardViewModel
+            {
+                StudentName = "Student",
+
+                EnrolledCourses = enrolledCourses,
+
+                AllCourses = allCourses,
+
+                Categories = new List<string>
+                {
+                    "Development",
+                    "AI",
+                    "Management",
+                    "Design"
+                }
+            };
+
+            return View(model);
+        }
+        private List<Course> GetAllCourses()
+        {
+            return new List<Course>
             {
                 new Course
                 {
@@ -73,35 +98,59 @@ namespace StudySphere.Controllers
                     Category = "Design"
                 }
             };
+        }
+        private List<Course> GetEnrolledCourses()
+        {
+            var allCourses = GetAllCourses();
 
-
-            // Temporary enrolled courses
-            var enrolledCourses = new List<Course>
+            return new List<Course>
             {
                 allCourses[0],
                 allCourses[1],
                 allCourses[4]
             };
+        }
+        public IActionResult MyCourses()
+        {
+            var enrolledCourses = GetEnrolledCourses();
 
+            return View(enrolledCourses);
+        }
 
-            var model = new StudentDashboardViewModel
+        public IActionResult AllCourses()
+        {
+            var allCourses = GetAllCourses();
+
+            return View(allCourses);
+        }
+
+        public IActionResult CategoryCourses(string category)
+        {
+            var allCourses = GetAllCourses();
+
+            var courses = allCourses
+                .Where(c => c.Category.Equals(
+                    category,
+                    StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            ViewBag.Category = category;
+
+            return View(courses);
+        }
+
+        public IActionResult CourseDetails(int id)
+        {
+            var allCourses = GetAllCourses();
+
+            var course = allCourses.FirstOrDefault(c => c.CourseId == id);
+
+            if (course == null)
             {
-                StudentName = "Student",
+                return NotFound();
+            }
 
-                EnrolledCourses = enrolledCourses,
-
-                AllCourses = allCourses,
-
-                Categories = new List<string>
-                {
-                    "Development",
-                    "AI",
-                    "Management",
-                    "Design"
-                }
-            };
-
-            return View(model);
+            return View(course);
         }
     }
 }

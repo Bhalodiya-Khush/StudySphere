@@ -1,0 +1,32 @@
+﻿@model List<StudySphere.Models.Course>
+
+@{
+    ViewData["Title"] = "All Courses";
+}
+
+<div class="container py-4">
+
+    <div class="mb-4">
+        <h2 class="fw-bold">Explore Courses</h2>
+
+        <p class="text-muted">
+            Explore all courses available on StudySphere.
+        </p>
+    </div>
+
+
+    <div class="row g-4">
+
+        @foreach (var course in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <partial name="_CourseCard"
+                         model="course" />
+
+            </div>
+        }
+
+    </div>
+
+</div>

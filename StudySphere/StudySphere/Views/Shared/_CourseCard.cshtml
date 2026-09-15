@@ -46,8 +46,10 @@
             }
             else
             {
-                <a href="#"
-                   class="btn btn-success btn-sm w-100">
+                <a asp-controller="StudentDashboard"
+                   asp-action="CourseDetails"
+                   asp-route-id="@Model.CourseId"
+                   class="btn btn-sm btn-success">
                     View Course
                 </a>
             }

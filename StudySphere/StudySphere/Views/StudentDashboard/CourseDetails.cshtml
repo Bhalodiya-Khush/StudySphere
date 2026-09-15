@@ -1,0 +1,75 @@
+﻿@model StudySphere.Models.Course
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container py-4">
+
+    <div class="row g-4">
+
+        <!-- Course Image -->
+
+        <div class="col-md-5">
+
+            <img src="@Model.ThumbnailUrl"
+                 alt="@Model.Title"
+                 class="img-fluid rounded shadow-sm w-100">
+
+        </div>
+
+
+        <!-- Course Information -->
+
+        <div class="col-md-7">
+
+            <span class="badge bg-success mb-3">
+                @Model.Category
+            </span>
+
+            <h1 class="fw-bold">
+                @Model.Title
+            </h1>
+
+            <p class="text-muted mt-3">
+                @Model.Description
+            </p>
+
+            <hr>
+
+            <div class="d-flex gap-2">
+
+                <a href="#"
+                   class="btn btn-success">
+                    Start Learning
+                </a>
+
+                <a asp-controller="StudentDashboard"
+                   asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Back
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Course Content -->
+
+    <div class="mt-5">
+
+        <h3 class="fw-bold">
+            Course Content
+        </h3>
+
+        <p class="text-muted">
+            Your course videos, PDF materials and live lectures
+            will appear here.
+        </p>
+
+    </div>
+
+</div>
