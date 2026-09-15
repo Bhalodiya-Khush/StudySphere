@@ -1,20 +1,19 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using StudySphere.Models.Dashboard;
-//[Authorize(Roles = "Admin")]
-public class AdminDashboardController : Controller
-{
-    public IActionResult Index()
-    {
-        var model = new Users
-        {
-            //TotalUsers = 850,
-            //TotalStudents = 720,
-            //TotalInstructors = 80,
-            //TotalCourses = 65,
-            //TotalCategories = 10
-        };
+﻿using Microsoft.AspNetCore.Mvc;
+using StudySphere.Models;
 
-        return View("~/Views/Dashboard/AdminDashboard/Index.cshtml", model);
+namespace StudySphere.Controllers
+{
+    public class AdminDashboardController : Controller
+    {
+        public IActionResult Index()
+        {
+            // Static data for now
+            ViewBag.TotalStudents = 120;
+            ViewBag.TotalInstructors = 15;
+            ViewBag.TotalCourses = 35;
+            ViewBag.PendingCourses = 5;
+
+            return View();
+        }
     }
 }

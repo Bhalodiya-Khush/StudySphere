@@ -1,29 +1,60 @@
 ﻿@model StudySphere.Models.Course
 
-<div class="course-card">
+<div class="card border-0 shadow-sm h-100 course-card">
 
+    ```
+    <!-- Course Thumbnail -->
     <img src="@Model.ThumbnailUrl"
-         class="course-thumbnail"
-         alt="@Model.Title">
+         alt="@Model.Title"
+         class="card-img-top course-thumbnail" />
 
-    <div class="course-card-body">
+    <div class="card-body d-flex flex-column">
 
-        <span class="course-category">
+        <!-- Category -->
+        <span class="badge bg-light text-dark border align-self-start mb-2">
             @Model.Category
         </span>
 
-        <h5 class="course-title">
+        <!-- Course Title -->
+        <h5 class="card-title fw-bold mb-2">
             @Model.Title
         </h5>
 
-        <p class="course-description">
+        <!-- Description -->
+        <p class="card-text text-muted small mb-3">
             @Model.Description
         </p>
 
-        <a href="#" class="btn btn-sm btn-success">
-            View Course
-        </a>
+        <!-- Level -->
+        <div class="mb-3">
+            <span class="badge bg-light text-dark border">
+                @Model.Level
+            </span>
+        </div>
+
+        <!-- Action Button -->
+        <div class="mt-auto">
+
+            @if (ViewData["IsInstructor"] is true)
+            {
+                <a asp-controller="InstructorDashboard"
+                   asp-action="CourseDetails"
+                   asp-route-id="@Model.CourseId"
+                   class="btn btn-success btn-sm w-100">
+                    Manage Course
+                </a>
+            }
+            else
+            {
+                <a href="#"
+                   class="btn btn-success btn-sm w-100">
+                    View Course
+                </a>
+            }
+
+        </div>
 
     </div>
+    ```
 
 </div>

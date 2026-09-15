@@ -1,1186 +1,164 @@
-﻿@{
+﻿@using StudySphere.Models
+
+@{
     ViewData["Title"] = "Instructor Dashboard";
+
+    var instructor = ViewBag.Instructor as Instructor;
+    var courses = ViewBag.Courses as List<Course>;
 }
 
-<link rel="stylesheet" href="~/css/Dashboard/instructor-dashboard.css" />
+<div class="container py-4">
 
-<div class="instructor-dashboard">
+    <!-- Header -->
+    <div class="mb-4">
+        <h2 class="fw-bold">
+            Welcome, Instructor 👋
+        </h2>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="dashboard-hero">
+        <p class="text-muted">
+            Manage your courses, students and learning content.
+        </p>
+    </div>
 
-        <div class="hero-content">
 
-            <span class="hero-badge">
-                Instructor Dashboard
-            </span>
+    <!-- Instructor Information -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
 
-            <h1>
-                Teach today.<br />
-                <span>Shape the future.</span>
-            </h1>
+            <div class="row align-items-center">
 
-            <p>
-                Create engaging courses, track student progress,
-                and help learners achieve their goals with StudySphere.
+                <div class="col-md-8">
+
+                    <h4 class="fw-bold mb-1">
+                        @instructor?.ProfessionalTitle
+                    </h4>
+
+                    <p class="text-muted mb-1">
+                        @instructor?.AreaOfExpertise
+                    </p>
+
+                    <p class="small text-muted mb-0">
+                        @instructor?.Qualification
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+
+                    <a asp-controller="InstructorDashboard"
+                       asp-action="Courses"
+                       class="btn btn-success">
+                        Manage Courses
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Statistics -->
+    <div class="row g-3 mb-5">
+
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <p class="text-muted mb-1">
+                        My Courses
+                    </p>
+
+                    <h3 class="fw-bold mb-0">
+                        @ViewBag.TotalCourses
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <p class="text-muted mb-1">
+                        Students
+                    </p>
+
+                    <h3 class="fw-bold mb-0">
+                        @ViewBag.TotalStudents
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <p class="text-muted mb-1">
+                        Materials
+                    </p>
+
+                    <h3 class="fw-bold mb-0">
+                        @ViewBag.TotalMaterials
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <p class="text-muted mb-1">
+                        Live Lectures
+                    </p>
+
+                    <h3 class="fw-bold mb-0">
+                        @ViewBag.UpcomingLectures
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- My Courses Heading -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <div>
+            <h4 class="fw-bold mb-1">
+                My Courses
+            </h4>
+
+            <p class="text-muted mb-0">
+                Courses created by you
             </p>
-
-            <div class="hero-actions">
-                <a href="#" class="btn-primary">
-                    <span>+</span>
-                    Create Course
-                </a>
-
-                <a href="#" class="btn-secondary">
-                    View My Courses
-                    <span>→</span>
-                </a>
-            </div>
-
         </div>
 
+        <a asp-controller="InstructorDashboard"
+           asp-action="Courses"
+           class="btn btn-outline-success">
+            View All
+        </a>
 
-        <div class="hero-visual">
+    </div>
 
-            <div class="hero-main-card">
 
-                <div class="hero-icon">
-                    📚
+    <!-- Horizontal Course Cards -->
+    <div class="d-flex overflow-auto gap-3 pb-3">
+
+        @if (courses != null)
+        {
+            foreach (var course in courses)
+            {
+                <div style="min-width: 280px; max-width: 280px;">
+                    <partial name="_CourseCard" model="course" />
                 </div>
+            }
+        }
 
-                <h3>
-                    Keep Teaching
-                </h3>
-
-                <p>
-                    Inspire your students every day.
-                </p>
-
-            </div>
-
-
-            <div class="floating-card engagement-card">
-
-                <div class="floating-icon">
-                    ↗
-                </div>
-
-                <div>
-                    <small>Student Engagement</small>
-                    <strong>82%</strong>
-                    <span>↑ 12% this month</span>
-                </div>
-
-            </div>
-
-
-            <div class="floating-card rating-card">
-
-                <div class="rating-icon">
-                    ★
-                </div>
-
-                <div>
-                    <small>Average Rating</small>
-                    <strong>4.8 / 5</strong>
-                    <span>96 Reviews</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= OVERVIEW ================= -->
-
-    <section class="dashboard-section">
-
-        <div class="section-header">
-            <div>
-                <span class="section-label">
-                    OVERVIEW
-                </span>
-
-                <h2>
-                    Teaching Overview
-                </h2>
-            </div>
-        </div>
-
-
-        <div class="stats-grid">
-
-            <!-- Total Courses -->
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    📚
-                </div>
-
-                <div class="stat-content">
-
-                    <span>Total Courses</span>
-
-                    <strong>04</strong>
-
-                    <small>
-                        3 Published · 1 Draft
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- Students -->
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    👥
-                </div>
-
-                <div class="stat-content">
-
-                    <span>Total Students</span>
-
-                    <strong>128</strong>
-
-                    <small class="positive">
-                        ↑ 18 this month
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- Completion -->
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    ◔
-                </div>
-
-                <div class="stat-content">
-
-                    <span>Completion Rate</span>
-
-                    <strong>82%</strong>
-
-                    <small class="positive">
-                        ↑ 6% from last month
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- Rating -->
-            <div class="stat-card">
-
-                <div class="stat-icon star">
-                    ★
-                </div>
-
-                <div class="stat-content">
-
-                    <span>Average Rating</span>
-
-                    <strong>4.8</strong>
-
-                    <small>
-                        Based on 96 reviews
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= MY COURSES ================= -->
-
-    <section class="dashboard-section">
-
-        <div class="section-header">
-
-            <div>
-                <span class="section-label">
-                    COURSES
-                </span>
-
-                <h2>
-                    My Courses
-                </h2>
-            </div>
-
-            <a href="#" class="view-all">
-                View All →
-            </a>
-
-        </div>
-
-
-        <div class="course-grid">
-
-            <!-- Java -->
-            <div class="course-card">
-
-                <div class="course-cover java-cover">
-
-                    <span class="course-category">
-                        Programming
-                    </span>
-
-                    <span class="course-status published">
-                        Published
-                    </span>
-
-                    <div class="course-symbol">
-                        ☕
-                    </div>
-
-                </div>
-
-
-                <div class="course-body">
-
-                    <h3>
-                        Java Programming
-                    </h3>
-
-                    <p>
-                        Learn Java from fundamentals to advanced concepts.
-                    </p>
-
-
-                    <div class="course-meta">
-
-                        <span>
-                            👥 52 Students
-                        </span>
-
-                        <span>
-                            ★ 4.9
-                        </span>
-
-                    </div>
-
-
-                    <div class="course-footer">
-
-                        <span>
-                            18 Lessons
-                        </span>
-
-                        <a href="#">
-                            Manage →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- C# -->
-            <div class="course-card">
-
-                <div class="course-cover dotnet-cover">
-
-                    <span class="course-category">
-                        Development
-                    </span>
-
-                    <span class="course-status published">
-                        Published
-                    </span>
-
-                    <div class="course-symbol">
-                        #C
-                    </div>
-
-                </div>
-
-
-                <div class="course-body">
-
-                    <h3>
-                        C# / .NET Development
-                    </h3>
-
-                    <p>
-                        Build modern web applications using ASP.NET Core.
-                    </p>
-
-
-                    <div class="course-meta">
-
-                        <span>
-                            👥 38 Students
-                        </span>
-
-                        <span>
-                            ★ 4.8
-                        </span>
-
-                    </div>
-
-
-                    <div class="course-footer">
-
-                        <span>
-                            22 Lessons
-                        </span>
-
-                        <a href="#">
-                            Manage →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Web Development -->
-            <div class="course-card">
-
-                <div class="course-cover web-cover">
-
-                    <span class="course-category">
-                        Web Development
-                    </span>
-
-                    <span class="course-status published">
-                        Published
-                    </span>
-
-                    <div class="course-symbol">
-                        &lt;/&gt;
-                    </div>
-
-                </div>
-
-
-                <div class="course-body">
-
-                    <h3>
-                        Web Development
-                    </h3>
-
-                    <p>
-                        Learn HTML, CSS and JavaScript to build modern websites.
-                    </p>
-
-
-                    <div class="course-meta">
-
-                        <span>
-                            👥 26 Students
-                        </span>
-
-                        <span>
-                            ★ 4.7
-                        </span>
-
-                    </div>
-
-
-                    <div class="course-footer">
-
-                        <span>
-                            20 Lessons
-                        </span>
-
-                        <a href="#">
-                            Manage →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Database -->
-            <div class="course-card">
-
-                <div class="course-cover database-cover">
-
-                    <span class="course-category">
-                        Database
-                    </span>
-
-                    <span class="course-status draft">
-                        Draft
-                    </span>
-
-                    <div class="course-symbol">
-                        DB
-                    </div>
-
-                </div>
-
-
-                <div class="course-body">
-
-                    <h3>
-                        Database Systems
-                    </h3>
-
-                    <p>
-                        Master SQL, database design and normalization.
-                    </p>
-
-
-                    <div class="course-meta">
-
-                        <span>
-                            👥 12 Students
-                        </span>
-
-                        <span>
-                            ★ 4.6
-                        </span>
-
-                    </div>
-
-
-                    <div class="course-footer">
-
-                        <span>
-                            16 Lessons
-                        </span>
-
-                        <a href="#">
-                            Continue Editing →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ACTIVITY + ASSESSMENTS ================= -->
-
-    <section class="dashboard-section">
-
-        <div class="two-column-grid">
-
-            <!-- Student Activity -->
-            <div class="dashboard-panel">
-
-                <div class="panel-header">
-
-                    <div>
-                        <span class="section-label">
-                            ACTIVITY
-                        </span>
-
-                        <h2>
-                            Recent Student Activity
-                        </h2>
-                    </div>
-
-                    <a href="#">
-                        View All
-                    </a>
-
-                </div>
-
-
-                <div class="activity-list">
-
-                    <div class="activity-item">
-
-                        <div class="activity-avatar">
-                            R
-                        </div>
-
-                        <div class="activity-info">
-
-                            <strong>
-                                Rahul Patel
-                            </strong>
-
-                            <p>
-                                Completed Java - OOP
-                            </p>
-
-                            <span>
-                                5 minutes ago
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="activity-item">
-
-                        <div class="activity-avatar">
-                            P
-                        </div>
-
-                        <div class="activity-info">
-
-                            <strong>
-                                Priya Shah
-                            </strong>
-
-                            <p>
-                                Submitted Database Assignment
-                            </p>
-
-                            <span>
-                                18 minutes ago
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="activity-item">
-
-                        <div class="activity-avatar">
-                            A
-                        </div>
-
-                        <div class="activity-info">
-
-                            <strong>
-                                Amit Kumar
-                            </strong>
-
-                            <p>
-                                Joined Web Development
-                            </p>
-
-                            <span>
-                                1 hour ago
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="activity-item">
-
-                        <div class="activity-avatar">
-                            N
-                        </div>
-
-                        <div class="activity-info">
-
-                            <strong>
-                                Neha Patel
-                            </strong>
-
-                            <p>
-                                Completed Java Quiz
-                            </p>
-
-                            <span>
-                                2 hours ago
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Assessments -->
-            <div class="dashboard-panel">
-
-                <div class="panel-header">
-
-                    <div>
-                        <span class="section-label">
-                            ASSESSMENTS
-                        </span>
-
-                        <h2>
-                            Upcoming Assessments
-                        </h2>
-                    </div>
-
-                    <a href="#">
-                        View All
-                    </a>
-
-                </div>
-
-
-                <div class="assessment-list">
-
-                    <div class="assessment-item">
-
-                        <div class="assessment-icon">
-                            📝
-                        </div>
-
-                        <div class="assessment-info">
-
-                            <strong>
-                                Java Programming
-                            </strong>
-
-                            <p>
-                                OOP Assignment
-                            </p>
-
-                            <span>
-                                Due Aug 18
-                            </span>
-
-                        </div>
-
-                        <div class="assessment-count">
-                            24
-                        </div>
-
-                    </div>
-
-
-                    <div class="assessment-item">
-
-                        <div class="assessment-icon">
-                            ✓
-                        </div>
-
-                        <div class="assessment-info">
-
-                            <strong>
-                                Database Systems
-                            </strong>
-
-                            <p>
-                                SQL Quiz
-                            </p>
-
-                            <span>
-                                Due Aug 20
-                            </span>
-
-                        </div>
-
-                        <div class="assessment-count">
-                            18
-                        </div>
-
-                    </div>
-
-
-                    <div class="assessment-item">
-
-                        <div class="assessment-icon">
-                            📝
-                        </div>
-
-                        <div class="assessment-info">
-
-                            <strong>
-                                Web Development
-                            </strong>
-
-                            <p>
-                                HTML & CSS Assignment
-                            </p>
-
-                            <span>
-                                Due Aug 22
-                            </span>
-
-                        </div>
-
-                        <div class="assessment-count">
-                            15
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= STUDENT PERFORMANCE ================= -->
-
-    <section class="dashboard-section">
-
-        <div class="section-header">
-
-            <div>
-
-                <span class="section-label">
-                    PERFORMANCE
-                </span>
-
-                <h2>
-                    Student Performance
-                </h2>
-
-            </div>
-
-            <a href="#" class="view-all">
-                View Analytics →
-            </a>
-
-        </div>
-
-
-        <div class="performance-grid">
-
-
-            <!-- Java -->
-            <div class="performance-card">
-
-                <div class="performance-header">
-
-                    <div>
-                        <strong>
-                            Java Programming
-                        </strong>
-
-                        <span>
-                            52 Students
-                        </span>
-                    </div>
-
-                    <span class="performance-value">
-                        78%
-                    </span>
-
-                </div>
-
-
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 78%;"></div>
-                </div>
-
-
-                <div class="performance-details">
-
-                    <span>
-                        <i class="dot completed"></i>
-                        Completed 78%
-                    </span>
-
-                    <span>
-                        <i class="dot progress"></i>
-                        In Progress 17%
-                    </span>
-
-                    <span>
-                        <i class="dot not-started"></i>
-                        Not Started 5%
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- Web -->
-            <div class="performance-card">
-
-                <div class="performance-header">
-
-                    <div>
-                        <strong>
-                            Web Development
-                        </strong>
-
-                        <span>
-                            26 Students
-                        </span>
-                    </div>
-
-                    <span class="performance-value">
-                        64%
-                    </span>
-
-                </div>
-
-
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 64%;"></div>
-                </div>
-
-
-                <div class="performance-details">
-
-                    <span>
-                        <i class="dot completed"></i>
-                        Completed 64%
-                    </span>
-
-                    <span>
-                        <i class="dot progress"></i>
-                        In Progress 25%
-                    </span>
-
-                    <span>
-                        <i class="dot not-started"></i>
-                        Not Started 11%
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- .NET -->
-            <div class="performance-card">
-
-                <div class="performance-header">
-
-                    <div>
-                        <strong>
-                            C# / .NET
-                        </strong>
-
-                        <span>
-                            38 Students
-                        </span>
-                    </div>
-
-                    <span class="performance-value">
-                        71%
-                    </span>
-
-                </div>
-
-
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 71%;"></div>
-                </div>
-
-
-                <div class="performance-details">
-
-                    <span>
-                        <i class="dot completed"></i>
-                        Completed 71%
-                    </span>
-
-                    <span>
-                        <i class="dot progress"></i>
-                        In Progress 21%
-                    </span>
-
-                    <span>
-                        <i class="dot not-started"></i>
-                        Not Started 8%
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= QUICK ACTIONS ================= -->
-
-    <section class="dashboard-section">
-
-        <div class="section-header">
-
-            <div>
-
-                <span class="section-label">
-                    QUICK ACTIONS
-                </span>
-
-                <h2>
-                    Manage Your Teaching
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="quick-actions">
-
-            <a href="#" class="quick-action-card">
-
-                <div class="quick-action-icon">
-                    +
-                </div>
-
-                <div>
-                    <strong>
-                        Create Course
-                    </strong>
-
-                    <span>
-                        Start a new course
-                    </span>
-                </div>
-
-                <span class="quick-arrow">
-                    →
-                </span>
-
-            </a>
-
-
-            <a href="#" class="quick-action-card">
-
-                <div class="quick-action-icon">
-                    📝
-                </div>
-
-                <div>
-                    <strong>
-                        Add Assignment
-                    </strong>
-
-                    <span>
-                        Create an assessment
-                    </span>
-                </div>
-
-                <span class="quick-arrow">
-                    →
-                </span>
-
-            </a>
-
-
-            <a href="#" class="quick-action-card">
-
-                <div class="quick-action-icon">
-                    👥
-                </div>
-
-                <div>
-                    <strong>
-                        View Students
-                    </strong>
-
-                    <span>
-                        Monitor your learners
-                    </span>
-                </div>
-
-                <span class="quick-arrow">
-                    →
-                </span>
-
-            </a>
-
-
-            <a href="#" class="quick-action-card">
-
-                <div class="quick-action-icon">
-                    📊
-                </div>
-
-                <div>
-                    <strong>
-                        View Analytics
-                    </strong>
-
-                    <span>
-                        Analyze course performance
-                    </span>
-                </div>
-
-                <span class="quick-arrow">
-                    →
-                </span>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ANALYTICS ================= -->
-
-    <section class="dashboard-section">
-
-        <div class="section-header">
-
-            <div>
-
-                <span class="section-label">
-                    ANALYTICS
-                </span>
-
-                <h2>
-                    Teaching Analytics
-                </h2>
-
-            </div>
-
-            <select class="analytics-select">
-                <option>Last 7 Days</option>
-                <option>Last 30 Days</option>
-                <option>Last 3 Months</option>
-            </select>
-
-        </div>
-
-
-        <div class="analytics-grid">
-
-            <!-- Chart -->
-            <div class="analytics-chart">
-
-                <div class="chart-header">
-
-                    <div>
-                        <span>
-                            Student Engagement
-                        </span>
-
-                        <strong>
-                            82%
-                        </strong>
-                    </div>
-
-                    <span class="positive">
-                        ↑ 12%
-                    </span>
-
-                </div>
-
-
-                <div class="chart">
-
-                    <div class="chart-y">
-                        <span>100%</span>
-                        <span>75%</span>
-                        <span>50%</span>
-                        <span>25%</span>
-                        <span>0%</span>
-                    </div>
-
-
-                    <div class="chart-area">
-
-                        <div class="chart-line">
-
-                            <span style="height: 48%;"></span>
-                            <span style="height: 60%;"></span>
-                            <span style="height: 54%;"></span>
-                            <span style="height: 72%;"></span>
-                            <span style="height: 68%;"></span>
-                            <span style="height: 84%;"></span>
-                            <span style="height: 82%;"></span>
-
-                        </div>
-
-
-                        <div class="chart-days">
-
-                            <span>Mon</span>
-                            <span>Tue</span>
-                            <span>Wed</span>
-                            <span>Thu</span>
-                            <span>Fri</span>
-                            <span>Sat</span>
-                            <span>Sun</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Monthly Stats -->
-            <div class="monthly-stats">
-
-                <div class="monthly-stat">
-
-                    <span>
-                        New Students
-                    </span>
-
-                    <strong>
-                        +18
-                    </strong>
-
-                    <small>
-                        ↑ 14% this month
-                    </small>
-
-                </div>
-
-
-                <div class="monthly-stat">
-
-                    <span>
-                        Course Engagement
-                    </span>
-
-                    <strong>
-                        +12%
-                    </strong>
-
-                    <small>
-                        Compared to last month
-                    </small>
-
-                </div>
-
-
-                <div class="monthly-stat">
-
-                    <span>
-                        Course Completion
-                    </span>
-
-                    <strong>
-                        +8%
-                    </strong>
-
-                    <small>
-                        Compared to last month
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    </div>
 
 </div>

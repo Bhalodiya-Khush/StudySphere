@@ -101,7 +101,8 @@ D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\refint\StudySphere.
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.pdb
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.genruntimeconfig.cache
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\ref\StudySphere.dll
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\f2pryvcx7r-{0}-o8tjupnk2e-o8tjupnk2e.gz
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\StudySph.CC77F4D6.Up2Date
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\Views\Shared\_CourseCard.cshtml.rz.scp.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\37qhbephri-{0}-ezjvu0xghi-ezjvu0xghi.gz
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\6mqf8h1pj9-{0}-ezjvu0xghi-ezjvu0xghi.gz
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\obj\Debug\net10.0\compressed\f2pryvcx7r-{0}-o8tjupnk2e-o8tjupnk2e.gz

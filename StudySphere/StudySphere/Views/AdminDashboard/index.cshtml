@@ -1,1 +1,68 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container-fluid py-4">
+
+    <!-- Page Header -->
+    <div class="mb-4">
+        <h2 class="fw-bold">Admin Dashboard</h2>
+        <p class="text-muted">
+            Manage StudySphere and review course requests.
+        </p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-4">
+
+        <!-- Students -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <p class="text-muted mb-1">Total Students</p>
+                    <h2 class="fw-bold mb-0">
+                        @ViewBag.TotalStudents
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructors -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <p class="text-muted mb-1">Total Instructors</p>
+                    <h2 class="fw-bold mb-0">
+                        @ViewBag.TotalInstructors
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <p class="text-muted mb-1">Total Courses</p>
+                    <h2 class="fw-bold mb-0">
+                        @ViewBag.TotalCourses
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Courses -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <p class="text-muted mb-1">Pending Courses</p>
+                    <h2 class="fw-bold mb-0">
+                        @ViewBag.PendingCourses
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
