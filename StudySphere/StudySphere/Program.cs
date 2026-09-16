@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped< IStudentDashboardRepository, StudentDashboardRepository>();
+builder.Services.AddScoped<IStudentDashboardRepository, StudentDashboardRepository>();
+builder.Services.AddScoped<IInstructorDashboardRepository, InstructorDashboardRepository>();
 
 var app = builder.Build();
 
