@@ -4,63 +4,297 @@
 
 <div class="container-fluid py-4">
 
-    <!-- Page Header -->
+    <!-- Header -->
     <div class="mb-4">
         <h2 class="fw-bold">Admin Dashboard</h2>
-        <p class="text-muted">
-            Manage StudySphere and review course requests.
+
+        <p class="text-muted mb-0">
+            Manage courses, instructors, students and course approvals.
         </p>
     </div>
 
-    <!-- Summary Cards -->
-    <div class="row g-4">
+
+    <!-- Statistics -->
+    <div class="row g-4 mb-4">
 
         <!-- Students -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-xl-3">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                    <p class="text-muted mb-1">Total Students</p>
+
+                    <h6 class="text-muted">
+                        Total Students
+                    </h6>
+
                     <h2 class="fw-bold mb-0">
                         @ViewBag.TotalStudents
                     </h2>
+
+                    <small class="text-muted">
+                        Registered students
+                    </small>
+
                 </div>
             </div>
         </div>
 
+
         <!-- Instructors -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-xl-3">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                    <p class="text-muted mb-1">Total Instructors</p>
+
+                    <h6 class="text-muted">
+                        Total Instructors
+                    </h6>
+
                     <h2 class="fw-bold mb-0">
                         @ViewBag.TotalInstructors
                     </h2>
+
+                    <small class="text-muted">
+                        Registered instructors
+                    </small>
+
                 </div>
             </div>
         </div>
 
+
         <!-- Courses -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-xl-3">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                    <p class="text-muted mb-1">Total Courses</p>
+
+                    <h6 class="text-muted">
+                        Total Courses
+                    </h6>
+
                     <h2 class="fw-bold mb-0">
                         @ViewBag.TotalCourses
                     </h2>
+
+                    <small class="text-muted">
+                        All courses
+                    </small>
+
                 </div>
             </div>
         </div>
 
+
         <!-- Pending Courses -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-xl-3">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                    <p class="text-muted mb-1">Pending Courses</p>
+
+                    <h6 class="text-muted">
+                        Pending Courses
+                    </h6>
+
                     <h2 class="fw-bold mb-0">
                         @ViewBag.PendingCourses
                     </h2>
+
+                    <small class="text-muted">
+                        Waiting for approval
+                    </small>
+
                 </div>
             </div>
+        </div>
+
+    </div>
+
+
+    <!-- Course Status -->
+    <div class="row g-4 mb-4">
+
+        <!-- Approved -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+                        Approved Courses
+                    </h6>
+
+                    <h3 class="fw-bold">
+                        @ViewBag.ApprovedCourses
+                    </h3>
+
+                    <span class="badge bg-success">
+                        Approved
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Rejected -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+                        Rejected Courses
+                    </h6>
+
+                    <h3 class="fw-bold">
+                        @ViewBag.RejectedCourses
+                    </h3>
+
+                    <span class="badge bg-danger">
+                        Rejected
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Enrollments -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+                        Total Enrollments
+                    </h6>
+
+                    <h3 class="fw-bold">
+                        @ViewBag.TotalEnrollments
+                    </h3>
+
+                    <span class="badge bg-primary">
+                        Enrollments
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Pending Course Requests -->
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-header bg-white py-3">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+                    <h5 class="fw-bold mb-1">
+                        Pending Course Requests
+                    </h5>
+
+                    <small class="text-muted">
+                        Courses waiting for admin approval
+                    </small>
+                </div>
+
+                <a asp-controller="AdminDashboard"
+                   asp-action="CourseRequests"
+                   class="btn btn-primary btn-sm">
+                    View All
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card-body p-0">
+
+            @if (ViewBag.RecentPendingCourses != null &&
+                 ViewBag.RecentPendingCourses.Count > 0)
+            {
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light">
+
+                            <tr>
+                                <th>Course</th>
+                                <th>Category</th>
+                                <th>Level</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @foreach (var course in ViewBag.RecentPendingCourses)
+                            {
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            @course.Title
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        @course.Category
+                                    </td>
+
+                                    <td>
+                                        @course.Level
+                                    </td>
+
+                                    <td>
+                                        ₹@course.Price
+                                    </td>
+
+                                    <td>
+                                        <span class="badge bg-warning text-dark">
+                                            @course.Status
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <a asp-controller="AdminDashboard"
+                                           asp-action="ReviewCourse"
+                                           asp-route-id="@course.CourseId"
+                                           class="btn btn-outline-primary btn-sm">
+                                            Review
+                                        </a>
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            }
+            else
+            {
+                <div class="p-4 text-center">
+
+                    <h6 class="fw-bold">
+                        No Pending Courses
+                    </h6>
+
+                    <p class="text-muted mb-0">
+                        There are currently no courses waiting for approval.
+                    </p>
+
+                </div>
+            }
+
         </div>
 
     </div>

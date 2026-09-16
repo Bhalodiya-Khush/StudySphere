@@ -1,0 +1,171 @@
+﻿@model IEnumerable<StudySphere.Models.Instructor>
+
+@{
+    ViewData["Title"] = "Instructors";
+}
+
+<div class="container-fluid py-4">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold mb-1">
+                Instructors
+            </h2>
+
+            <p class="text-muted mb-0">
+                View all registered instructors and their courses.
+            </p>
+        </div>
+
+        <a asp-controller="AdminDashboard"
+           asp-action="Index"
+           class="btn btn-outline-secondary">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Summary -->
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+                    <h6 class="text-muted mb-1">
+                        Total Instructors
+                    </h6>
+
+                    <h3 class="fw-bold mb-0">
+                        @Model.Count()
+                    </h3>
+                </div>
+
+                <span class="badge bg-primary fs-6">
+                    Instructors
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Instructor List -->
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-header bg-white py-3">
+
+            <h5 class="fw-bold mb-0">
+                Instructor List
+            </h5>
+
+        </div>
+
+        <div class="card-body p-0">
+
+            @if (Model.Any())
+            {
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light">
+
+                            <tr>
+                                <th>Instructor ID</th>
+                                <th>Professional Title</th>
+                                <th>Area of Expertise</th>
+                                <th>Qualification</th>
+                                <th>Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var instructor in Model)
+                            {
+                                <tr>
+
+                                    <!-- Instructor ID -->
+                                    <td>
+                                        <span class="fw-semibold">
+                                            #@instructor.InstructorId
+                                        </span>
+                                    </td>
+
+
+                                    <!-- Professional Title -->
+                                    <td>
+                                        @instructor.ProfessionalTitle
+                                    </td>
+
+
+                                    <!-- Area of Expertise -->
+                                    <td>
+                                        @instructor.AreaOfExpertise
+                                    </td>
+
+
+                                    <!-- Qualification -->
+                                    <td>
+                                        @instructor.Qualification
+                                    </td>
+
+
+                                    <!-- Status -->
+                                    <td>
+                                        <span class="badge bg-success">
+                                            Active
+                                        </span>
+                                    </td>
+
+
+                                    <!-- Action -->
+                                    <td class="text-end">
+
+                                        <a asp-controller="AdminDashboard"
+                                           asp-action="ViewInstructor"
+                                           asp-route-id="@instructor.InstructorId"
+                                           class="btn btn-outline-primary btn-sm">
+                                            View
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+
+                    <h5 class="fw-bold">
+                        No Instructors Found
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        There are currently no registered instructors.
+                    </p>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>

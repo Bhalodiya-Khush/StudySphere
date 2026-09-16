@@ -1,0 +1,210 @@
+﻿@model StudySphere.Models.Student
+
+@{
+    ViewData["Title"] = "View Student";
+}
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold mb-1">
+                Student Details
+            </h2>
+
+            <p class="text-muted mb-0">
+                View student information and enrolled courses.
+            </p>
+        </div>
+
+        <a asp-controller="AdminDashboard"
+           asp-action="Students"
+           class="btn btn-outline-secondary">
+            Back to Students
+        </a>
+
+    </div>
+
+
+    <!-- Student Information -->
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-header bg-white py-3">
+
+            <h5 class="fw-bold mb-0">
+                Student Information
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <!-- Student ID -->
+                <div class="col-md-6 mb-3">
+
+                    <small class="text-muted d-block">
+                        Student ID
+                    </small>
+
+                    <strong>
+                        #@Model.StudentId
+                    </strong>
+
+                </div>
+
+
+                <!-- Status -->
+                <div class="col-md-6 mb-3">
+
+                    <small class="text-muted d-block">
+                        Status
+                    </small>
+
+                    <span class="badge bg-success">
+                        Active
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Enrollment Summary -->
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <h6 class="text-muted mb-1">
+                        Total Enrollments
+                    </h6>
+
+                    <h3 class="fw-bold mb-0">
+                        @(ViewBag.Enrollments?.Count ?? 0)
+                    </h3>
+
+                </div>
+
+                <span class="badge bg-primary fs-6">
+                    Enrollments
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Enrolled Courses -->
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-header bg-white py-3">
+
+            <h5 class="fw-bold mb-0">
+                Enrolled Courses
+            </h5>
+
+        </div>
+
+
+        <div class="card-body p-0">
+
+            @if (ViewBag.Enrollments != null &&
+                 ViewBag.Enrollments.Count > 0)
+            {
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light">
+
+                            <tr>
+                                <th>Enrollment ID</th>
+                                <th>Course ID</th>
+                                <th>Enrollment Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var enrollment in ViewBag.Enrollments)
+                            {
+                                <tr>
+
+                                    <!-- Enrollment ID -->
+                                    <td>
+                                        <span class="fw-semibold">
+                                            #@enrollment.EnrollmentId
+                                        </span>
+                                    </td>
+
+
+                                    <!-- Course ID -->
+                                    <td>
+                                        @enrollment.CourseId
+                                    </td>
+
+
+                                    <!-- Enrollment Status -->
+                                    <td>
+                                        <span class="badge bg-success">
+                                            Enrolled
+                                        </span>
+                                    </td>
+
+
+                                    <!-- Action -->
+                                    <td class="text-end">
+
+                                        <a asp-controller="AdminDashboard"
+                                           asp-action="ReviewCourse"
+                                           asp-route-id="@enrollment.CourseId"
+                                           class="btn btn-outline-primary btn-sm">
+                                            View Course
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+
+                    <h5 class="fw-bold">
+                        No Enrollments
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        This student is not enrolled in any course.
+                    </p>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,380 @@
+﻿@model StudySphere.Models.Course
+
+@{
+ViewData["Title"] = "Review Course";
+}
+
+<div class="container py-4">
+
+<!-- Header -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+        <h2 class="fw-bold mb-1">
+            Review Course
+        </h2>
+
+        <p class="text-muted mb-0">
+            Review the course details before approving or rejecting it.
+        </p>
+    </div>
+
+    <a asp-controller="AdminDashboard"
+       asp-action="CourseRequests"
+       class="btn btn-outline-secondary">
+        Back
+    </a>
+
+</div>
+
+
+<!-- Course Information -->
+<div class="card border-0 shadow-sm mb-4">
+
+    <div class="card-header bg-white py-3">
+        <h5 class="fw-bold mb-0">
+            Course Information
+        </h5>
+    </div>
+
+    <div class="card-body">
+
+        <div class="row g-4">
+
+            <!-- Thumbnail -->
+            <div class="col-md-4">
+
+                @if (!string.IsNullOrEmpty(Model.ThumbnailUrl))
+                {
+                    <img src="@Model.ThumbnailUrl"
+                         alt="@Model.Title"
+                         class="img-fluid rounded"
+                         style="width:100%; height:220px; object-fit:cover;">
+                }
+                else
+                {
+                    <div class="bg-light rounded d-flex align-items-center justify-content-center"
+                         style="height:220px;">
+                        <span class="text-muted">
+                            No Thumbnail
+                        </span>
+                    </div>
+                }
+
+            </div>
+
+
+            <!-- Details -->
+            <div class="col-md-8">
+
+                <h3 class="fw-bold">
+                    @Model.Title
+                </h3>
+
+                <p class="text-muted">
+                    @Model.Description
+                </p>
+
+                <div class="row mt-3">
+
+                    <div class="col-sm-6 mb-3">
+                        <small class="text-muted d-block">
+                            Category
+                        </small>
+
+                        <strong>
+                            @Model.Category
+                        </strong>
+                    </div>
+
+
+                    <div class="col-sm-6 mb-3">
+                        <small class="text-muted d-block">
+                            Level
+                        </small>
+
+                        <strong>
+                            @Model.Level
+                        </strong>
+                    </div>
+
+
+                    <div class="col-sm-6 mb-3">
+                        <small class="text-muted d-block">
+                            Price
+                        </small>
+
+                        <strong>
+                            ₹@Model.Price
+                        </strong>
+                    </div>
+
+
+                    <div class="col-sm-6 mb-3">
+                        <small class="text-muted d-block">
+                            Course Status
+                        </small>
+
+                        @if (Model.Status == "Pending")
+                        {
+                            <span class="badge bg-warning text-dark">
+                                Pending
+                            </span>
+                        }
+                        else if (Model.Status == "Approved")
+                        {
+                            <span class="badge bg-success">
+                                Approved
+                            </span>
+                        }
+                        else if (Model.Status == "Rejected")
+                        {
+                            <span class="badge bg-danger">
+                                Rejected
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">
+                                @Model.Status
+                            </span>
+                        }
+
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <small class="text-muted d-block">
+                            Created At
+                        </small>
+
+                        <strong>
+                            @Model.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")
+                        </strong>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <small class="text-muted d-block">
+                            Course ID
+                        </small>
+
+                        <strong>
+                            #@Model.CourseId
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Instructor Information -->
+<div class="card border-0 shadow-sm mb-4">
+
+    <div class="card-header bg-white py-3">
+        <h5 class="fw-bold mb-0">
+            Instructor Information
+        </h5>
+    </div>
+
+    <div class="card-body">
+
+        @if (ViewBag.Instructor != null)
+        {
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <small class="text-muted d-block">
+                        Instructor ID
+                    </small>
+
+                    <strong>
+                        @ViewBag.Instructor.InstructorId
+                    </strong>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <small class="text-muted d-block">
+                        User ID
+                    </small>
+
+                    <strong>
+                        @ViewBag.Instructor.InstructorId
+                    </strong>
+
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <p class="text-muted mb-0">
+                Instructor information is not available.
+            </p>
+        }
+
+    </div>
+
+</div>
+
+
+<!-- Course Materials -->
+<div class="card border-0 shadow-sm mb-4">
+
+    <div class="card-header bg-white py-3">
+        <h5 class="fw-bold mb-0">
+            Course Materials
+        </h5>
+    </div>
+
+    <div class="card-body">
+
+        @if (ViewBag.Materials != null &&
+             ViewBag.Materials.Count > 0)
+        {
+            <div class="list-group">
+
+                @foreach (var material in ViewBag.Materials)
+                {
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <span>
+                            @material.Title
+                        </span>
+
+                        <span class="badge bg-secondary">
+                            @material.MaterialType
+                        </span>
+
+                    </div>
+                }
+
+            </div>
+        }
+        else
+        {
+            <p class="text-muted mb-0">
+                No materials have been added to this course.
+            </p>
+        }
+
+    </div>
+
+</div>
+
+
+<!-- Live Lectures -->
+<div class="card border-0 shadow-sm mb-4">
+
+    <div class="card-header bg-white py-3">
+        <h5 class="fw-bold mb-0">
+            Live Lectures
+        </h5>
+    </div>
+
+    <div class="card-body">
+
+        @if (ViewBag.LiveLectures != null &&
+             ViewBag.LiveLectures.Count > 0)
+        {
+            <div class="list-group">
+
+                @foreach (var lecture in ViewBag.LiveLectures)
+                {
+                    <div class="list-group-item">
+
+                        <div class="fw-semibold">
+                            @lecture.Title
+                        </div>
+
+                        <small class="text-muted">
+                            @lecture.ScheduledAt
+                        </small>
+
+                    </div>
+                }
+
+            </div>
+        }
+        else
+        {
+            <p class="text-muted mb-0">
+                No live lectures have been added.
+            </p>
+        }
+
+    </div>
+
+</div>
+
+
+<!-- Admin Actions -->
+@if (Model.Status == "Pending")
+{
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-header bg-white py-3">
+            <h5 class="fw-bold mb-0">
+                Admin Decision
+            </h5>
+        </div>
+
+        <div class="card-body">
+
+            <p class="text-muted">
+                Review all course information before making your decision.
+            </p>
+
+            <div class="d-flex gap-2">
+
+                <!-- Approve -->
+                <form asp-controller="AdminDashboard"
+                      asp-action="ApproveCourse"
+                      method="post">
+
+                    <input type="hidden"
+                           name="id"
+                           value="@Model.CourseId" />
+
+                    <button type="submit"
+                            class="btn btn-success">
+                        Approve Course
+                    </button>
+
+                </form>
+
+
+                <!-- Reject -->
+                <form asp-controller="AdminDashboard"
+                      asp-action="RejectCourse"
+                      method="post">
+
+                    <input type="hidden"
+                           name="id"
+                           value="@Model.CourseId" />
+
+                    <button type="submit"
+                            class="btn btn-danger">
+                        Reject Course
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+}
+
+</div>

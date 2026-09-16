@@ -27,8 +27,44 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ApprovedCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcQXBwcm92ZWRDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/CourseRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcQ291cnNlUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/Courses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcQ291cnNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/Instructors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcSW5zdHJ1Y3RvcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/RejectedCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcUmVqZWN0ZWRDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ReviewCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcUmV2aWV3Q291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/Students.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcU3R1ZGVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ViewInstructor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcVmlld0luc3RydWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ViewStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcVmlld1N0dWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Home/index.cshtml]
