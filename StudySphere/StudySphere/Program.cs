@@ -1,7 +1,12 @@
+using StudySphere.Repositories;
+using StudySphere.Repositories.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped< IStudentDashboardRepository, StudentDashboardRepository>();
 
 var app = builder.Build();
 

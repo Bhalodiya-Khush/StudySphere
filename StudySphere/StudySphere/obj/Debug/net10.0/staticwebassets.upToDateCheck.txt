@@ -69,8 +69,8 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\home.css
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\login.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\Profile.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\site.css
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\student-dashboard.css
@@ -135,6 +135,6 @@ D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.js
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.min.js
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.min.map
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.slim.js
-D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\lib\jquery\LICENSE.txt
+D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\wwwroot\css\login.css
