@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj": {}
+    "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\StudySphere.csproj": {}
   },
   "projects": {
-    "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj": {
+    "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\StudySphere.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
+        "projectUniqueName": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\StudySphere.csproj",
         "projectName": "StudySphere",
-        "projectPath": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
+        "projectPath": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\StudySphere.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\obj\\",
+        "outputPath": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

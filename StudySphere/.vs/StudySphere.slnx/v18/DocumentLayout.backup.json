@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\repositories\\instructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -238,7 +238,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -254,8 +254,7 @@
               "RelativeToolTip": "StudySphere\\Repositories\\InstructorDashboardRepository.cs",
               "ViewState": "AgIAACYCAAAAAAAAAAAswD4CAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T18:16:23.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-16T18:16:23.181Z"
             },
             {
               "$type": "Document",
@@ -267,8 +266,7 @@
               "RelativeToolTip": "StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAA9wFQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T18:14:49.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-16T18:14:49.511Z"
             },
             {
               "$type": "Document",
@@ -296,20 +294,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "InstructorDashboardController.cs",
               "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\InstructorDashboardController.cs",
               "RelativeDocumentMoniker": "StudySphere\\Controllers\\InstructorDashboardController.cs",
               "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\InstructorDashboardController.cs",
               "RelativeToolTip": "StudySphere\\Controllers\\InstructorDashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoCAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwKoCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-15T16:32:11.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Program.cs",
               "RelativeDocumentMoniker": "StudySphere\\Program.cs",
@@ -354,8 +352,7 @@
               "RelativeToolTip": "StudySphere\\Controllers\\StudentDashboardController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:17:19.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T16:17:19.237Z"
             },
             {
               "$type": "Document",
