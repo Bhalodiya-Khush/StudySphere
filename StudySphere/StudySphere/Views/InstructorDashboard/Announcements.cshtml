@@ -1,0 +1,166 @@
+﻿@using StudySphere.Models
+
+@{
+    ViewData["Title"] = "Announcements";
+
+    var course = ViewBag.Course as Course;
+    var announcements = ViewBag.Announcements as List<Announcement>;
+}
+
+<div class="container py-4">
+
+    <!-- Back Button -->
+    <div class="mb-3">
+        <a asp-action="CourseDetails"
+           asp-route-id="@course?.CourseId"
+           class="btn btn-outline-secondary">
+            ← Back to Course
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold mb-1">Announcements</h2>
+
+            <p class="text-muted mb-0">
+                @course?.Title
+            </p>
+        </div>
+
+        <a asp-action="CreateAnnouncement"
+           asp-route-courseId="@course?.CourseId"
+           class="btn btn-success">
+            + Create Announcement
+        </a>
+
+    </div>
+
+    @if (announcements != null && announcements.Any())
+    {
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light">
+                            <tr>
+                                <th>Title</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var announcement in announcements)
+                            {
+                                <tr>
+
+                                    <!-- Title -->
+                                    <td>
+                                        <strong>
+                                            @announcement.Title
+                                        </strong>
+                                    </td>
+
+                                    <!-- Message -->
+                                    <td>
+                                        <span>
+                                            @announcement.Message
+                                        </span>
+                                    </td>
+
+                                    <!-- Date -->
+                                    <td>
+                                        @announcement.CreatedAt.ToString("dd MMM yyyy")
+                                    </td>
+
+                                    <!-- Status -->
+                                    <td>
+
+                                        @if (announcement.IsPublished)
+                                        {
+                                            <span class="badge bg-success">
+                                                Published
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">
+                                                Draft
+                                            </span>
+                                        }
+
+                                    </td>
+
+                                    <!-- Actions -->
+                                    <td class="text-end">
+
+                                        <a asp-action="EditAnnouncement"
+                                           asp-route-id="@announcement.AnnouncementId"
+                                           class="btn btn-sm btn-outline-primary me-1">
+                                            Edit
+                                        </a>
+
+                                        <form asp-action="DeleteAnnouncement"
+                                              asp-route-id="@announcement.AnnouncementId"
+                                              method="post"
+                                              class="d-inline">
+
+                                            <button type="submit"
+                                                    class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Are you sure you want to delete this announcement?');">
+                                                Delete
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <!-- Empty State -->
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body text-center py-5">
+
+                <h5 class="fw-bold">
+                    No announcements yet
+                </h5>
+
+                <p class="text-muted">
+                    Create an announcement to inform students about this course.
+                </p>
+
+                <a asp-action="CreateAnnouncement"
+                   asp-route-courseId="@course?.CourseId"
+                   class="btn btn-success">
+                    + Create Announcement
+                </a>
+
+            </div>
+
+        </div>
+    }
+
+</div>

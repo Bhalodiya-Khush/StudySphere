@@ -1,0 +1,312 @@
+﻿@model StudySphere.Models.Course
+
+@{
+    ViewData["Title"] = "Course Details";
+
+    var materials = ViewBag.Materials as List<StudySphere.Models.Material>;
+    var students = ViewBag.Students as List<StudySphere.Models.Enrollment>;
+    var announcements = ViewBag.Announcements as List<StudySphere.Models.Announcement>;
+    var lectures = ViewBag.LiveLectures as List<StudySphere.Models.LiveLecture>;
+}
+
+<div class="container py-4">
+
+    <!-- Back -->
+    <div class="mb-3">
+        <a asp-controller="InstructorDashboard"
+           asp-action="Courses"
+           class="text-decoration-none text-muted">
+            ← Back to My Courses
+        </a>
+    </div>
+
+
+    <!-- Course Header -->
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="row g-0">
+
+            <!-- Thumbnail -->
+            <div class="col-md-4">
+
+                <img src="@Model.ThumbnailUrl"
+                     class="img-fluid w-100 h-100"
+                     style="object-fit: cover; min-height: 240px;"
+                     alt="@Model.Title">
+
+            </div>
+
+
+            <!-- Course Information -->
+            <div class="col-md-8">
+
+                <div class="card-body p-4">
+
+                    <div class="d-flex justify-content-between align-items-start">
+
+                        <div>
+
+                            <span class="badge bg-light text-dark mb-2">
+                                @Model.Category
+                            </span>
+
+                            <h2 class="fw-bold mb-2">
+                                @Model.Title
+                            </h2>
+
+                        </div>
+
+                        <span class="badge
+                            @(Model.Status == "Published"
+                                ? "bg-success"
+                                : Model.Status == "Pending"
+                                    ? "bg-warning text-dark"
+                                    : Model.Status == "Rejected"
+                                        ? "bg-danger"
+                                        : "bg-secondary")">
+
+                            @Model.Status
+
+                        </span>
+
+                    </div>
+
+
+                    <p class="text-muted mt-3">
+                        @Model.Description
+                    </p>
+
+
+                    <div class="row mt-4">
+
+                        <div class="col-sm-4 mb-3">
+
+                            <small class="text-muted d-block">
+                                Level
+                            </small>
+
+                            <strong>
+                                @Model.Level
+                            </strong>
+
+                        </div>
+
+
+                        <div class="col-sm-4 mb-3">
+
+                            <small class="text-muted d-block">
+                                Price
+                            </small>
+
+                            <strong>
+                                ₹@Model.Price
+                            </strong>
+
+                        </div>
+
+
+                        <div class="col-sm-4 mb-3">
+
+                            <small class="text-muted d-block">
+                                Created
+                            </small>
+
+                            <strong>
+                                @Model.CreatedAt.ToString("dd MMM yyyy")
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Edit Course -->
+                    <a asp-controller="InstructorDashboard"
+                       asp-action="EditCourse"
+                       asp-route-id="@Model.CourseId"
+                       class="btn btn-success">
+
+                        Edit Course
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Management Options -->
+
+    <h4 class="fw-bold mb-3">
+        Course Management
+    </h4>
+
+
+    <div class="row g-4">
+
+        <!-- Materials -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <div class="fs-2 mb-3">
+                        📚
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Materials
+                    </h5>
+
+                    <p class="text-muted small">
+                        Manage videos and PDF learning materials.
+                    </p>
+
+                    <p class="mb-3">
+                        <strong>@(materials?.Count ?? 0)</strong>
+                        materials
+                    </p>
+
+                    <a asp-controller="InstructorDashboard"
+                       asp-action="Materials"
+                       asp-route-courseId="@Model.CourseId"
+                       class="btn btn-outline-success btn-sm w-100">
+
+                        Manage Materials
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Students -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <div class="fs-2 mb-3">
+                        👨‍🎓
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Students
+                    </h5>
+
+                    <p class="text-muted small">
+                        View students enrolled in this course.
+                    </p>
+
+                    <p class="mb-3">
+                        <strong>@(students?.Count ?? 0)</strong>
+                        students
+                    </p>
+
+                    <a asp-controller="InstructorDashboard"
+                       asp-action="Students"
+                       asp-route-courseId="@Model.CourseId"
+                       class="btn btn-outline-success btn-sm w-100">
+
+                        View Students
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Announcements -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <div class="fs-2 mb-3">
+                        📢
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Announcements
+                    </h5>
+
+                    <p class="text-muted small">
+                        Send announcements to enrolled students.
+                    </p>
+
+                    <p class="mb-3">
+                        <strong>@(announcements?.Count ?? 0)</strong>
+                        announcements
+                    </p>
+
+                    <a asp-controller="InstructorDashboard"
+                       asp-action="Announcements"
+                       asp-route-courseId="@Model.CourseId"
+                       class="btn btn-outline-success btn-sm w-100">
+
+                        Manage Announcements
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Live Lectures -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card border-0 shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <div class="fs-2 mb-3">
+                        🎥
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Live Lectures
+                    </h5>
+
+                    <p class="text-muted small">
+                        Schedule and manage live lectures.
+                    </p>
+
+                    <p class="mb-3">
+                        <strong>@(lectures?.Count ?? 0)</strong>
+                        lectures
+                    </p>
+
+                    <a asp-controller="InstructorDashboard"
+                       asp-action="LiveLectures"
+                       asp-route-courseId="@Model.CourseId"
+                       class="btn btn-outline-success btn-sm w-100">
+
+                        Manage Lectures
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

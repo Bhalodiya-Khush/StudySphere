@@ -1,0 +1,165 @@
+﻿@using StudySphere.Models
+
+@{
+    ViewData["Title"] = "Edit Live Lecture";
+
+    var lecture = ViewBag.LiveLecture as LiveLecture;
+    var course = ViewBag.Course as Course;
+}
+
+<div class="container py-4">
+
+    <!-- Back Button -->
+    <div class="mb-3">
+        <a asp-action="LiveLectures"
+           asp-route-courseId="@course?.CourseId"
+           class="btn btn-outline-secondary">
+            ← Back to Live Lectures
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h2 class="fw-bold mb-1">Edit Live Lecture</h2>
+
+        <p class="text-muted mb-0">
+            Update lecture for:
+            <strong>@course?.Title</strong>
+        </p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+            <form asp-action="EditLiveLecture" method="post">
+
+                <!-- Hidden IDs -->
+                <input type="hidden"
+                       name="LiveLectureId"
+                       value="@lecture?.LiveLectureId" />
+
+                <input type="hidden"
+                       name="CourseId"
+                       value="@lecture?.CourseId" />
+
+                <input type="hidden"
+                       name="InstructorId"
+                       value="@lecture?.InstructorId" />
+
+                <!-- Title -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Lecture Title
+                    </label>
+
+                    <input type="text"
+                           name="Title"
+                           value="@lecture?.Title"
+                           class="form-control"
+                           placeholder="Enter lecture title"
+                           required />
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Description
+                    </label>
+
+                    <textarea name="Description"
+                              class="form-control"
+                              rows="4"
+                              placeholder="Enter lecture description">@lecture?.Description</textarea>
+                </div>
+
+                <!-- Start Time -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Start Time
+                    </label>
+
+                    <input type="datetime-local"
+                           name="StartTime"
+                           value="@lecture?.StartTime.ToString("yyyy-MM-ddTHH:mm")"
+                           class="form-control"
+                           required />
+                </div>
+
+                <!-- End Time -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        End Time
+                    </label>
+
+                    <input type="datetime-local"
+                           name="EndTime"
+                           value="@lecture?.EndTime.ToString("yyyy-MM-ddTHH:mm")"
+                           class="form-control"
+                           required />
+                </div>
+
+                <!-- Meeting URL -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Meeting URL
+                    </label>
+
+                    <input type="url"
+                           name="MeetingUrl"
+                           value="@lecture?.MeetingUrl"
+                           class="form-control"
+                           placeholder="https://meet.google.com/..." />
+                </div>
+
+                <!-- Status -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">
+                        Status
+                    </label>
+
+                    <select name="Status"
+                            class="form-select">
+
+                        <option value="Scheduled"
+                                selected="@(lecture?.Status == "Scheduled")">
+                            Scheduled
+                        </option>
+
+                        <option value="Completed"
+                                selected="@(lecture?.Status == "Completed")">
+                            Completed
+                        </option>
+
+                        <option value="Cancelled"
+                                selected="@(lecture?.Status == "Cancelled")">
+                            Cancelled
+                        </option>
+
+                    </select>
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex gap-2">
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Save Changes
+                    </button>
+
+                    <a asp-action="LiveLectures"
+                       asp-route-courseId="@course?.CourseId"
+                       class="btn btn-outline-secondary">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,107 @@
+﻿@using StudySphere.Models
+
+@{
+    ViewData["Title"] = "Create Announcement";
+
+    var course = ViewBag.Course as Course;
+}
+
+<div class="container py-4">
+
+    <!-- Back Button -->
+    <div class="mb-3">
+        <a asp-action="Announcements"
+           asp-route-courseId="@course?.CourseId"
+           class="btn btn-outline-secondary">
+            ← Back to Announcements
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h2 class="fw-bold mb-1">Create Announcement</h2>
+
+        <p class="text-muted mb-0">
+            Create an announcement for:
+            <strong>@course?.Title</strong>
+        </p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+            <form asp-action="CreateAnnouncement" method="post">
+
+                <!-- Hidden Course ID -->
+                <input type="hidden"
+                       name="CourseId"
+                       value="@course?.CourseId" />
+
+                <!-- Title -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Announcement Title
+                    </label>
+
+                    <input type="text"
+                           name="Title"
+                           class="form-control"
+                           placeholder="Enter announcement title"
+                           required />
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Message
+                    </label>
+
+                    <textarea name="Message"
+                              class="form-control"
+                              rows="6"
+                              placeholder="Write your announcement..."
+                              required></textarea>
+                </div>
+
+                <!-- Published -->
+                <div class="form-check mb-4">
+
+                    <input type="checkbox"
+                           name="IsPublished"
+                           value="true"
+                           class="form-check-input"
+                           id="isPublished"
+                           checked />
+
+                    <label class="form-check-label"
+                           for="isPublished">
+                        Publish announcement immediately
+                    </label>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex gap-2">
+
+                    <button type="submit"
+                            class="btn btn-success">
+                        Create Announcement
+                    </button>
+
+                    <a asp-action="Announcements"
+                       asp-route-courseId="@course?.CourseId"
+                       class="btn btn-outline-secondary">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

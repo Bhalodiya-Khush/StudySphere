@@ -1,0 +1,180 @@
+﻿@using StudySphere.Models
+
+@{
+    ViewData["Title"] = "Create Course";
+
+    var instructor = ViewBag.Instructor as Instructor;
+}
+
+<div class="container py-4">
+
+    <!-- Back Button -->
+    <div class="mb-3">
+        <a asp-action="Courses"
+           class="btn btn-outline-secondary">
+            ← Back to Courses
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h2 class="fw-bold mb-1">Create New Course</h2>
+
+        <p class="text-muted mb-0">
+            Create a new course for your students.
+        </p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+            <form asp-action="CreateCourse" method="post">
+
+                <!-- Instructor ID -->
+                <input type="hidden"
+                       name="InstructorId"
+                       value="@instructor?.InstructorId" />
+
+                <!-- Course Title -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Course Title
+                    </label>
+
+                    <input type="text"
+                           name="Title"
+                           class="form-control"
+                           placeholder="Enter course title"
+                           maxlength="150"
+                           required />
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Description
+                    </label>
+
+                    <textarea name="Description"
+                              class="form-control"
+                              rows="5"
+                              maxlength="2000"
+                              placeholder="Enter course description"
+                              required></textarea>
+                </div>
+
+                <!-- Category -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Category
+                    </label>
+
+                    <input type="text"
+                           name="Category"
+                           class="form-control"
+                           placeholder="Example: Web Development" />
+                </div>
+
+                <!-- Level -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Level
+                    </label>
+
+                    <select name="Level"
+                            class="form-select">
+
+                        <option value="">
+                            Select Level
+                        </option>
+
+                        <option value="Beginner">
+                            Beginner
+                        </option>
+
+                        <option value="Intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="Advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+                </div>
+
+                <!-- Thumbnail URL -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Thumbnail URL
+                    </label>
+
+                    <input type="text"
+                           name="ThumbnailUrl"
+                           class="form-control"
+                           placeholder="/images/courses/course.jpg" />
+                </div>
+
+                <!-- Price -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Price
+                    </label>
+
+                    <div class="input-group">
+                        <span class="input-group-text">₹</span>
+
+                        <input type="number"
+                               name="Price"
+                               class="form-control"
+                               min="0"
+                               step="0.01"
+                               placeholder="Enter course price"
+                               required />
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">
+                        Status
+                    </label>
+
+                    <select name="Status"
+                            class="form-select">
+
+                        <option value="Draft">
+                            Draft
+                        </option>
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                    </select>
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex gap-2">
+
+                    <button type="submit"
+                            class="btn btn-success">
+                        Create Course
+                    </button>
+
+                    <a asp-action="Courses"
+                       class="btn btn-outline-secondary">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

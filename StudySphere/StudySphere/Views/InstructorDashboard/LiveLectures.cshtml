@@ -1,0 +1,195 @@
+﻿@using StudySphere.Models
+
+@{
+    ViewData["Title"] = "Live Lectures";
+
+    var course = ViewBag.Course as Course;
+    var lectures = ViewBag.LiveLectures as List<LiveLecture>;
+}
+
+<div class="container py-4">
+
+    <!-- Back Button -->
+    <div class="mb-3">
+        <a asp-action="CourseDetails"
+           asp-route-id="@course?.CourseId"
+           class="btn btn-outline-secondary">
+            ← Back to Course
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold mb-1">Live Lectures</h2>
+
+            <p class="text-muted mb-0">
+                @course?.Title
+            </p>
+        </div>
+
+        <a asp-action="CreateLiveLecture"
+           asp-route-courseId="@course?.CourseId"
+           class="btn btn-success">
+            + Schedule Lecture
+        </a>
+
+    </div>
+
+    @if (lectures != null && lectures.Any())
+    {
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light">
+                            <tr>
+                                <th>Lecture</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var lecture in lectures)
+                            {
+                                <tr>
+
+                                    <!-- Lecture -->
+                                    <td>
+                                        <strong>
+                                            @lecture.Title
+                                        </strong>
+
+                                        @if (!string.IsNullOrEmpty(lecture.Description))
+                                        {
+                                            <br />
+                                            <small class="text-muted">
+                                                @lecture.Description
+                                            </small>
+                                        }
+                                    </td>
+
+                                    <!-- Date -->
+                                    <td>
+                                        @lecture.StartTime.ToString("dd MMM yyyy")
+                                    </td>
+
+                                    <!-- Time -->
+                                    <td>
+                                        @lecture.StartTime.ToString("hh:mm tt")
+                                        -
+                                        @lecture.EndTime.ToString("hh:mm tt")
+                                    </td>
+
+                                    <!-- Status -->
+                                    <td>
+
+                                        @if (lecture.Status == "Scheduled")
+                                        {
+                                            <span class="badge bg-primary">
+                                                Scheduled
+                                            </span>
+                                        }
+                                        else if (lecture.Status == "Completed")
+                                        {
+                                            <span class="badge bg-success">
+                                                Completed
+                                            </span>
+                                        }
+                                        else if (lecture.Status == "Cancelled")
+                                        {
+                                            <span class="badge bg-danger">
+                                                Cancelled
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">
+                                                @lecture.Status
+                                            </span>
+                                        }
+
+                                    </td>
+
+                                    <!-- Actions -->
+                                    <td class="text-end">
+
+                                        @if (!string.IsNullOrEmpty(lecture.MeetingUrl))
+                                        {
+                                            <a href="@lecture.MeetingUrl"
+                                               target="_blank"
+                                               class="btn btn-sm btn-outline-success me-1">
+                                                Join
+                                            </a>
+                                        }
+
+                                        <a asp-action="EditLiveLecture"
+                                           asp-route-id="@lecture.LiveLectureId"
+                                           class="btn btn-sm btn-outline-primary me-1">
+                                            Edit
+                                        </a>
+
+                                        <form asp-action="DeleteLiveLecture"
+                                              asp-route-id="@lecture.LiveLectureId"
+                                              method="post"
+                                              class="d-inline">
+
+                                            <button type="submit"
+                                                    class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Are you sure you want to delete this lecture?');">
+                                                Delete
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <!-- Empty State -->
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body text-center py-5">
+
+                <h5 class="fw-bold">
+                    No live lectures scheduled
+                </h5>
+
+                <p class="text-muted">
+                    Schedule a live lecture for your students.
+                </p>
+
+                <a asp-action="CreateLiveLecture"
+                   asp-route-courseId="@course?.CourseId"
+                   class="btn btn-success">
+                    + Schedule Lecture
+                </a>
+
+            </div>
+
+        </div>
+    }
+
+</div>

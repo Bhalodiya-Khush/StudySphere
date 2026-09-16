@@ -1,0 +1,173 @@
+﻿@using StudySphere.Models
+
+@{
+    ViewData["Title"] = "Enrolled Students";
+
+    var course = ViewBag.Course as Course;
+    var enrollments = ViewBag.Enrollments as List<Enrollment>;
+}
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <div class="mb-4">
+
+        <a asp-controller="InstructorDashboard"
+           asp-action="CourseDetails"
+           asp-route-id="@course?.CourseId"
+           class="text-decoration-none text-muted">
+            ← Back to Course
+        </a>
+
+        <h2 class="fw-bold mt-3 mb-1">
+            Enrolled Students
+        </h2>
+
+        <p class="text-muted mb-0">
+            Students enrolled in <strong>@course?.Title</strong>
+        </p>
+
+    </div>
+
+
+    <!-- Student Count -->
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body">
+
+            <h5 class="fw-bold mb-1">
+                Total Students
+            </h5>
+
+            <h2 class="fw-bold text-success mb-0">
+                @(enrollments?.Count ?? 0)
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- Students Table -->
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-body">
+
+            @if (enrollments != null && enrollments.Any())
+            {
+                <div class="table-responsive">
+
+                    <table class="table align-middle">
+
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student ID</th>
+                                <th>Enrolled On</th>
+                                <th>Status</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @{
+                                int number = 1;
+                            }
+
+                            @foreach (var enrollment in enrollments)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @number
+                                    </td>
+
+                                    <td>
+                                        <strong>
+                                            Student #@enrollment.StudentId
+                                        </strong>
+                                    </td>
+
+                                    <td>
+                                        @enrollment.EnrolledAt.ToString("dd MMM yyyy")
+                                    </td>
+
+                                    <td>
+
+                                        @if (enrollment.Status == "Active")
+                                        {
+                                            <span class="badge bg-success">
+                                                Active
+                                            </span>
+                                        }
+                                        else if (enrollment.Status == "Completed")
+                                        {
+                                            <span class="badge bg-primary">
+                                                Completed
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">
+                                                @enrollment.Status
+                                            </span>
+                                        }
+
+                                    </td>
+
+                                    <td style="min-width: 180px;">
+
+                                        <div class="d-flex justify-content-between">
+
+                                            <small>
+                                                @enrollment.Progress%
+                                            </small>
+
+                                        </div>
+
+                                        <div class="progress"
+                                             role="progressbar"
+                                             aria-valuenow="@enrollment.Progress"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100">
+
+                                            <div class="progress-bar"
+                                                 style="width: @enrollment.Progress%">
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                number++;
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+
+                    <h5 class="fw-bold">
+                        No Students Enrolled
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        No students have enrolled in this course yet.
+                    </p>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>
