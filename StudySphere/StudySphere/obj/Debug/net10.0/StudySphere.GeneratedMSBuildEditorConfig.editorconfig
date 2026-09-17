@@ -20,181 +20,181 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = StudySphere
 build_property.RootNamespace = StudySphere
-build_property.ProjectDir = D:\B.Tech\SEM5\WAD\StudySphere\StudySphere\
+build_property.ProjectDir = D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\B.Tech\SEM5\WAD\StudySphere\StudySphere
+build_property.MSBuildProjectDirectory = D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Account/Login.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ApprovedCourses.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/ApprovedCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcQXBwcm92ZWRDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/CourseRequests.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/CourseRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcQ291cnNlUmVxdWVzdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/Courses.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcQ291cnNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/index.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/Instructors.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/Instructors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcSW5zdHJ1Y3RvcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/RejectedCourses.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/RejectedCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcUmVqZWN0ZWRDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ReviewCourse.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/ReviewCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcUmV2aWV3Q291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/Students.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/Students.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcU3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ViewInstructor.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/ViewInstructor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcVmlld0luc3RydWN0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/AdminDashboard/ViewStudent.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/AdminDashboard/ViewStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcVmlld1N0dWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Home/index.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Home/Privacy.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/Announcements.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/Announcements.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxBbm5vdW5jZW1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/CourseDetails.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/CourseDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxDb3Vyc2VEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/Courses.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/CreateAnnouncement.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/CreateAnnouncement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxDcmVhdGVBbm5vdW5jZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/CreateCourse.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/CreateCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxDcmVhdGVDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/CreateLiveLecture.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/CreateLiveLecture.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxDcmVhdGVMaXZlTGVjdHVyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/CreateMaterial.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/CreateMaterial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxDcmVhdGVNYXRlcmlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/EditAnnouncement.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/EditAnnouncement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxFZGl0QW5ub3VuY2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/EditCourse.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/EditCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxFZGl0Q291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/EditLiveLecture.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/EditLiveLecture.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxFZGl0TGl2ZUxlY3R1cmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/EditMaterial.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/EditMaterial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxFZGl0TWF0ZXJpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/index.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/LiveLectures.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/LiveLectures.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxMaXZlTGVjdHVyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/Materials.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/Materials.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxNYXRlcmlhbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/InstructorDashboard/Students.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/InstructorDashboard/Students.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxTdHVkZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/LiveLecture/Test.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/LiveLecture/Test.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGl2ZUxlY3R1cmVcVGVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Profile/index.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Profile/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Shared/Error.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/StudentDashboard/AllCourses.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/StudentDashboard/AllCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudERhc2hib2FyZFxBbGxDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/StudentDashboard/CategoryCourses.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/StudentDashboard/CategoryCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudERhc2hib2FyZFxDYXRlZ29yeUNvdXJzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/StudentDashboard/CourseDetails.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/StudentDashboard/CourseDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudERhc2hib2FyZFxDb3Vyc2VEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/StudentDashboard/index.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/StudentDashboard/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudERhc2hib2FyZFxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/StudentDashboard/MyCourses.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/StudentDashboard/MyCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudERhc2hib2FyZFxNeUNvdXJzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/_ViewImports.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/_ViewStart.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Shared/_AuthLayout.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_AuthLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRoTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-izxkpwduui
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Shared/_CourseCard.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_CourseCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db3Vyc2VDYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-hhm9vmcfer
 
-[D:/B.Tech/SEM5/WAD/StudySphere/StudySphere/Views/Shared/_Layout.cshtml]
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0b6d1kkkdr

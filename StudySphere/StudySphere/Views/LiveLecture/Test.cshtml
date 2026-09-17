@@ -14,6 +14,10 @@
     <button id="joinButton">
         Join Lecture
     </button>
+
+    <button id="leaveButton" disabled>
+        Leave Meeting
+    </button>
 </div>
 
 <hr />
@@ -54,6 +58,9 @@
 
     const joinButton =
         document.getElementById("joinButton");
+
+    const leaveButton =
+        document.getElementById("leaveButton");
 
     const status =
         document.getElementById("status");
@@ -303,6 +310,8 @@
                 status.innerText =
                     "Starting...";
 
+                    joinButton.disabled = true;
+                    leaveButton.disabled = false;
 
                 await connection.start();
 
@@ -336,5 +345,45 @@
                     "Error: " + error.message;
             }
         };
+    // Leave meeting button
+        leaveButton.onclick = async function () {
+        try {
+            const lectureId =
+                parseInt(document.getElementById("lectureId").value);
 
+            // 1. Tell SignalR that we are leaving the lecture
+            await connection.invoke(
+                "LeaveLecture",
+                lectureId
+            );
+
+            // 2. Stop camera and microphone
+            if (localStream) {
+                localStream.getTracks().forEach(track => {
+                    track.stop();
+                });
+
+                localVideo.srcObject = null;
+                localStream = null;
+            }
+
+            // 3. Close WebRTC connection
+            peerConnection.close();
+
+            // 4. Disconnect SignalR
+            await connection.stop();
+
+            // 5. Clear remote video
+            remoteVideo.srcObject = null;
+
+            status.innerText = "You left the meeting";
+
+            joinButton.disabled = false;
+            leaveButton.disabled = true;
+        }
+        catch (error) {
+            console.error(error);
+            status.innerText = "Error while leaving: " + error.message;
+        }
+    };
 </script>

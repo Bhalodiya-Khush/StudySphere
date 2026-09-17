@@ -21,6 +21,21 @@ namespace StudySphere.Hubs
                 );
         }
 
+        public async Task LeaveLecture(int lectureId)
+        {
+            string groupName = $"Lecture_{lectureId}";
+
+            await Groups.RemoveFromGroupAsync(
+                Context.ConnectionId,
+                groupName
+            );
+
+            await Clients.Group(groupName)
+                .SendAsync(
+                    "StudentLeft",
+                    Context.ConnectionId
+                );
+        }
         public async Task SendOffer(
             int lectureId,
             string targetConnectionId,
