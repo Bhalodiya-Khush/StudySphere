@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StudySphere.Data;
+using StudySphere.Hubs;
 using StudySphere.Repositories;
 using StudySphere.Repositories.Interfaces;
 
@@ -10,6 +11,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IStudentDashboardRepository, StudentDashboardRepository>();
 builder.Services.AddScoped<IInstructorDashboardRepository, InstructorDashboardRepository>();
+
+builder.Services.AddSignalR();
 builder.Services.AddScoped<IAdminDashboardRepository, AdminDashboardRepository>();
 builder.Services.AddDbContext<StudySphereDbContext>(options =>
     options.UseSqlServer(
@@ -27,6 +30,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+app.MapHub<LectureHub>("/lectureHub");
 
 app.UseAuthorization();
 

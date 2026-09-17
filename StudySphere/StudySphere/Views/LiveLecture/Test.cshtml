@@ -1,0 +1,340 @@
+﻿@{
+    ViewData["Title"] = "WebRTC Test";
+}
+
+<h2>1-to-1 WebRTC Test</h2>
+
+<div>
+    <label>Lecture ID:</label>
+
+    <input type="number"
+           id="lectureId"
+           value="101" />
+
+    <button id="joinButton">
+        Join Lecture
+    </button>
+</div>
+
+<hr />
+
+<h4>My Video</h4>
+
+<video id="localVideo"
+       autoplay
+       muted
+       playsinline
+       width="400">
+</video>
+
+<h4>Remote Video</h4>
+
+<video id="remoteVideo"
+       autoplay
+       playsinline
+       width="400">
+</video>
+
+<p id="status">Not connected</p>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+
+<script>
+
+    // ---------------------------------------
+    // 1. HTML elements
+    // ---------------------------------------
+
+    const localVideo =
+        document.getElementById("localVideo");
+
+    const remoteVideo =
+        document.getElementById("remoteVideo");
+
+    const joinButton =
+        document.getElementById("joinButton");
+
+    const status =
+        document.getElementById("status");
+
+
+    // ---------------------------------------
+    // 2. SignalR connection
+    // ---------------------------------------
+
+    const connection =
+        new signalR.HubConnectionBuilder()
+            .withUrl("/lectureHub")
+            .build();
+
+
+    // ---------------------------------------
+    // 3. WebRTC configuration
+    // ---------------------------------------
+
+    const peerConnection =
+        new RTCPeerConnection({
+            iceServers: [
+                {
+                    urls: "stun:stun.l.google.com:19302"
+                }
+            ]
+        });
+
+
+    let localStream = null;
+
+    let remoteConnectionId = null;
+
+
+    // ---------------------------------------
+    // 4. Start camera and microphone
+    // ---------------------------------------
+
+    async function startCamera() {
+
+        localStream =
+            await navigator.mediaDevices
+                .getUserMedia({
+                    video: true,
+                    audio: true
+                });
+
+        localVideo.srcObject =
+            localStream;
+
+
+        localStream.getTracks()
+            .forEach(track => {
+
+                peerConnection.addTrack(
+                    track,
+                    localStream
+                );
+
+            });
+    }
+
+
+    // ---------------------------------------
+    // 5. Receive remote video
+    // ---------------------------------------
+
+    peerConnection.ontrack =
+        function (event) {
+
+            remoteVideo.srcObject =
+                event.streams[0];
+
+        };
+
+
+    // ---------------------------------------
+    // 6. ICE candidate
+    // ---------------------------------------
+
+    peerConnection.onicecandidate =
+        async function (event) {
+
+            if (event.candidate &&
+                remoteConnectionId) {
+
+                await connection.invoke(
+                    "SendIceCandidate",
+                    remoteConnectionId,
+                    JSON.stringify(
+                        event.candidate
+                    )
+                );
+            }
+        };
+
+
+    // ---------------------------------------
+    // 7. Someone joined
+    // ---------------------------------------
+
+    connection.on(
+        "UserJoined",
+        async function (connectionId) {
+
+            remoteConnectionId =
+                connectionId;
+
+            status.innerText =
+                "Another user joined";
+
+            await createOffer();
+        }
+    );
+
+
+    // ---------------------------------------
+    // 8. Create Offer
+    // ---------------------------------------
+
+    async function createOffer() {
+
+        const offer =
+            await peerConnection
+                .createOffer();
+
+        await peerConnection
+            .setLocalDescription(offer);
+
+
+        await connection.invoke(
+            "SendOffer",
+            parseInt(
+                document.getElementById("lectureId")
+                    .value
+            ),
+            remoteConnectionId,
+            JSON.stringify(offer)
+        );
+    }
+
+
+    // ---------------------------------------
+    // 9. Receive Offer
+    // ---------------------------------------
+
+    connection.on(
+        "ReceiveOffer",
+        async function (
+            senderConnectionId,
+            offer
+        ) {
+
+            remoteConnectionId =
+                senderConnectionId;
+
+
+            const parsedOffer =
+                JSON.parse(offer);
+
+
+            await peerConnection
+                .setRemoteDescription(
+                    parsedOffer
+                );
+
+
+            const answer =
+                await peerConnection
+                    .createAnswer();
+
+
+            await peerConnection
+                .setLocalDescription(
+                    answer
+                );
+
+
+            await connection.invoke(
+                "SendAnswer",
+                remoteConnectionId,
+                JSON.stringify(answer)
+            );
+        }
+    );
+
+
+    // ---------------------------------------
+    // 10. Receive Answer
+    // ---------------------------------------
+
+    connection.on(
+        "ReceiveAnswer",
+        async function (
+            senderConnectionId,
+            answer
+        ) {
+
+            const parsedAnswer =
+                JSON.parse(answer);
+
+
+            await peerConnection
+                .setRemoteDescription(
+                    parsedAnswer
+                );
+
+
+            status.innerText =
+                "WebRTC connection established";
+        }
+    );
+
+
+    // ---------------------------------------
+    // 11. Receive ICE candidate
+    // ---------------------------------------
+
+    connection.on(
+        "ReceiveIceCandidate",
+        async function (
+            senderConnectionId,
+            candidate
+        ) {
+
+            const parsedCandidate =
+                JSON.parse(candidate);
+
+
+            await peerConnection
+                .addIceCandidate(
+                    parsedCandidate
+                );
+        }
+    );
+
+
+    // ---------------------------------------
+    // 12. Join button
+    // ---------------------------------------
+
+    joinButton.onclick =
+        async function () {
+
+            try {
+
+                status.innerText =
+                    "Starting...";
+
+
+                await connection.start();
+
+
+                await startCamera();
+
+
+                const lectureId =
+                    parseInt(
+                        document.getElementById(
+                            "lectureId"
+                        ).value
+                    );
+
+
+                await connection.invoke(
+                    "JoinLecture",
+                    lectureId
+                );
+
+
+                status.innerText =
+                    "Joined lecture";
+
+            }
+            catch (error) {
+
+                console.error(error);
+
+                status.innerText =
+                    "Error: " + error.message;
+            }
+        };
+
+</script>
