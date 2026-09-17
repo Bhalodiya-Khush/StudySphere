@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using StudySphere.Data;
 using StudySphere.Repositories;
 using StudySphere.Repositories.Interfaces;
 
@@ -9,6 +11,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IStudentDashboardRepository, StudentDashboardRepository>();
 builder.Services.AddScoped<IInstructorDashboardRepository, InstructorDashboardRepository>();
 builder.Services.AddScoped<IAdminDashboardRepository, AdminDashboardRepository>();
+builder.Services.AddDbContext<StudySphereDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
