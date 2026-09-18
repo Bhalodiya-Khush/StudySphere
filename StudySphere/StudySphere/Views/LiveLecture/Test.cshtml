@@ -1,10 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "WebRTC Test";
+    ViewData["Title"] = "WebRTC 1-to-Many Test";
 }
 
-<h2>1-to-1 WebRTC Test</h2>
+<h2>1-to-Many WebRTC Test</h2>
 
 <div>
+
     <label>Lecture ID:</label>
 
     <input type="number"
@@ -18,6 +19,7 @@
     <button id="leaveButton" disabled>
         Leave Meeting
     </button>
+
 </div>
 
 <hr />
@@ -31,30 +33,33 @@
        width="400">
 </video>
 
-<h4>Remote Video</h4>
+<hr />
 
-<video id="remoteVideo"
-       autoplay
-       playsinline
-       width="400">
-</video>
+<h4>Students / Remote Videos</h4>
 
-<p id="status">Not connected</p>
+<div id="remoteVideos">
+    <!-- Remote videos will be created here -->
+</div>
+
+<p id="status">
+    Not connected
+</p>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
 
+
 <script>
 
-    // ---------------------------------------
-    // 1. HTML elements
-    // ---------------------------------------
+    // =========================================================
+    // 1. HTML ELEMENTS
+    // =========================================================
 
     const localVideo =
         document.getElementById("localVideo");
 
-    const remoteVideo =
-        document.getElementById("remoteVideo");
+    const remoteVideos =
+        document.getElementById("remoteVideos");
 
     const joinButton =
         document.getElementById("joinButton");
@@ -66,9 +71,9 @@
         document.getElementById("status");
 
 
-    // ---------------------------------------
-    // 2. SignalR connection
-    // ---------------------------------------
+    // =========================================================
+    // 2. SIGNALR CONNECTION
+    // =========================================================
 
     const connection =
         new signalR.HubConnectionBuilder()
@@ -76,31 +81,36 @@
             .build();
 
 
-    // ---------------------------------------
-    // 3. WebRTC configuration
-    // ---------------------------------------
+    // =========================================================
+    // 3. WEBRTC CONNECTIONS
+    // =========================================================
 
-    const peerConnection =
-        new RTCPeerConnection({
-            iceServers: [
-                {
-                    urls: "stun:stun.l.google.com:19302"
-                }
-            ]
-        });
+    /*
+        1-to-1:
 
+            let peerConnection;
+
+        1-to-many:
+
+            One PeerConnection for EACH student.
+    */
+
+    const peerConnections = {};
+
+
+    // =========================================================
+    // 4. LOCAL STREAM
+    // =========================================================
 
     let localStream = null;
 
-    let remoteConnectionId = null;
 
+    // =========================================================
+    // 5. START CAMERA AND MICROPHONE
+    // =========================================================
 
-    // ---------------------------------------
-    // 4. Start camera and microphone
-    // ---------------------------------------
-
-    async function startCamera() {
-
+    async function startCamera()
+    {
         localStream =
             await navigator.mediaDevices
                 .getUserMedia({
@@ -110,9 +120,40 @@
 
         localVideo.srcObject =
             localStream;
+    }
 
 
-        localStream.getTracks()
+    // =========================================================
+    // 6. CREATE PEER CONNECTION
+    // =========================================================
+
+    function createPeerConnection(connectionId)
+    {
+        console.log(
+            "Creating PeerConnection for:",
+            connectionId
+        );
+
+
+        const peerConnection =
+            new RTCPeerConnection({
+
+                iceServers: [
+                    {
+                        urls:
+                            "stun:stun.l.google.com:19302"
+                    }
+                ]
+
+            });
+
+
+        // -----------------------------------------------------
+        // Add my camera + microphone to THIS student connection
+        // -----------------------------------------------------
+
+        localStream
+            .getTracks()
             .forEach(track => {
 
                 peerConnection.addTrack(
@@ -121,106 +162,186 @@
                 );
 
             });
+
+
+        // -----------------------------------------------------
+        // Receive student's media
+        // -----------------------------------------------------
+
+        peerConnection.ontrack =
+            function(event)
+            {
+                console.log(
+                    "Received remote track from:",
+                    connectionId
+                );
+
+
+                let video =
+                    document.getElementById(
+                        "video-" + connectionId
+                    );
+
+
+                // If video doesn't exist, create it
+                if (!video)
+                {
+                    video =
+                        document.createElement(
+                            "video"
+                        );
+
+                    video.id =
+                        "video-" + connectionId;
+
+                    video.autoplay = true;
+                    video.playsInline = true;
+
+                    video.width = 300;
+
+                    remoteVideos.appendChild(
+                        video
+                    );
+                }
+
+
+                video.srcObject =
+                    event.streams[0];
+            };
+
+
+        // -----------------------------------------------------
+        // ICE candidate
+        // -----------------------------------------------------
+
+        peerConnection.onicecandidate =
+            async function(event)
+            {
+                if (event.candidate)
+                {
+                    await connection.invoke(
+                        "SendIceCandidate",
+                        connectionId,
+                        JSON.stringify(
+                            event.candidate
+                        )
+                    );
+                }
+            };
+
+
+        return peerConnection;
     }
 
 
-    // ---------------------------------------
-    // 5. Receive remote video
-    // ---------------------------------------
-
-    peerConnection.ontrack =
-        function (event) {
-
-            remoteVideo.srcObject =
-                event.streams[0];
-
-        };
-
-
-    // ---------------------------------------
-    // 6. ICE candidate
-    // ---------------------------------------
-
-    peerConnection.onicecandidate =
-        async function (event) {
-
-            if (event.candidate &&
-                remoteConnectionId) {
-
-                await connection.invoke(
-                    "SendIceCandidate",
-                    remoteConnectionId,
-                    JSON.stringify(
-                        event.candidate
-                    )
-                );
-            }
-        };
-
-
-    // ---------------------------------------
-    // 7. Someone joined
-    // ---------------------------------------
+    // =========================================================
+    // 7. USER JOINED
+    // =========================================================
 
     connection.on(
         "UserJoined",
-        async function (connectionId) {
+        async function(connectionId)
+        {
+            console.log(
+                "User joined:",
+                connectionId
+            );
 
-            remoteConnectionId =
-                connectionId;
 
             status.innerText =
-                "Another user joined";
+                "A student joined";
 
-            await createOffer();
+
+            // Create a NEW PeerConnection
+            // for this particular student
+
+            const peerConnection =
+                createPeerConnection(
+                    connectionId
+                );
+
+
+            // Store it
+
+            peerConnections[
+                connectionId
+            ] =
+                peerConnection;
+
+
+            // Create offer
+
+            const offer =
+                await peerConnection
+                    .createOffer();
+
+
+            await peerConnection
+                .setLocalDescription(
+                    offer
+                );
+
+
+            // Send offer to this student
+
+            await connection.invoke(
+                "SendOffer",
+
+                parseInt(
+                    document.getElementById(
+                        "lectureId"
+                    ).value
+                ),
+
+                connectionId,
+
+                JSON.stringify(offer)
+            );
         }
     );
 
 
-    // ---------------------------------------
-    // 8. Create Offer
-    // ---------------------------------------
-
-    async function createOffer() {
-
-        const offer =
-            await peerConnection
-                .createOffer();
-
-        await peerConnection
-            .setLocalDescription(offer);
-
-
-        await connection.invoke(
-            "SendOffer",
-            parseInt(
-                document.getElementById("lectureId")
-                    .value
-            ),
-            remoteConnectionId,
-            JSON.stringify(offer)
-        );
-    }
-
-
-    // ---------------------------------------
-    // 9. Receive Offer
-    // ---------------------------------------
+    // =========================================================
+    // 8. RECEIVE OFFER
+    // =========================================================
 
     connection.on(
         "ReceiveOffer",
-        async function (
+        async function(
             senderConnectionId,
             offer
-        ) {
+        )
+        {
+            console.log(
+                "Received offer from:",
+                senderConnectionId
+            );
 
-            remoteConnectionId =
-                senderConnectionId;
 
+            /*
+                Create PeerConnection for
+                the instructor.
+            */
+
+            const peerConnection =
+                createPeerConnection(
+                    senderConnectionId
+                );
+
+
+            peerConnections[
+                senderConnectionId
+            ] =
+                peerConnection;
+
+
+            // Convert offer JSON → object
 
             const parsedOffer =
                 JSON.parse(offer);
 
+
+            // Set remote description
 
             await peerConnection
                 .setRemoteDescription(
@@ -228,10 +349,14 @@
                 );
 
 
+            // Create answer
+
             const answer =
                 await peerConnection
                     .createAnswer();
 
+
+            // Set local description
 
             await peerConnection
                 .setLocalDescription(
@@ -239,25 +364,52 @@
                 );
 
 
+            // Send answer back
+
             await connection.invoke(
                 "SendAnswer",
-                remoteConnectionId,
+
+                senderConnectionId,
+
                 JSON.stringify(answer)
             );
         }
     );
 
 
-    // ---------------------------------------
-    // 10. Receive Answer
-    // ---------------------------------------
+    // =========================================================
+    // 9. RECEIVE ANSWER
+    // =========================================================
 
     connection.on(
         "ReceiveAnswer",
-        async function (
+        async function(
             senderConnectionId,
             answer
-        ) {
+        )
+        {
+            console.log(
+                "Received answer from:",
+                senderConnectionId
+            );
+
+
+            const peerConnection =
+                peerConnections[
+                    senderConnectionId
+                ];
+
+
+            if (!peerConnection)
+            {
+                console.error(
+                    "PeerConnection not found:",
+                    senderConnectionId
+                );
+
+                return;
+            }
+
 
             const parsedAnswer =
                 JSON.parse(answer);
@@ -275,16 +427,40 @@
     );
 
 
-    // ---------------------------------------
-    // 11. Receive ICE candidate
-    // ---------------------------------------
+    // =========================================================
+    // 10. RECEIVE ICE CANDIDATE
+    // =========================================================
 
     connection.on(
         "ReceiveIceCandidate",
-        async function (
+        async function(
             senderConnectionId,
             candidate
-        ) {
+        )
+        {
+            console.log(
+                "Received ICE candidate from:",
+                senderConnectionId
+            );
+
+
+            const peerConnection =
+                peerConnections[
+                    senderConnectionId
+                ];
+
+
+            if (!peerConnection)
+            {
+                console.error(
+                    "PeerConnection not found for ICE:"
+                    ,
+                    senderConnectionId
+                );
+
+                return;
+            }
+
 
             const parsedCandidate =
                 JSON.parse(candidate);
@@ -298,26 +474,87 @@
     );
 
 
-    // ---------------------------------------
-    // 12. Join button
-    // ---------------------------------------
+    // =========================================================
+    // 11. STUDENT LEFT
+    // =========================================================
+
+    connection.on(
+        "StudentLeft",
+        function(connectionId)
+        {
+            console.log(
+                "Student left:",
+                connectionId
+            );
+
+
+            const peerConnection =
+                peerConnections[
+                    connectionId
+                ];
+
+
+            if (peerConnection)
+            {
+                peerConnection.close();
+
+                delete peerConnections[
+                    connectionId
+                ];
+            }
+
+
+            // Remove student's video
+
+            const video =
+                document.getElementById(
+                    "video-" + connectionId
+                );
+
+
+            if (video)
+            {
+                video.remove();
+            }
+
+
+            status.innerText =
+                "Student left";
+        }
+    );
+
+
+    // =========================================================
+    // 12. JOIN BUTTON
+    // =========================================================
 
     joinButton.onclick =
-        async function () {
-
-            try {
-
+        async function()
+        {
+            try
+            {
                 status.innerText =
                     "Starting...";
 
-                    joinButton.disabled = true;
-                    leaveButton.disabled = false;
+
+                joinButton.disabled =
+                    true;
+
+                leaveButton.disabled =
+                    false;
+
+
+                // Start SignalR
 
                 await connection.start();
 
 
+                // Start camera
+
                 await startCamera();
 
+
+                // Get lecture ID
 
                 const lectureId =
                     parseInt(
@@ -327,6 +564,8 @@
                     );
 
 
+                // Join lecture
+
                 await connection.invoke(
                     "JoinLecture",
                     lectureId
@@ -335,55 +574,122 @@
 
                 status.innerText =
                     "Joined lecture";
-
             }
-            catch (error) {
-
+            catch(error)
+            {
                 console.error(error);
 
+
                 status.innerText =
-                    "Error: " + error.message;
+                    "Error: " +
+                    error.message;
             }
         };
-    // Leave meeting button
-        leaveButton.onclick = async function () {
-        try {
-            const lectureId =
-                parseInt(document.getElementById("lectureId").value);
 
-            // 1. Tell SignalR that we are leaving the lecture
-            await connection.invoke(
-                "LeaveLecture",
-                lectureId
-            );
 
-            // 2. Stop camera and microphone
-            if (localStream) {
-                localStream.getTracks().forEach(track => {
-                    track.stop();
-                });
+    // =========================================================
+    // 13. LEAVE BUTTON
+    // =========================================================
 
-                localVideo.srcObject = null;
-                localStream = null;
+    leaveButton.onclick =
+        async function()
+        {
+            try
+            {
+                const lectureId =
+                    parseInt(
+                        document.getElementById(
+                            "lectureId"
+                        ).value
+                    );
+
+
+                // Tell SignalR
+
+                await connection.invoke(
+                    "LeaveLecture",
+                    lectureId
+                );
+
+
+                // Stop camera
+
+                if(localStream)
+                {
+                    localStream
+                        .getTracks()
+                        .forEach(
+                            track =>
+                            {
+                                track.stop();
+                            }
+                        );
+
+
+                    localVideo.srcObject =
+                        null;
+
+                    localStream =
+                        null;
+                }
+
+
+                // Close ALL PeerConnections
+
+                Object
+                    .values(peerConnections)
+                    .forEach(
+                        peerConnection =>
+                        {
+                            peerConnection.close();
+                        }
+                    );
+
+
+                // Clear dictionary
+
+                Object
+                    .keys(peerConnections)
+                    .forEach(
+                        connectionId =>
+                        {
+                            delete peerConnections[
+                                connectionId
+                            ];
+                        }
+                    );
+
+
+                // Clear remote videos
+
+                remoteVideos.innerHTML =
+                    "";
+
+
+                // Stop SignalR
+
+                await connection.stop();
+
+
+                status.innerText =
+                    "You left the meeting";
+
+
+                joinButton.disabled =
+                    false;
+
+                leaveButton.disabled =
+                    true;
             }
+            catch(error)
+            {
+                console.error(error);
 
-            // 3. Close WebRTC connection
-            peerConnection.close();
 
-            // 4. Disconnect SignalR
-            await connection.stop();
+                status.innerText =
+                    "Error while leaving: " +
+                    error.message;
+            }
+        };
 
-            // 5. Clear remote video
-            remoteVideo.srcObject = null;
-
-            status.innerText = "You left the meeting";
-
-            joinButton.disabled = false;
-            leaveButton.disabled = true;
-        }
-        catch (error) {
-            console.error(error);
-            status.innerText = "Error while leaving: " + error.message;
-        }
-    };
 </script>
