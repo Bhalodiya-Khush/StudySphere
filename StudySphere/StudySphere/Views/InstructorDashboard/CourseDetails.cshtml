@@ -3,30 +3,47 @@
 @{
     ViewData["Title"] = "Course Details";
 
-    var materials = ViewBag.Materials as List<StudySphere.Models.Material>;
-    var students = ViewBag.Students as List<StudySphere.Models.Enrollment>;
-    var announcements = ViewBag.Announcements as List<StudySphere.Models.Announcement>;
-    var lectures = ViewBag.LiveLectures as List<StudySphere.Models.LiveLecture>;
+    var materials =
+        ViewBag.Materials as List<StudySphere.Models.Material>;
+
+    var students =
+        ViewBag.Students as List<StudySphere.Models.Enrollment>;
+
+    var announcements =
+        ViewBag.Announcements as List<StudySphere.Models.Announcement>;
+
+    var lectures =
+        ViewBag.LiveLectures as List<StudySphere.Models.LiveLecture>;
 }
 
 <div class="container py-4">
 
-    <!-- Back -->
+    <!-- =========================================================
+         BACK TO COURSES
+         ========================================================= -->
+
     <div class="mb-3">
+
         <a asp-controller="InstructorDashboard"
            asp-action="Courses"
            class="text-decoration-none text-muted">
+
             ← Back to My Courses
+
         </a>
+
     </div>
 
 
-    <!-- Course Header -->
+    <!-- =========================================================
+         COURSE HEADER
+         ========================================================= -->
+
     <div class="card border-0 shadow-sm mb-4">
 
         <div class="row g-0">
 
-            <!-- Thumbnail -->
+            <!-- Course Thumbnail -->
             <div class="col-md-4">
 
                 <img src="@Model.ThumbnailUrl"
@@ -42,7 +59,9 @@
 
                 <div class="card-body p-4">
 
-                    <div class="d-flex justify-content-between align-items-start">
+                    <!-- Title + Status -->
+                    <div class="d-flex justify-content-between
+                                align-items-start">
 
                         <div>
 
@@ -56,6 +75,8 @@
 
                         </div>
 
+
+                        <!-- Course Status -->
                         <span class="badge
                             @(Model.Status == "Published"
                                 ? "bg-success"
@@ -72,13 +93,16 @@
                     </div>
 
 
+                    <!-- Description -->
                     <p class="text-muted mt-3">
                         @Model.Description
                     </p>
 
 
+                    <!-- Course Information -->
                     <div class="row mt-4">
 
+                        <!-- Level -->
                         <div class="col-sm-4 mb-3">
 
                             <small class="text-muted d-block">
@@ -92,6 +116,7 @@
                         </div>
 
 
+                        <!-- Price -->
                         <div class="col-sm-4 mb-3">
 
                             <small class="text-muted d-block">
@@ -105,6 +130,7 @@
                         </div>
 
 
+                        <!-- Created -->
                         <div class="col-sm-4 mb-3">
 
                             <small class="text-muted d-block">
@@ -139,7 +165,9 @@
     </div>
 
 
-    <!-- Management Options -->
+    <!-- =========================================================
+         COURSE MANAGEMENT
+         ========================================================= -->
 
     <h4 class="fw-bold mb-3">
         Course Management
@@ -148,12 +176,15 @@
 
     <div class="row g-4">
 
-        <!-- Materials -->
+        <!-- =====================================================
+             MATERIALS
+             ===================================================== -->
+
         <div class="col-md-6 col-lg-3">
 
             <div class="card border-0 shadow-sm h-100">
 
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
 
                     <div class="fs-2 mb-3">
                         📚
@@ -168,18 +199,28 @@
                     </p>
 
                     <p class="mb-3">
-                        <strong>@(materials?.Count ?? 0)</strong>
+
+                        <strong>
+                            @(materials?.Count ?? 0)
+                        </strong>
+
                         materials
+
                     </p>
 
-                    <a asp-controller="InstructorDashboard"
-                       asp-action="Materials"
-                       asp-route-courseId="@Model.CourseId"
-                       class="btn btn-outline-success btn-sm w-100">
 
-                        Manage Materials
+                    <div class="mt-auto">
 
-                    </a>
+                        <a asp-controller="InstructorDashboard"
+                           asp-action="Materials"
+                           asp-route-courseId="@Model.CourseId"
+                           class="btn btn-outline-success btn-sm w-100">
+
+                            Manage Materials
+
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -188,12 +229,15 @@
         </div>
 
 
-        <!-- Students -->
+        <!-- =====================================================
+             STUDENTS
+             ===================================================== -->
+
         <div class="col-md-6 col-lg-3">
 
             <div class="card border-0 shadow-sm h-100">
 
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
 
                     <div class="fs-2 mb-3">
                         👨‍🎓
@@ -208,18 +252,28 @@
                     </p>
 
                     <p class="mb-3">
-                        <strong>@(students?.Count ?? 0)</strong>
+
+                        <strong>
+                            @(students?.Count ?? 0)
+                        </strong>
+
                         students
+
                     </p>
 
-                    <a asp-controller="InstructorDashboard"
-                       asp-action="Students"
-                       asp-route-courseId="@Model.CourseId"
-                       class="btn btn-outline-success btn-sm w-100">
 
-                        View Students
+                    <div class="mt-auto">
 
-                    </a>
+                        <a asp-controller="InstructorDashboard"
+                           asp-action="Students"
+                           asp-route-courseId="@Model.CourseId"
+                           class="btn btn-outline-success btn-sm w-100">
+
+                            View Students
+
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -228,12 +282,15 @@
         </div>
 
 
-        <!-- Announcements -->
+        <!-- =====================================================
+             ANNOUNCEMENTS
+             ===================================================== -->
+
         <div class="col-md-6 col-lg-3">
 
             <div class="card border-0 shadow-sm h-100">
 
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
 
                     <div class="fs-2 mb-3">
                         📢
@@ -248,18 +305,28 @@
                     </p>
 
                     <p class="mb-3">
-                        <strong>@(announcements?.Count ?? 0)</strong>
+
+                        <strong>
+                            @(announcements?.Count ?? 0)
+                        </strong>
+
                         announcements
+
                     </p>
 
-                    <a asp-controller="InstructorDashboard"
-                       asp-action="Announcements"
-                       asp-route-courseId="@Model.CourseId"
-                       class="btn btn-outline-success btn-sm w-100">
 
-                        Manage Announcements
+                    <div class="mt-auto">
 
-                    </a>
+                        <a asp-controller="InstructorDashboard"
+                           asp-action="Announcements"
+                           asp-route-courseId="@Model.CourseId"
+                           class="btn btn-outline-success btn-sm w-100">
+
+                            Manage Announcements
+
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -268,12 +335,15 @@
         </div>
 
 
-        <!-- Live Lectures -->
+        <!-- =====================================================
+             LIVE LECTURES
+             ===================================================== -->
+
         <div class="col-md-6 col-lg-3">
 
             <div class="card border-0 shadow-sm h-100">
 
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
 
                     <div class="fs-2 mb-3">
                         🎥
@@ -284,13 +354,44 @@
                     </h5>
 
                     <p class="text-muted small">
-                        Schedule and manage live lectures.
+                        Start or manage live lectures for this course.
                     </p>
 
                     <p class="mb-3">
-                        <strong>@(lectures?.Count ?? 0)</strong>
+
+                        <strong>
+                            @(lectures?.Count ?? 0)
+                        </strong>
+
                         lectures
+
                     </p>
+
+
+                    <!-- Start Live Lecture -->
+
+                    <form asp-controller="InstructorDashboard"
+                          asp-action="StartLiveLecture"
+                          method="post"
+                          class="mb-2">
+
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden"
+                               name="courseId"
+                               value="@Model.CourseId" />
+
+                        <button type="submit"
+                                class="btn btn-success btn-sm w-100">
+
+                            🎥 Start Live Lecture
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- Manage Lectures -->
 
                     <a asp-controller="InstructorDashboard"
                        asp-action="LiveLectures"

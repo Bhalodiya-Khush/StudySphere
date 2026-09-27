@@ -20,7 +20,39 @@ namespace StudySphere.Repositories
 
         private readonly List<Announcement> _announcements;
 
-        private readonly List<LiveLecture> _liveLectures;
+        // Static so newly created repository instances
+        // can access lectures added by previous requests.
+        private static readonly List<LiveLecture> _liveLectures =
+            new List<LiveLecture>
+            {
+                new LiveLecture
+                {
+                    LiveLectureId = 1,
+                    CourseId = 1,
+                    InstructorId = 1,
+                    Title = "ASP.NET Core MVC - Controllers",
+                    Description = "Live session about controllers and routing.",
+                    StartTime = DateTime.Now.AddDays(1).AddHours(2),
+                    EndTime = DateTime.Now.AddDays(1).AddHours(3),
+                    MeetingUrl = "https://meet.example.com/aspnet",
+                    Status = "Scheduled",
+                    CreatedAt = DateTime.UtcNow
+                },
+
+                new LiveLecture
+                {
+                    LiveLectureId = 2,
+                    CourseId = 2,
+                    InstructorId = 1,
+                    Title = "Spring Boot REST API",
+                    Description = "Live session about REST API development.",
+                    StartTime = DateTime.Now.AddDays(2).AddHours(3),
+                    EndTime = DateTime.Now.AddDays(2).AddHours(4),
+                    MeetingUrl = "https://meet.example.com/spring",
+                    Status = "Scheduled",
+                    CreatedAt = DateTime.UtcNow
+                }
+            };
 
 
         // =========================================================
@@ -271,42 +303,6 @@ namespace StudySphere.Repositories
                     Message = "Practice the REST API examples covered in the latest lecture.",
                     CreatedAt = DateTime.UtcNow.AddDays(-1),
                     IsPublished = true
-                }
-            };
-
-
-            // -----------------------------------------------------
-            // Live Lectures
-            // -----------------------------------------------------
-
-            _liveLectures = new List<LiveLecture>
-            {
-                new LiveLecture
-                {
-                    LiveLectureId = 1,
-                    CourseId = 1,
-                    InstructorId = 1,
-                    Title = "ASP.NET Core MVC - Controllers",
-                    Description = "Live session about controllers and routing.",
-                    StartTime = DateTime.Now.AddDays(1).AddHours(2),
-                    EndTime = DateTime.Now.AddDays(1).AddHours(3),
-                    MeetingUrl = "https://meet.example.com/aspnet",
-                    Status = "Scheduled",
-                    CreatedAt = DateTime.UtcNow
-                },
-
-                new LiveLecture
-                {
-                    LiveLectureId = 2,
-                    CourseId = 2,
-                    InstructorId = 1,
-                    Title = "Spring Boot REST API",
-                    Description = "Live session about REST API development.",
-                    StartTime = DateTime.Now.AddDays(2).AddHours(3),
-                    EndTime = DateTime.Now.AddDays(2).AddHours(4),
-                    MeetingUrl = "https://meet.example.com/spring",
-                    Status = "Scheduled",
-                    CreatedAt = DateTime.UtcNow
                 }
             };
         }

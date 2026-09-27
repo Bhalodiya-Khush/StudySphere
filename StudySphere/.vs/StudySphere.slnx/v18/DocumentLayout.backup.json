@@ -1,273 +1,273 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\",
+  "WorkspaceRootPath": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\livelecture\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\livelecture\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\hubs\\lecturehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\hubs\\lecturehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\controllers\\livelecturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\livelecturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\migrations\\20260917163228_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\migrations\\20260917163228_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\data\\studyspheredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\data\\studyspheredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\livelecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\livelecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\announcement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\announcement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\repositories\\studentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\studentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\repositories\\instructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\repositories\\instructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\instructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\repositories\\iinstructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\iinstructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\repositories\\admindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\admindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\repositories\\iadmindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\iadmindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\repositories\\istudentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\istudentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\shared\\_coursecard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\shared\\_coursecard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\studentdashboard\\mycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\mycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\studentdashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\studentdashboard\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\studentdashboard\\categorycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\categorycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\studentdashboard\\allcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\allcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\materials.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\materials.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\livelectures.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\livelectures.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\editmaterial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editmaterial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\editlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\editannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\creatematerial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\creatematerial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\createlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\createlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\createcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\createcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\createannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\createannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\courses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\courses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\instructordashboard\\announcements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\livelecture\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\livelecture\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\livelecturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\livelecturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\instructordashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\repositories\\iinstructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\iinstructordashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\data\\studyspheredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\data\\studyspheredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\hubs\\lecturehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\hubs\\lecturehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\shared\\_coursecard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\shared\\_coursecard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\courses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\courses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\livelectures.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\livelectures.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\livelecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\livelecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\migrations\\20260917163228_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\migrations\\20260917163228_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\announcement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\announcement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\repositories\\studentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\studentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\repositories\\admindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\admindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\repositories\\iadmindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\iadmindashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\repositories\\istudentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\repositories\\istudentdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\studentdashboard\\mycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\mycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\studentdashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\studentdashboard\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\studentdashboard\\categorycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\categorycourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\studentdashboard\\allcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\studentdashboard\\allcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\materials.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\materials.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\editmaterial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editmaterial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\editlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\editannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\editannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\creatematerial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\creatematerial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\createlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\createlivelecture.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\createcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\createcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\createannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\createannouncement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\instructordashboard\\announcements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\instructordashboard\\announcements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\viewstudent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\viewstudent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\viewstudent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\viewinstructor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\viewinstructor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\viewinstructor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\students.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\reviewcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\reviewcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\reviewcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\rejectedcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\rejectedcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\rejectedcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\instructors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\instructors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\instructors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\courses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\courses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\courses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\approvedcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\approvedcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\approvedcourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\admindashboard\\courserequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\admindashboard\\courserequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\admindashboard\\courserequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\viewmodels\\studentdashboardviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\viewmodels\\studentdashboardviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\viewmodels\\studentdashboardviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\models\\dashboard\\admindashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\models\\dashboard\\admindashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\models\\dashboard\\admindashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\github project\\studysphere\\studysphere\\studysphere\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|d:\\b.tech\\sem5\\wad\\studysphere\\studysphere\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2652F3B1-5F2F-C23F-1233-BA6CA64C6C06}|StudySphere\\StudySphere.csproj|solutionrelative:studysphere\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -278,7 +278,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -286,808 +286,874 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourseDetails.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
+              "ViewState": "AgIAAIsBAAAAAAAAAAAQwJwBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-16T06:55:32.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "InstructorDashboardRepository.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\InstructorDashboardRepository.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Repositories\\InstructorDashboardRepository.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\InstructorDashboardRepository.cs",
+              "RelativeToolTip": "StudySphere\\Repositories\\InstructorDashboardRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-16T18:16:23.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InstructorDashboardController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\InstructorDashboardController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\InstructorDashboardController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\InstructorDashboardController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\InstructorDashboardController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwDcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T16:32:11.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LiveLectureController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\LiveLectureController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\LiveLectureController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\LiveLectureController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\LiveLectureController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-17T18:46:04.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Test.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\LiveLecture\\Test.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\LiveLecture\\Test.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\LiveLecture\\Test.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\LiveLecture\\Test.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\LiveLecture\\Test.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\LiveLecture\\Test.cshtml",
-              "ViewState": "AgIAAJcCAAAAAAAAAAAAALYCAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAAACwDAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-09-17T18:47:18.962Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LectureHub.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Hubs\\LectureHub.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Hubs\\LectureHub.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Hubs\\LectureHub.cs",
-              "RelativeToolTip": "StudySphere\\Hubs\\LectureHub.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCUAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "IInstructorDashboardRepository.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
+              "RelativeToolTip": "StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwEUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T18:44:38.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20260917163228_InitialCreate.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
-              "RelativeToolTip": "StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T16:32:28.903Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Material.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Material.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\Material.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Material.cs",
-              "RelativeToolTip": "StudySphere\\Models\\Material.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwB0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T16:28:02.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Instructor.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Instructor.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\Instructor.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Instructor.cs",
-              "RelativeToolTip": "StudySphere\\Models\\Instructor.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAwwB0AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T11:08:19.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LiveLecture.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\LiveLecture.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\LiveLecture.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\LiveLecture.cs",
-              "RelativeToolTip": "StudySphere\\Models\\LiveLecture.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAADwvyMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T10:11:35.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Program.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Program.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Program.cs",
-              "RelativeToolTip": "StudySphere\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:05:09.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LiveLectureController.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\LiveLectureController.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Controllers\\LiveLectureController.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\LiveLectureController.cs",
-              "RelativeToolTip": "StudySphere\\Controllers\\LiveLectureController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T18:46:04.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Student.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\Student.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Student.cs",
-              "RelativeToolTip": "StudySphere\\Models\\Student.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvxIAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T10:54:17.146Z"
+              "WhenOpened": "2026-09-16T18:14:49.511Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\User.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\User.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\User.cs",
-              "RelativeToolTip": "StudySphere\\Models\\User.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwBoAAAASAAAAAAAAAA==",
+              "Title": "StudySphereDbContext.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Data\\StudySphereDbContext.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Data\\StudySphereDbContext.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Data\\StudySphereDbContext.cs",
+              "RelativeToolTip": "StudySphere\\Data\\StudySphereDbContext.cs",
+              "ViewState": "AgIAAMECAAAAAAAAAAAAANICAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T10:56:13.723Z"
+              "WhenOpened": "2026-09-17T16:07:21.722Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StudySphereDbContext.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Data\\StudySphereDbContext.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Data\\StudySphereDbContext.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Data\\StudySphereDbContext.cs",
-              "RelativeToolTip": "StudySphere\\Data\\StudySphereDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Program.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Program.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Program.cs",
+              "RelativeToolTip": "StudySphere\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T16:07:21.722Z"
+              "WhenOpened": "2026-09-15T16:05:09.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LectureHub.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Hubs\\LectureHub.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Hubs\\LectureHub.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Hubs\\LectureHub.cs",
+              "RelativeToolTip": "StudySphere\\Hubs\\LectureHub.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAqwDoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-17T18:44:38.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_CourseCard.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Shared\\_CourseCard.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\Shared\\_CourseCard.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Shared\\_CourseCard.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\Shared\\_CourseCard.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAkwC8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-15T17:05:47.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StudentDashboardController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\StudentDashboardController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\StudentDashboardController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\StudentDashboardController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\StudentDashboardController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAuwFkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T16:17:19.237Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Enrollment.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Enrollment.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\Enrollment.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Enrollment.cs",
-              "RelativeToolTip": "StudySphere\\Models\\Enrollment.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvxQAAAAaAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T11:04:02.615Z"
+              "WhenOpened": "2026-09-15T16:01:31.094Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Course.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Course.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\Course.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Course.cs",
-              "RelativeToolTip": "StudySphere\\Models\\Course.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T17:20:27.406Z"
+              "Title": "Courses.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAkwDQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-16T06:11:28.04Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Announcement.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Announcement.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\Announcement.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Announcement.cs",
-              "RelativeToolTip": "StudySphere\\Models\\Announcement.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvxgAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T16:25:37.438Z"
+              "Title": "LiveLectures.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-16T10:07:05.83Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Models\\Admin.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Admin.cs",
-              "RelativeToolTip": "StudySphere\\Models\\Admin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "Title": "Enrollment.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Enrollment.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Enrollment.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Enrollment.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Enrollment.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvxgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T11:08:37.086Z"
+              "WhenOpened": "2026-09-16T11:04:02.615Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "StudentDashboardRepository.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\StudentDashboardRepository.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Repositories\\StudentDashboardRepository.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\StudentDashboardRepository.cs",
-              "RelativeToolTip": "StudySphere\\Repositories\\StudentDashboardRepository.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAswJMAAAA8AAAAAAAAAA==",
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Course.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Course.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Course.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAADwvygAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T17:00:47.053Z"
+              "WhenOpened": "2026-09-15T17:20:27.406Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "InstructorDashboardRepository.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\InstructorDashboardRepository.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Repositories\\InstructorDashboardRepository.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\InstructorDashboardRepository.cs",
-              "RelativeToolTip": "StudySphere\\Repositories\\InstructorDashboardRepository.cs",
-              "ViewState": "AgIAACACAAAAAAAAAAAswCoCAAAAAAAAAAAAAA==",
+              "Title": "LiveLecture.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\LiveLecture.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\LiveLecture.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\LiveLecture.cs",
+              "RelativeToolTip": "StudySphere\\Models\\LiveLecture.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAADwvyMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T18:16:23.181Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IInstructorDashboardRepository.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
-              "RelativeToolTip": "StudySphere\\Repositories\\IInstructorDashboardRepository.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAQwEcAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T18:14:49.511Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AdminDashboardRepository.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\AdminDashboardRepository.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Repositories\\AdminDashboardRepository.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\AdminDashboardRepository.cs",
-              "RelativeToolTip": "StudySphere\\Repositories\\AdminDashboardRepository.cs",
-              "ViewState": "AgIAAGABAAAAAAAAAAAwwGwBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T15:48:34.076Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\appsettings.json",
-              "RelativeDocumentMoniker": "StudySphere\\appsettings.json",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\appsettings.json",
-              "RelativeToolTip": "StudySphere\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-17T16:09:37.718Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AdminDashboardController.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\AdminDashboardController.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Controllers\\AdminDashboardController.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\AdminDashboardController.cs",
-              "RelativeToolTip": "StudySphere\\Controllers\\AdminDashboardController.cs",
-              "ViewState": "AgIAAOIAAAAAAAAAAADwv/EAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T17:22:36.094Z"
+              "WhenOpened": "2026-09-16T10:11:35.764Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "IAdminDashboardRepository.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\IAdminDashboardRepository.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Repositories\\IAdminDashboardRepository.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\IAdminDashboardRepository.cs",
-              "RelativeToolTip": "StudySphere\\Repositories\\IAdminDashboardRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvx8AAAABAAAAAAAAAA==",
+              "Title": "Instructor.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Instructor.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Instructor.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Instructor.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Instructor.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwB0AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T15:52:25.093Z"
+              "WhenOpened": "2026-09-16T11:08:19.715Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "StudySphere\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "Material.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Material.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Material.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Material.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Material.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwB0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:01:32.979Z"
+              "WhenOpened": "2026-09-17T16:28:02.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20260917163228_InitialCreate.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
+              "RelativeToolTip": "StudySphere\\Migrations\\20260917163228_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-17T16:32:28.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Student.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Student.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Student.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvxIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-16T10:54:17.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\User.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\User.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\User.cs",
+              "RelativeToolTip": "StudySphere\\Models\\User.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwBoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-16T10:56:13.723Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "InstructorDashboardController.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\InstructorDashboardController.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Controllers\\InstructorDashboardController.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\InstructorDashboardController.cs",
-              "RelativeToolTip": "StudySphere\\Controllers\\InstructorDashboardController.cs",
-              "ViewState": "AgIAAOQBAAAAAAAAAAAIwKoCAAABAAAAAAAAAA==",
+              "Title": "Announcement.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Announcement.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Announcement.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Announcement.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Announcement.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvxgAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:32:11.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "StudySphere\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:01:31.094Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Controllers\\ProfileController.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "StudySphere\\Controllers\\ProfileController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:01:41.075Z"
+              "WhenOpened": "2026-09-17T16:25:37.438Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "StudentDashboardController.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\StudentDashboardController.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Controllers\\StudentDashboardController.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Controllers\\StudentDashboardController.cs",
-              "RelativeToolTip": "StudySphere\\Controllers\\StudentDashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAABAAAAAAAAAA==",
+              "Title": "Admin.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Models\\Admin.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Admin.cs",
+              "RelativeToolTip": "StudySphere\\Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:17:19.237Z"
+              "WhenOpened": "2026-09-16T11:08:37.086Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "AllCourses.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T18:07:01.491Z"
+              "DocumentIndex": 24,
+              "Title": "StudentDashboardRepository.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\StudentDashboardRepository.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Repositories\\StudentDashboardRepository.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\StudentDashboardRepository.cs",
+              "RelativeToolTip": "StudySphere\\Repositories\\StudentDashboardRepository.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAswJMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-16T17:00:47.053Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "index.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\index.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\index.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\index.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T16:17:38.833Z"
+              "DocumentIndex": 25,
+              "Title": "AdminDashboardRepository.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\AdminDashboardRepository.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Repositories\\AdminDashboardRepository.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\AdminDashboardRepository.cs",
+              "RelativeToolTip": "StudySphere\\Repositories\\AdminDashboardRepository.cs",
+              "ViewState": "AgIAAGABAAAAAAAAAAAwwGwBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-17T15:48:34.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "CourseDetails.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T18:08:35.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "CategoryCourses.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T18:08:02.374Z"
+              "DocumentIndex": 26,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\appsettings.json",
+              "RelativeDocumentMoniker": "StudySphere\\appsettings.json",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\appsettings.json",
+              "RelativeToolTip": "StudySphere\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-17T16:09:37.718Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
-              "Title": "IStudentDashboardRepository.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\IStudentDashboardRepository.cs",
-              "RelativeDocumentMoniker": "StudySphere\\Repositories\\IStudentDashboardRepository.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Repositories\\IStudentDashboardRepository.cs",
-              "RelativeToolTip": "StudySphere\\Repositories\\IStudentDashboardRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Title": "AdminDashboardController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\AdminDashboardController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\AdminDashboardController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\AdminDashboardController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\AdminDashboardController.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAADwv/EAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T16:59:37.479Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "MyCourses.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T18:16:36.71Z"
+              "WhenOpened": "2026-09-15T17:22:36.094Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 28,
-              "Title": "_CourseCard.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Shared\\_CourseCard.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\Shared\\_CourseCard.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Shared\\_CourseCard.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\Shared\\_CourseCard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T17:05:47.459Z"
+              "Title": "IAdminDashboardRepository.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\IAdminDashboardRepository.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Repositories\\IAdminDashboardRepository.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\IAdminDashboardRepository.cs",
+              "RelativeToolTip": "StudySphere\\Repositories\\IAdminDashboardRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvx8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-17T15:52:25.093Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "index.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Profile\\index.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\Profile\\index.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Profile\\index.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\Profile\\index.cshtml",
-              "ViewState": "AgIAAKwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T16:31:38.035Z"
+              "DocumentIndex": 30,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T16:01:32.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Controllers\\ProfileController.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "StudySphere\\Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T16:01:41.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 36,
-              "Title": "Materials.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
-              "ViewState": "AgIAALwAAAAAAAAAAAAAAHQAAAApAAAAAAAAAA==",
+              "Title": "AllCourses.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\AllCourses.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T07:07:00.235Z"
+              "WhenOpened": "2026-09-15T18:07:01.491Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "LiveLectures.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\LiveLectures.cshtml",
-              "ViewState": "AgIAALAAAAAAAAAAAAAAAMIAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:07:05.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 33,
               "Title": "index.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\index.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\index.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\index.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAAAGAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\index.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\index.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\index.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T16:32:52.213Z"
+              "WhenOpened": "2026-09-15T16:17:38.833Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "EditMaterial.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
-              "ViewState": "AgIAAM0AAAAAAAAAAAAgwOEAAAABAAAAAAAAAA==",
+              "DocumentIndex": 34,
+              "Title": "CourseDetails.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T07:08:48.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "EditLiveLecture.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:08:32.154Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "EditCourse.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T06:57:11.019Z"
+              "WhenOpened": "2026-09-15T18:08:35.617Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
-              "Title": "Students.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAAAKcAAAAAAAAAAAAAAA==",
+              "Title": "CategoryCourses.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\CategoryCourses.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T07:09:37.384Z"
+              "WhenOpened": "2026-09-15T18:08:02.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IStudentDashboardRepository.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\IStudentDashboardRepository.cs",
+              "RelativeDocumentMoniker": "StudySphere\\Repositories\\IStudentDashboardRepository.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Repositories\\IStudentDashboardRepository.cs",
+              "RelativeToolTip": "StudySphere\\Repositories\\IStudentDashboardRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-16T16:59:37.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "MyCourses.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\MyCourses.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-15T18:16:36.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Profile\\index.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\Profile\\index.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Profile\\index.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\Profile\\index.cshtml",
+              "ViewState": "AgIAAKwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-16T16:31:38.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Materials.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\Materials.cshtml",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAAHQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-16T07:07:00.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\index.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\index.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\index.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-15T16:32:52.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "EditMaterial.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditMaterial.cshtml",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAgwOEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-16T07:08:48.757Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 42,
-              "Title": "EditAnnouncement.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAGAAAAAAAAAA==",
+              "Title": "EditLiveLecture.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditLiveLecture.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:06:28.201Z"
+              "WhenOpened": "2026-09-16T10:08:32.154Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 43,
-              "Title": "CreateMaterial.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOYAAAABAAAAAAAAAA==",
+              "Title": "EditCourse.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditCourse.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T07:08:12.453Z"
+              "WhenOpened": "2026-09-16T06:57:11.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Students.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\Students.cshtml",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAAAKcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-16T07:09:37.384Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 44,
-              "Title": "CreateLiveLecture.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkAAAAGAAAAAAAAAA==",
+              "Title": "EditAnnouncement.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\EditAnnouncement.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:07:52.79Z"
+              "WhenOpened": "2026-09-16T10:06:28.201Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 45,
-              "Title": "CreateCourse.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
-              "ViewState": "AgIAAKQAAAAAAAAAAAAAACUAAAAqAAAAAAAAAA==",
+              "Title": "CreateMaterial.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateMaterial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:09:12.004Z"
+              "WhenOpened": "2026-09-16T07:08:12.453Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 46,
-              "Title": "CreateAnnouncement.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAGAAAAAAAAAA==",
+              "Title": "CreateLiveLecture.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateLiveLecture.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:05:42.737Z"
+              "WhenOpened": "2026-09-16T10:07:52.79Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 47,
-              "Title": "Courses.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\Courses.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAGAAAAAAAAAA==",
+              "Title": "CreateCourse.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateCourse.cshtml",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAAACUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T06:11:28.04Z"
+              "WhenOpened": "2026-09-16T10:09:12.004Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 48,
-              "Title": "CourseDetails.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
-              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
-              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CourseDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcBAAAGAAAAAAAAAA==",
+              "Title": "CreateAnnouncement.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
+              "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
+              "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\CreateAnnouncement.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T06:55:32.745Z"
+              "WhenOpened": "2026-09-16T10:05:42.737Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 49,
               "Title": "Announcements.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Announcements.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Announcements.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\InstructorDashboard\\Announcements.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Announcements.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\InstructorDashboard\\Announcements.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\InstructorDashboard\\Announcements.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:04:36.761Z"
+              "WhenOpened": "2026-09-16T10:04:36.761Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 50,
               "Title": "index.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Home\\index.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Home\\index.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\Home\\index.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Home\\index.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Home\\index.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\Home\\index.cshtml",
               "ViewState": "AgIAADQBAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T16:05:51.811Z"
+              "WhenOpened": "2026-09-15T16:05:51.811Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 51,
               "Title": "ViewStudent.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewStudent.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewStudent.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\ViewStudent.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewStudent.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewStudent.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\ViewStudent.cshtml",
               "ViewState": "AgIAAMYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:49:40.882Z"
+              "WhenOpened": "2026-09-16T10:49:40.882Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 52,
               "Title": "ViewInstructor.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewInstructor.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewInstructor.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\ViewInstructor.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewInstructor.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ViewInstructor.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\ViewInstructor.cshtml",
               "ViewState": "AgIAACMBAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:47:53.593Z"
+              "WhenOpened": "2026-09-16T10:47:53.593Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 53,
               "Title": "Students.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Students.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Students.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\Students.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Students.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Students.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\Students.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:48:44.093Z"
+              "WhenOpened": "2026-09-16T10:48:44.093Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 54,
               "Title": "ReviewCourse.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ReviewCourse.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ReviewCourse.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\ReviewCourse.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ReviewCourse.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ReviewCourse.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\ReviewCourse.cshtml",
               "ViewState": "AgIAAHQBAAAAAAAAAAAAAHkBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:43:57.784Z"
+              "WhenOpened": "2026-09-16T10:43:57.784Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 55,
               "Title": "RejectedCourses.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\RejectedCourses.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\RejectedCourses.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\RejectedCourses.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\RejectedCourses.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\RejectedCourses.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\RejectedCourses.cshtml",
               "ViewState": "AgIAAMsAAAAAAAAAAAAgwNYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:46:26.667Z"
+              "WhenOpened": "2026-09-16T10:46:26.667Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 56,
               "Title": "Instructors.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Instructors.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Instructors.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\Instructors.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Instructors.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Instructors.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\Instructors.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:47:04.212Z"
+              "WhenOpened": "2026-09-16T10:47:04.212Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 57,
               "Title": "index.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\index.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\index.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\index.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\index.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\index.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0BAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T17:23:06.941Z"
+              "WhenOpened": "2026-09-15T17:23:06.941Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 58,
               "Title": "Courses.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Courses.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Courses.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\Courses.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Courses.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\Courses.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\Courses.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:44:47.418Z"
+              "WhenOpened": "2026-09-16T10:44:47.418Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 59,
               "Title": "ApprovedCourses.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ApprovedCourses.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ApprovedCourses.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\ApprovedCourses.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ApprovedCourses.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\ApprovedCourses.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\ApprovedCourses.cshtml",
               "ViewState": "AgIAAMAAAAAAAAAAAAAAAMYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:45:40.636Z"
+              "WhenOpened": "2026-09-16T10:45:40.636Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 60,
               "Title": "CourseRequests.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\CourseRequests.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\CourseRequests.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\AdminDashboard\\CourseRequests.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\AdminDashboard\\CourseRequests.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\AdminDashboard\\CourseRequests.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\AdminDashboard\\CourseRequests.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T10:42:46.084Z"
+              "WhenOpened": "2026-09-16T10:42:46.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 61,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Account\\Login.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T16:15:45.924Z"
+              "WhenOpened": "2026-09-15T16:15:45.924Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 62,
               "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\_ViewStart.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T16:48:25.52Z"
+              "WhenOpened": "2026-09-15T16:48:25.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 63,
               "Title": "StudentDashboardViewModels.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\ViewModels\\StudentDashboardViewModels.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\ViewModels\\StudentDashboardViewModels.cs",
               "RelativeDocumentMoniker": "StudySphere\\Models\\ViewModels\\StudentDashboardViewModels.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\ViewModels\\StudentDashboardViewModels.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\ViewModels\\StudentDashboardViewModels.cs",
               "RelativeToolTip": "StudySphere\\Models\\ViewModels\\StudentDashboardViewModels.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T11:06:30.435Z"
+              "WhenOpened": "2026-09-16T11:06:30.435Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 64,
               "Title": "AdminDashboardViewModel.cs",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Dashboard\\AdminDashboardViewModel.cs",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Dashboard\\AdminDashboardViewModel.cs",
               "RelativeDocumentMoniker": "StudySphere\\Models\\Dashboard\\AdminDashboardViewModel.cs",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Models\\Dashboard\\AdminDashboardViewModel.cs",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Models\\Dashboard\\AdminDashboardViewModel.cs",
               "RelativeToolTip": "StudySphere\\Models\\Dashboard\\AdminDashboardViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T10:40:49.885Z"
+              "WhenOpened": "2026-09-16T10:40:49.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 65,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T16:48:29.948Z"
+              "WhenOpened": "2026-09-15T16:48:29.948Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 66,
               "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "StudySphere\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\B.Tech\\SEM5\\WAD\\StudySphere\\StudySphere\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "StudySphere\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T16:48:23.451Z"
+              "WhenOpened": "2026-09-15T16:48:23.451Z",
+              "EditorCaption": ""
             }
           ]
         }

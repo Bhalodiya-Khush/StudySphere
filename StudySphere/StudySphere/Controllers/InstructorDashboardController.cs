@@ -27,11 +27,8 @@ namespace StudySphere.Controllers
         {
             int instructorId = 1;
 
-            var instructor =
-                _repository.GetInstructor(instructorId);
-
-            var courses =
-                _repository.GetCourses(instructorId);
+            var instructor = _repository.GetInstructor(instructorId);
+            var courses = _repository.GetCourses(instructorId);
 
             var materialsCount = courses
                 .SelectMany(course =>
@@ -46,14 +43,14 @@ namespace StudySphere.Controllers
             var totalStudents =
                 _repository.GetTotalStudents(instructorId);
 
-
             ViewBag.Instructor = instructor;
             ViewBag.Courses = courses;
-
             ViewBag.TotalCourses = courses.Count;
             ViewBag.TotalStudents = totalStudents;
             ViewBag.TotalMaterials = materialsCount;
             ViewBag.UpcomingLectures = upcomingLectures;
+
+            ViewData["IsInstructor"] = true;
 
             return View();
         }
@@ -67,8 +64,9 @@ namespace StudySphere.Controllers
         {
             int instructorId = 1;
 
-            var courses =
-                _repository.GetCourses(instructorId);
+            var courses = _repository.GetCourses(instructorId);
+
+            ViewData["IsInstructor"] = true;
 
             ViewBag.Courses = courses;
 
@@ -158,6 +156,53 @@ namespace StudySphere.Controllers
             return View(course);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult StartLiveLecture(int courseId)
+        {
+            var course = _repository.GetCourseById(courseId);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            // Check whether a live lecture is already running
+            var existingLecture = _repository
+                .GetLiveLectures(courseId)
+                .FirstOrDefault(x => x.Status == "Live");
+
+            if (existingLecture != null)
+            {
+                return RedirectToAction(
+                    "Test",
+                    "LiveLecture",
+                    new { lectureId = existingLecture.LiveLectureId }
+                );
+            }
+
+            // Create a new live lecture
+            var lecture = new LiveLecture
+            {
+                CourseId = courseId,
+                InstructorId = 1,
+                Title = $"{course.Title} - Live Lecture",
+                Description = $"Live lecture for {course.Title}",
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddHours(2),
+                Status = "Live",
+                CreatedAt = DateTime.UtcNow
+            };
+
+            _repository.AddLiveLecture(lecture);
+
+            // lecture.LiveLectureId is now available
+            return RedirectToAction(
+                "Test",
+                "LiveLecture",
+                new { lectureId = lecture.LiveLectureId }
+            );
+        }
 
         // =========================================================
         // 5. EDIT COURSE
