@@ -1,5 +1,6 @@
 ﻿using StudySphere.Models;
 using StudySphere.Repositories.Interfaces;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace StudySphere.Repositories
 {
@@ -89,6 +90,42 @@ namespace StudySphere.Repositories
 
 
         // =========================================================
+        // STATIC LIVE LECTURE DATA
+        // =========================================================
+
+        private readonly List<LiveLecture> _liveLectures = new()
+        {
+            new LiveLecture
+            {
+                LiveLectureId = 1,
+                CourseId = 1,
+                InstructorId = 1,
+                Title = "C# Programming - Introduction",
+                Description = "Live session about C# programming fundamentals.",
+                StartTime = DateTime.Now.AddDays(1).AddHours(2),
+                EndTime = DateTime.Now.AddDays(1).AddHours(3),
+                MeetingUrl = "https://meet.example.com/csharp",
+                Status = "Scheduled",
+                CreatedAt = DateTime.UtcNow
+            },
+
+            new LiveLecture
+            {
+                LiveLectureId = 2,
+                CourseId = 2,
+                InstructorId = 1,
+                Title = "ASP.NET Core MVC - Controllers",
+                Description = "Live session about controllers and routing.",
+                StartTime = DateTime.Now.AddDays(1).AddHours(2),
+                EndTime = DateTime.Now.AddDays(1).AddHours(3),
+                MeetingUrl = "https://meet.example.com/aspnet",
+                Status = "Scheduled",
+                CreatedAt = DateTime.UtcNow
+            }
+        };
+
+
+        // =========================================================
         // GET ALL COURSES
         // =========================================================
 
@@ -132,6 +169,20 @@ namespace StudySphere.Repositories
         {
             return _courses
                 .FirstOrDefault(course => course.CourseId == id);
+        }
+
+
+        // =========================================================
+        // GET LIVE LECTURES
+        // =========================================================
+
+        public List<LiveLecture> GetLiveLectures(int courseId)
+        {
+            return _liveLectures
+                .Where(lecture =>
+                    lecture.CourseId == courseId)
+                .OrderBy(lecture => lecture.StartTime)
+                .ToList();
         }
 
 

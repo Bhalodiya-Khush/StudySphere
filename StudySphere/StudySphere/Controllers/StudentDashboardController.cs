@@ -94,6 +94,10 @@ namespace StudySphere.Controllers
         // COURSE DETAILS
         // =========================================================
 
+        // =========================================================
+        // COURSE DETAILS
+        // =========================================================
+
         public IActionResult CourseDetails(int id)
         {
             var course =
@@ -103,6 +107,12 @@ namespace StudySphere.Controllers
             {
                 return NotFound();
             }
+
+            // Get live lectures for this course
+            var liveLectures =
+                _repository.GetLiveLectures(id);
+
+            ViewBag.LiveLectures = liveLectures;
 
             return View(course);
         }

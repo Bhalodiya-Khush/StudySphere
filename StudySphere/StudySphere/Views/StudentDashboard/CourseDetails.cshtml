@@ -57,18 +57,157 @@
     </div>
 
 
-    <!-- Course Content -->
+    <!-- =========================================================
+     COURSE CONTENT
+     ========================================================= -->
 
     <div class="mt-5">
 
-        <h3 class="fw-bold">
+        <h3 class="fw-bold mb-3">
             Course Content
         </h3>
 
-        <p class="text-muted">
+        <p class="text-muted mb-4">
             Your course videos, PDF materials and live lectures
             will appear here.
         </p>
+
+
+        <!-- =====================================================
+         LIVE LECTURES
+         ===================================================== -->
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between
+                    align-items-center mb-3">
+
+                    <div>
+
+                        <h4 class="fw-bold mb-1">
+                            🎥 Live Lectures
+                        </h4>
+
+                        <p class="text-muted small mb-0">
+                            Join live sessions conducted by your instructor.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                @{
+                    var liveLectures =
+                        ViewBag.LiveLectures
+                        as List<StudySphere.Models.LiveLecture>;
+                }
+
+
+                @if (liveLectures != null && liveLectures.Any())
+                {
+                    foreach (var lecture in liveLectures)
+                    {
+                        <div class="border rounded p-3 mb-3">
+
+                            <div class="row align-items-center">
+
+                                <!-- Lecture Information -->
+
+                                <div class="col-md-8">
+
+                                    <h5 class="fw-bold mb-1">
+                                        @lecture.Title
+                                    </h5>
+
+                                    <p class="text-muted small mb-2">
+                                        @lecture.Description
+                                    </p>
+
+                                    <div class="small">
+
+                                        <strong>
+                                            Start:
+                                        </strong>
+
+                                        @lecture.StartTime.ToString(
+                                            "dd MMM yyyy, hh:mm tt"
+                                        )
+
+                                    </div>
+
+                                    <div class="small">
+
+                                        <strong>
+                                            End:
+                                        </strong>
+
+                                        @lecture.EndTime.ToString(
+                                            "dd MMM yyyy, hh:mm tt"
+                                        )
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Lecture Action -->
+
+                                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+
+                                    @if (lecture.Status == "Live")
+                                    {
+                                        <a asp-controller="LiveLecture"
+                                           asp-action="Test"
+                                           asp-route-lectureId="@lecture.LiveLectureId"
+                                           class="btn btn-success">
+
+                                            🎥 Join Live Lecture
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-secondary"
+                                                disabled>
+
+                                            Lecture Not Live
+
+                                        </button>
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center py-4">
+
+                        <div class="fs-1 mb-2">
+                            🎥
+                        </div>
+
+                        <h5 class="fw-bold">
+                            No Live Lectures
+                        </h5>
+
+                        <p class="text-muted mb-0">
+                            No live lectures are currently scheduled
+                            for this course.
+                        </p>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
 
     </div>
 

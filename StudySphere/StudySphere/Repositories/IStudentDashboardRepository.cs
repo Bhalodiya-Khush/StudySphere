@@ -12,6 +12,8 @@ namespace StudySphere.Repositories.Interfaces
 
         Course? GetCourseById(int id);
 
+        List<LiveLecture> GetLiveLectures(int courseId);
+
         List<Course> GetCoursesByCategory(string category);
     }
 }
