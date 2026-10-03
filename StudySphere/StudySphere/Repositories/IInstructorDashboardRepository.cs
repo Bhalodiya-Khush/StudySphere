@@ -10,6 +10,8 @@ namespace StudySphere.Repositories.Interfaces
 
         Instructor GetInstructor(int instructorId);
 
+        Instructor? GetInstructorByEmail(string email);
+
 
         // =========================================================
         // COURSES

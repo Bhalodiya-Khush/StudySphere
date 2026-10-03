@@ -26,6 +26,13 @@ namespace StudySphere.Data
         public DbSet<Material> Materials { get; set; } = null!;
         public DbSet<Announcement> Announcements { get; set; } = null!;
         public DbSet<LiveLecture> LiveLectures { get; set; } = null!;
+        public DbSet<Assignment> Assignments { get; set; } = null!;
+        public DbSet<AssignmentSubmission> AssignmentSubmissions { get; set; } = null!;
+        public DbSet<Quiz> Quizzes { get; set; } = null!;
+        public DbSet<QuizQuestion> QuizQuestions { get; set; } = null!;
+        public DbSet<QuizAttempt> QuizAttempts { get; set; } = null!;
+        public DbSet<LessonProgress> LessonProgress { get; set; } = null!;
+        public DbSet<CourseCertificate> CourseCertificates { get; set; } = null!;
 
 
         // =========================================================
@@ -168,6 +175,96 @@ namespace StudySphere.Data
                 .HasForeignKey(l => l.InstructorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Assignment>()
+                .HasOne(assignment => assignment.Course)
+                .WithMany(course => course.Assignments)
+                .HasForeignKey(assignment => assignment.CourseId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AssignmentSubmission>()
+                .HasOne(submission => submission.Assignment)
+                .WithMany(assignment => assignment.Submissions)
+                .HasForeignKey(submission => submission.AssignmentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AssignmentSubmission>()
+                .HasOne(submission => submission.Student)
+                .WithMany(student => student.AssignmentSubmissions)
+                .HasForeignKey(submission => submission.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AssignmentSubmission>()
+                .HasIndex(submission => new
+                {
+                    submission.AssignmentId,
+                    submission.StudentId
+                })
+                .IsUnique();
+
+            modelBuilder.Entity<Quiz>()
+                .HasOne(quiz => quiz.Course)
+                .WithMany(course => course.Quizzes)
+                .HasForeignKey(quiz => quiz.CourseId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<QuizQuestion>()
+                .HasOne(question => question.Quiz)
+                .WithMany(quiz => quiz.Questions)
+                .HasForeignKey(question => question.QuizId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<QuizAttempt>()
+                .HasOne(attempt => attempt.Quiz)
+                .WithMany(quiz => quiz.Attempts)
+                .HasForeignKey(attempt => attempt.QuizId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<QuizAttempt>()
+                .HasOne(attempt => attempt.Student)
+                .WithMany(student => student.QuizAttempts)
+                .HasForeignKey(attempt => attempt.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<LessonProgress>()
+                .HasOne(progress => progress.Student)
+                .WithMany(student => student.LessonProgress)
+                .HasForeignKey(progress => progress.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<LessonProgress>()
+                .HasOne(progress => progress.Material)
+                .WithMany(material => material.LessonProgress)
+                .HasForeignKey(progress => progress.MaterialId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<LessonProgress>()
+                .HasIndex(progress => new
+                {
+                    progress.StudentId,
+                    progress.MaterialId
+                })
+                .IsUnique();
+
+            modelBuilder.Entity<CourseCertificate>()
+                .HasOne(certificate => certificate.Student)
+                .WithMany(student => student.Certificates)
+                .HasForeignKey(certificate => certificate.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CourseCertificate>()
+                .HasOne(certificate => certificate.Course)
+                .WithMany(course => course.Certificates)
+                .HasForeignKey(certificate => certificate.CourseId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CourseCertificate>()
+                .HasIndex(certificate => new
+                {
+                    certificate.StudentId,
+                    certificate.CourseId
+                })
+                .IsUnique();
+
 
             // =====================================================
             // Student.LiveLectures
@@ -191,6 +288,10 @@ namespace StudySphere.Data
             modelBuilder.Entity<Enrollment>()
                 .Property(e => e.Progress)
                 .HasPrecision(5, 2);
+
+            modelBuilder.Entity<Enrollment>()
+                .HasIndex(e => new { e.StudentId, e.CourseId })
+                .IsUnique();
 
 
             // =====================================================

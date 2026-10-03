@@ -1,0 +1,47 @@
+@model StudySphere.Models.ViewModels.QuizAttemptViewModel
+@{
+    ViewData["Title"] = "Attempt quiz";
+}
+
+<div class="container py-4">
+    <h1 class="h3">@Model.Title</h1>
+    <p class="text-muted">@Model.Description</p>
+    <form asp-action="SubmitQuiz" method="post" class="card card-body shadow-sm">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+        <input asp-for="QuizId" type="hidden" />
+        @for (var index = 0; index < Model.Questions.Count; index++)
+        {
+            var question = Model.Questions[index];
+            <fieldset class="border-bottom mb-4 pb-3">
+                <legend class="h5">
+                    @(index + 1). @question.Prompt
+                    <span class="small text-muted">(@question.Marks marks)</span>
+                </legend>
+                @foreach (var option in new[]
+                {
+                    ("A", question.OptionA),
+                    ("B", question.OptionB),
+                    ("C", question.OptionC),
+                    ("D", question.OptionD)
+                })
+                {
+                    <div class="form-check">
+                        <input class="form-check-input"
+                               type="radio"
+                               id="q-@question.QuizQuestionId-@option.Item1"
+                               name="Answers[@question.QuizQuestionId]"
+                               value="@option.Item1"
+                               checked="@(Model.Answers.TryGetValue(question.QuizQuestionId, out var selected) && selected == option.Item1)"
+                               required />
+                        <label class="form-check-label"
+                               for="q-@question.QuizQuestionId-@option.Item1">
+                            @option.Item2
+                        </label>
+                    </div>
+                }
+            </fieldset>
+        }
+        <button type="submit" class="btn btn-primary align-self-start">Submit quiz</button>
+    </form>
+</div>

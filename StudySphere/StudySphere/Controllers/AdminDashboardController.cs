@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using StudySphere.Data;
+using StudySphere.Models;
 using StudySphere.Repositories.Interfaces;
 
 namespace StudySphere.Controllers
@@ -8,16 +11,21 @@ namespace StudySphere.Controllers
     public class AdminDashboardController : Controller
     {
         private readonly IAdminDashboardRepository _adminRepository;
-
+        private readonly StudySphereDbContext _dbContext;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         // =========================================================
         // CONSTRUCTOR
         // =========================================================
 
         public AdminDashboardController(
-            IAdminDashboardRepository adminRepository)
+            IAdminDashboardRepository adminRepository,
+            StudySphereDbContext dbContext,
+            UserManager<ApplicationUser> userManager)
         {
             _adminRepository = adminRepository;
+            _dbContext = dbContext;
+            _userManager = userManager;
         }
 
 
@@ -49,12 +57,34 @@ namespace StudySphere.Controllers
 
             ViewBag.TotalEnrollments =
                 enrollments.Count;
+            ViewBag.CompletedEnrollments =
+                enrollments.Count(enrollment => enrollment.Status == "Completed");
+            ViewBag.PendingInstructors =
+                instructors.Count(instructor => !instructor.User.IsActive);
 
             ViewBag.RecentPendingCourses =
                 _adminRepository
                     .GetPendingCourses()
                     .Take(5)
                     .ToList();
+            ViewBag.RecentRegistrations = students
+                .Select(student => new
+                {
+                    Name = student.User.FullName,
+                    Role = "Student",
+                    RegisteredAt = student.User.CreatedAt,
+                    Id = student.StudentId
+                })
+                .Concat(instructors.Select(instructor => new
+                {
+                    Name = instructor.User.FullName,
+                    Role = "Instructor",
+                    RegisteredAt = instructor.User.CreatedAt,
+                    Id = instructor.InstructorId
+                }))
+                .OrderByDescending(registration => registration.RegisteredAt)
+                .Take(8)
+                .ToList();
 
             return View();
         }
@@ -255,6 +285,115 @@ namespace StudySphere.Controllers
             ViewBag.Enrollments = enrollments;
 
             return View(student);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SetStudentActive(int id, bool isActive)
+        {
+            var student = _adminRepository.GetStudentById(id);
+            if (student is null)
+            {
+                return NotFound();
+            }
+
+            var failure = await UpdateAccountStatusAsync(
+                student.User.Email,
+                isActive,
+                () => _adminRepository.SetStudentActive(id, isActive));
+            if (failure is not null)
+            {
+                return failure;
+            }
+
+            return RedirectToAction(nameof(Students));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SetInstructorActive(int id, bool isActive)
+        {
+            var instructor = _adminRepository.GetInstructorById(id);
+            if (instructor is null)
+            {
+                return NotFound();
+            }
+
+            var failure = await UpdateAccountStatusAsync(
+                instructor.User.Email,
+                isActive,
+                () => _adminRepository.SetInstructorActive(id, isActive));
+            if (failure is not null)
+            {
+                return failure;
+            }
+
+            return RedirectToAction(nameof(Instructors));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SetCourseActive(int id, bool isActive)
+        {
+            if (!_adminRepository.SetCourseActive(id, isActive))
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction(nameof(Courses));
+        }
+
+        private async Task<IActionResult?> UpdateAccountStatusAsync(
+            string email,
+            bool isActive,
+            Func<bool> updateProfile)
+        {
+            await using var transaction =
+                await _dbContext.Database.BeginTransactionAsync();
+
+            if (!updateProfile())
+            {
+                await transaction.RollbackAsync();
+                return NotFound();
+            }
+
+            var identityUser = await _userManager.FindByEmailAsync(email);
+            if (identityUser is not null)
+            {
+                var lockoutEnabledResult =
+                    await _userManager.SetLockoutEnabledAsync(identityUser, true);
+                if (!lockoutEnabledResult.Succeeded)
+                {
+                    await transaction.RollbackAsync();
+                    return Problem(
+                        "The account lockout status could not be updated.",
+                        statusCode: StatusCodes.Status500InternalServerError);
+                }
+
+                var lockoutResult = await _userManager.SetLockoutEndDateAsync(
+                    identityUser,
+                    isActive ? null : DateTimeOffset.MaxValue);
+                if (!lockoutResult.Succeeded)
+                {
+                    await transaction.RollbackAsync();
+                    return Problem(
+                        "The account status could not be updated in the authentication store.",
+                        statusCode: StatusCodes.Status500InternalServerError);
+                }
+
+                var stampResult =
+                    await _userManager.UpdateSecurityStampAsync(identityUser);
+                if (!stampResult.Succeeded)
+                {
+                    await transaction.RollbackAsync();
+                    return Problem(
+                        "The account sessions could not be revoked.",
+                        statusCode: StatusCodes.Status500InternalServerError);
+                }
+            }
+
+            await transaction.CommitAsync();
+            return null;
         }
     }
 }

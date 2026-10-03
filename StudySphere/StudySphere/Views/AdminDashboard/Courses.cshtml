@@ -207,6 +207,12 @@ ViewData["Title"] = "All Courses";
                                             Rejected
                                         </span>
                                     }
+                                    else if (course.Status == "Deactivated")
+                                    {
+                                        <span class="badge bg-secondary">
+                                            Deactivated
+                                        </span>
+                                    }
                                     else
                                     {
                                         <span class="badge bg-secondary">
@@ -226,6 +232,21 @@ ViewData["Title"] = "All Courses";
                                        class="btn btn-outline-primary btn-sm">
                                         View
                                     </a>
+                                    @if (course.Status is "Approved" or "Deactivated")
+                                    {
+                                        <form asp-controller="AdminDashboard"
+                                              asp-action="SetCourseActive"
+                                              method="post"
+                                              class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@course.CourseId" />
+                                            <input type="hidden" name="isActive" value="@(course.Status == "Deactivated")" />
+                                            <button type="submit"
+                                                    class="btn btn-sm @(course.Status == "Approved" ? "btn-outline-danger" : "btn-outline-success")">
+                                                @(course.Status == "Approved" ? "Deactivate" : "Reactivate")
+                                            </button>
+                                        </form>
+                                    }
 
                                 </td>
 

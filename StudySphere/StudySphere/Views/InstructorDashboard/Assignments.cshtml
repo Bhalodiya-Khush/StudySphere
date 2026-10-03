@@ -1,0 +1,43 @@
+@model List<StudySphere.Models.Assignment>
+@{
+    var course = ViewBag.Course as StudySphere.Models.Course;
+    ViewData["Title"] = "Assignments";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <a asp-action="CourseDetails" asp-route-id="@course?.CourseId"
+               class="text-decoration-none">Back to course</a>
+            <h1 class="h3 mt-2 mb-1">Assignments</h1>
+            <p class="text-muted mb-0">@course?.Title</p>
+        </div>
+        <a asp-action="CreateAssignment" asp-route-courseId="@course?.CourseId"
+           class="btn btn-primary">Create assignment</a>
+    </div>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">No assignments have been created for this course.</div>
+    }
+    else
+    {
+        <div class="list-group">
+            @foreach (var assignment in Model)
+            {
+                <div class="list-group-item d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <h2 class="h5 mb-1">@assignment.Title</h2>
+                        <div class="small text-muted">
+                            Due @assignment.DueAt.ToLocalTime().ToString("dd MMM yyyy, hh:mm tt")
+                            · @assignment.MaxMarks marks
+                        </div>
+                    </div>
+                    <a asp-action="AssignmentSubmissions"
+                       asp-route-assignmentId="@assignment.AssignmentId"
+                       class="btn btn-outline-primary">View submissions</a>
+                </div>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,62 @@
+@model StudySphere.Models.QuizQuestion
+@{
+    var quiz = ViewBag.Quiz as StudySphere.Models.Quiz;
+    ViewData["Title"] = "Add quiz question";
+}
+
+<div class="container py-4">
+    <a asp-action="Quizzes" asp-route-courseId="@quiz?.CourseId"
+       class="text-decoration-none">Back to quizzes</a>
+    <h1 class="h3 mt-3">Add question</h1>
+    <p class="text-muted">@quiz?.Title</p>
+
+    <form asp-action="AddQuizQuestion" method="post" class="card card-body shadow-sm">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+        <input asp-for="QuizId" type="hidden" value="@quiz?.QuizId" />
+        <div class="mb-3">
+            <label asp-for="Prompt" class="form-label">Question</label>
+            <textarea asp-for="Prompt" rows="3" class="form-control"></textarea>
+            <span asp-validation-for="Prompt" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="OptionA" class="form-label">Option A</label>
+                <input asp-for="OptionA" class="form-control" />
+                <span asp-validation-for="OptionA" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="OptionB" class="form-label">Option B</label>
+                <input asp-for="OptionB" class="form-control" />
+                <span asp-validation-for="OptionB" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="OptionC" class="form-label">Option C</label>
+                <input asp-for="OptionC" class="form-control" />
+                <span asp-validation-for="OptionC" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="OptionD" class="form-label">Option D</label>
+                <input asp-for="OptionD" class="form-control" />
+                <span asp-validation-for="OptionD" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="CorrectOption" class="form-label">Correct option</label>
+                <select asp-for="CorrectOption" class="form-select">
+                    <option value="A">Option A</option>
+                    <option value="B">Option B</option>
+                    <option value="C">Option C</option>
+                    <option value="D">Option D</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Marks" class="form-label">Marks</label>
+                <input asp-for="Marks" type="number" min="0.01" step="0.01" class="form-control" />
+                <span asp-validation-for="Marks" class="text-danger"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary align-self-start">Add question</button>
+    </form>
+</div>

@@ -36,9 +36,11 @@
 
             <form asp-controller="InstructorDashboard"
                   asp-action="CreateMaterial"
-                  method="post">
+                  method="post"
+                  enctype="multipart/form-data">
 
                 @Html.AntiForgeryToken()
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                 <input type="hidden"
                        asp-for="CourseId"
@@ -108,6 +110,9 @@
                             PDF
                         </option>
 
+                        <option value="Document">
+                            Document
+                        </option>
                     </select>
 
                     <span asp-validation-for="MaterialType"
@@ -117,25 +122,28 @@
                 </div>
 
 
-                <!-- File URL -->
+                <!-- File -->
                 <div class="mb-3">
 
-                    <label asp-for="FileUrl"
+                    <label for="upload"
                            class="form-label fw-semibold">
-                        File URL
+                        Upload file
                     </label>
 
-                    <input asp-for="FileUrl"
+                    <input id="upload"
+                           name="upload"
+                           type="file"
                            class="form-control"
-                           placeholder="/materials/course/video.mp4" />
+                           accept=".mp4,.webm,.mov,.pdf,.doc,.docx,.ppt,.pptx,.txt"
+                           required />
 
                     <div class="form-text">
-                        For now, enter the file path or URL.
-                        Actual file upload will be added later.
+                        Videos: MP4, WebM or MOV. Documents: PDF, Word,
+                        PowerPoint or text files. Maximum size: 500 MB.
                     </div>
 
-                    <span asp-validation-for="FileUrl"
-                          class="text-danger">
+                    <span class="text-danger"
+                          data-valmsg-for="upload">
                     </span>
 
                 </div>

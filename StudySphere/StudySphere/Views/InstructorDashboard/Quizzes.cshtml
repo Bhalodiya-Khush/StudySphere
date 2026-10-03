@@ -1,0 +1,67 @@
+@model List<StudySphere.Models.Quiz>
+@{
+    var course = ViewBag.Course as StudySphere.Models.Course;
+    ViewData["Title"] = "Quizzes";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <a asp-action="CourseDetails" asp-route-id="@course?.CourseId"
+               class="text-decoration-none">Back to course</a>
+            <h1 class="h3 mt-2 mb-1">Quizzes</h1>
+            <p class="text-muted mb-0">@course?.Title</p>
+        </div>
+        <a asp-action="CreateQuiz" asp-route-courseId="@course?.CourseId"
+           class="btn btn-primary">Create quiz</a>
+    </div>
+
+    @if (TempData["QuizMessage"] is string message)
+    {
+        <div class="alert alert-success">@message</div>
+    }
+    @if (TempData["QuizError"] is string error)
+    {
+        <div class="alert alert-danger">@error</div>
+    }
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">No quizzes have been created.</div>
+    }
+    else
+    {
+        @foreach (var quiz in Model)
+        {
+            <div class="card border-0 shadow-sm mb-3">
+                <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between gap-3">
+                        <div>
+                            <h2 class="h5 mb-1">@quiz.Title</h2>
+                            <p class="text-muted mb-2">@quiz.Description</p>
+                            <span class="badge @(quiz.IsPublished ? "bg-success" : "bg-secondary")">
+                                @(quiz.IsPublished ? "Published" : "Draft")
+                            </span>
+                            <span class="small text-muted ms-2">
+                                @quiz.Questions.Count questions · @quiz.Attempts.Count attempts
+                            </span>
+                        </div>
+                        <div class="d-flex gap-2 align-items-start">
+                            <a asp-action="AddQuizQuestion" asp-route-quizId="@quiz.QuizId"
+                               class="btn btn-outline-primary">Add question</a>
+                            <a asp-action="QuizAttempts" asp-route-quizId="@quiz.QuizId"
+                               class="btn btn-outline-secondary">View results</a>
+                            @if (!quiz.IsPublished)
+                            {
+                                <form asp-action="PublishQuiz" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="quizId" value="@quiz.QuizId" />
+                                    <button type="submit" class="btn btn-success">Publish</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

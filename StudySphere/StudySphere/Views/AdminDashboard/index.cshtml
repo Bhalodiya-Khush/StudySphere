@@ -181,6 +181,86 @@
     </div>
 
 
+    <!-- Completion and Approval Overview -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted">Completed Enrollments</h6>
+                        <h3 class="fw-bold mb-0">@ViewBag.CompletedEnrollments</h3>
+                    </div>
+                    <span class="badge bg-success">Course completions</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted">Instructor Approvals</h6>
+                        <h3 class="fw-bold mb-0">@ViewBag.PendingInstructors</h3>
+                    </div>
+                    <a asp-action="Instructors" class="btn btn-outline-primary btn-sm">
+                        Review instructors
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white py-3">
+            <h5 class="fw-bold mb-0">Recent registrations</h5>
+        </div>
+        <div class="card-body p-0">
+            @if (ViewBag.RecentRegistrations is IEnumerable<dynamic> registrations &&
+                 registrations.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Registered</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var registration in registrations)
+                            {
+                                <tr>
+                                    <td>@registration.Name</td>
+                                    <td>@registration.Role</td>
+                                    <td>@registration.RegisteredAt.ToLocalTime().ToString("dd MMM yyyy")</td>
+                                    <td class="text-end">
+                                        @if (registration.Role == "Student")
+                                        {
+                                            <a asp-action="ViewStudent"
+                                               asp-route-id="@registration.Id"
+                                               class="btn btn-sm btn-outline-primary">View</a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="ViewInstructor"
+                                               asp-route-id="@registration.Id"
+                                               class="btn btn-sm btn-outline-primary">View</a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <p class="text-muted text-center py-4 mb-0">No registrations yet.</p>
+            }
+        </div>
+    </div>
+
     <!-- Pending Course Requests -->
     <div class="card border-0 shadow-sm">
 

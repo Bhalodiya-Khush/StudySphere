@@ -78,6 +78,13 @@
 
         <div class="form-wrapper">
 
+            @if (TempData["AuthenticationMessage"] is string authenticationMessage)
+            {
+                <div class="alert alert-info" role="status">
+                    @authenticationMessage
+                </div>
+            }
+
             <!-- Mobile Logo -->
             <div class="mobile-logo">
                 <div class="logo-icon">

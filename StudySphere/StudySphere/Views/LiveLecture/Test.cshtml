@@ -42,6 +42,12 @@
                 Leave Meeting
             </button>
 
+            <button id="screenShareButton"
+                    class="btn btn-outline-primary"
+                    disabled>
+                Share Screen
+            </button>
+
             <p id="status"
                class="text-muted mt-3 mb-0">
                 Not connected
@@ -129,6 +135,9 @@
     const leaveButton =
         document.getElementById("leaveButton");
 
+    const screenShareButton =
+        document.getElementById("screenShareButton");
+
     const status =
         document.getElementById("status");
 
@@ -175,6 +184,7 @@
     // =========================================================
 
     let localStream = null;
+    let screenStream = null;
 
 
     // =========================================================
@@ -235,6 +245,23 @@
                         localStream
                     );
                 });
+
+            if (screenStream)
+            {
+                const videoSender =
+                    peerConnection.getSenders()
+                        .find(sender => sender.track?.kind === "video");
+
+                if (videoSender)
+                {
+                    videoSender
+                        .replaceTrack(screenStream.getVideoTracks()[0])
+                        .catch(error => console.error(
+                            "Could not replace the video track:",
+                            error
+                        ));
+                }
+            }
         }
 
 
@@ -280,6 +307,42 @@
                     remoteVideos.appendChild(
                         video
                     );
+                }
+
+                async function replaceVideoTrack(track)
+                {
+                    const replacements =
+                        Object.values(peerConnections).map(peerConnection =>
+                        {
+                            const sender =
+                                peerConnection.getSenders()
+                                    .find(item => item.track?.kind === "video");
+
+                            return sender ? sender.replaceTrack(track) : Promise.resolve();
+                        });
+
+                    await Promise.all(replacements);
+                }
+
+                async function stopScreenSharing(restoreCamera = true)
+                {
+                    if (!screenStream)
+                    {
+                        return;
+                    }
+
+                    const stoppedStream = screenStream;
+                    screenStream = null;
+                    stoppedStream.getTracks().forEach(track => track.stop());
+
+                    const cameraTrack = localStream?.getVideoTracks()[0];
+                    if (restoreCamera && cameraTrack)
+                    {
+                        await replaceVideoTrack(cameraTrack);
+                        localVideo.srcObject = localStream;
+                    }
+
+                    screenShareButton.innerText = "Share Screen";
                 }
 
 
@@ -656,6 +719,7 @@
                     lectureId
                 );
 
+                screenShareButton.disabled = false;
 
                 console.log(
                     "Joined lecture:",
@@ -684,6 +748,46 @@
 
                 leaveButton.disabled =
                     true;
+            }
+        };
+
+    screenShareButton.onclick =
+        async function()
+        {
+            try
+            {
+                if (screenStream)
+                {
+                    await stopScreenSharing();
+                    return;
+                }
+
+                screenStream =
+                    await navigator.mediaDevices.getDisplayMedia({
+                        video: true,
+                        audio: false
+                    });
+
+                const screenTrack =
+                    screenStream.getVideoTracks()[0];
+                if (!screenTrack)
+                {
+                    await stopScreenSharing();
+                    return;
+                }
+
+                await replaceVideoTrack(screenTrack);
+                localVideo.srcObject = new MediaStream([
+                    screenTrack,
+                    ...localStream.getAudioTracks()
+                ]);
+                screenTrack.onended = stopScreenSharing;
+                screenShareButton.innerText = "Stop Sharing";
+            }
+            catch(error)
+            {
+                status.innerText =
+                    "Screen sharing error: " + error.message;
             }
         };
 
@@ -719,6 +823,7 @@
 
                 if (localStream)
                 {
+                    await stopScreenSharing(false);
                     localStream
                         .getTracks()
                         .forEach(track =>
@@ -793,6 +898,7 @@
                 joinButton.disabled =
                     false;
 
+                screenShareButton.disabled = true;
                 leaveButton.disabled =
                     true;
             }

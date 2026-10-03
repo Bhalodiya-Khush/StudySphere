@@ -28,5 +28,8 @@ namespace StudySphere.Repositories.Interfaces
         // Course actions
         bool ApproveCourse(int id);
         bool RejectCourse(int id);
+        bool SetCourseActive(int id, bool isActive);
+        bool SetStudentActive(int id, bool isActive);
+        bool SetInstructorActive(int id, bool isActive);
     }
 }

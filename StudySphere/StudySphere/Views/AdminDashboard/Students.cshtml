@@ -108,8 +108,8 @@
 
                                     <!-- Status -->
                                     <td>
-                                        <span class="badge bg-success">
-                                            Active
+                                        <span class="badge @(student.User.IsActive ? "bg-success" : "bg-secondary")">
+                                            @(student.User.IsActive ? "Active" : "Inactive")
                                         </span>
                                     </td>
 
@@ -123,6 +123,18 @@
                                            class="btn btn-outline-primary btn-sm">
                                             View
                                         </a>
+                                        <form asp-controller="AdminDashboard"
+                                              asp-action="SetStudentActive"
+                                              method="post"
+                                              class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@student.StudentId" />
+                                            <input type="hidden" name="isActive" value="@(!student.User.IsActive)" />
+                                            <button type="submit"
+                                                    class="btn btn-sm @(student.User.IsActive ? "btn-outline-danger" : "btn-outline-success")">
+                                                @(student.User.IsActive ? "Deactivate" : "Activate")
+                                            </button>
+                                        </form>
 
                                     </td>
 

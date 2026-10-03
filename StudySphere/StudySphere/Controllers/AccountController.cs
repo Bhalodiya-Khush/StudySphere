@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StudySphere.Data;
 using StudySphere.Models;
 using StudySphere.ViewModels.Authentication;
 
@@ -13,13 +15,16 @@ namespace StudySphere.Controllers
 
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly StudySphereDbContext _dbContext;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            StudySphereDbContext dbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _dbContext = dbContext;
         }
 
         [AllowAnonymous]
@@ -56,6 +61,35 @@ namespace StudySphere.Controllers
 
             if (result.Succeeded)
             {
+                var signedInUser = await _userManager.FindByEmailAsync(model.Email);
+                var isAdministrator = signedInUser is not null &&
+                    await _userManager.IsInRoleAsync(signedInUser, "Admin");
+                var isActive = isAdministrator;
+                if (!isActive && signedInUser is not null)
+                {
+                    var identityRoles =
+                        await _userManager.GetRolesAsync(signedInUser);
+                    var normalizedEmail = (signedInUser.Email ?? string.Empty)
+                        .Trim()
+                        .ToLowerInvariant();
+                    var profile = await _dbContext.Users
+                        .AsNoTracking()
+                        .SingleOrDefaultAsync(user =>
+                            user.Email.ToLower() == normalizedEmail);
+                    isActive = profile?.IsActive == true &&
+                        identityRoles.Contains(profile.Role);
+                }
+
+                if (!isActive)
+                {
+                    await _signInManager.SignOutAsync();
+                    ModelState.AddModelError(
+                        string.Empty,
+                        "This account is inactive, awaiting instructor approval, or has no active profile. Contact an administrator.");
+                    ViewBag.ReturnUrl = returnUrl;
+                    return View("Login", new AuthViewModel { Login = model });
+                }
+
                 if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                 {
                     return Redirect(returnUrl);
@@ -87,23 +121,53 @@ namespace StudySphere.Controllers
                     "Choose a valid account type.");
             }
 
+            if (model.Role == InstructorRole)
+            {
+                if (string.IsNullOrWhiteSpace(model.ProfessionalTitle))
+                {
+                    ModelState.AddModelError(
+                        nameof(model.ProfessionalTitle),
+                        "Professional title is required for instructors.");
+                }
+
+                if (string.IsNullOrWhiteSpace(model.AreaOfExpertise))
+                {
+                    ModelState.AddModelError(
+                        nameof(model.AreaOfExpertise),
+                        "Area of expertise is required for instructors.");
+                }
+
+                if (string.IsNullOrWhiteSpace(model.Qualification))
+                {
+                    ModelState.AddModelError(
+                        nameof(model.Qualification),
+                        "Qualification is required for instructors.");
+                }
+            }
+
             if (!ModelState.IsValid)
             {
                 ViewBag.ActiveForm = "signUpForm";
                 return View("Login", new AuthViewModel { Register = model });
             }
 
+            var email = model.Email.Trim();
+            var normalizedEmail = email.ToLowerInvariant();
             var user = new ApplicationUser
             {
-                UserName = model.Email,
-                Email = model.Email,
+                UserName = normalizedEmail,
+                Email = normalizedEmail,
                 FullName = model.FullName.Trim(),
                 PhoneNumber = model.PhoneNumber
             };
 
+            await using var transaction =
+                await _dbContext.Database.BeginTransactionAsync();
+
             var createResult = await _userManager.CreateAsync(user, model.Password);
             if (!createResult.Succeeded)
             {
+                await transaction.RollbackAsync();
                 AddIdentityErrors(createResult);
                 ViewBag.ActiveForm = "signUpForm";
                 return View("Login", new AuthViewModel { Register = model });
@@ -112,15 +176,47 @@ namespace StudySphere.Controllers
             var roleResult = await _userManager.AddToRoleAsync(user, model.Role);
             if (!roleResult.Succeeded)
             {
-                var cleanupResult = await _userManager.DeleteAsync(user);
+                await transaction.RollbackAsync();
                 AddIdentityErrors(roleResult);
-                if (!cleanupResult.Succeeded)
-                {
-                    AddIdentityErrors(cleanupResult);
-                }
-
                 ViewBag.ActiveForm = "signUpForm";
                 return View("Login", new AuthViewModel { Register = model });
+            }
+
+            var profileUser = new User
+            {
+                FullName = user.FullName,
+                Email = normalizedEmail,
+                PasswordHash = user.PasswordHash!,
+                Phone = user.PhoneNumber,
+                Role = model.Role,
+                CreatedAt = DateTime.UtcNow,
+                IsActive = model.Role == StudentRole
+            };
+            _dbContext.Users.Add(profileUser);
+
+            if (model.Role == StudentRole)
+            {
+                _dbContext.Students.Add(new Student { User = profileUser });
+            }
+            else
+            {
+                _dbContext.Instructors.Add(new Instructor
+                {
+                    User = profileUser,
+                    ProfessionalTitle = model.ProfessionalTitle?.Trim(),
+                    AreaOfExpertise = model.AreaOfExpertise?.Trim(),
+                    Qualification = model.Qualification?.Trim()
+                });
+            }
+
+            await _dbContext.SaveChangesAsync();
+            await transaction.CommitAsync();
+
+            if (model.Role == InstructorRole)
+            {
+                TempData["AuthenticationMessage"] =
+                    "Your instructor registration was submitted for administrator approval. You can sign in after your account is activated.";
+                return RedirectToAction(nameof(Login));
             }
 
             await _signInManager.SignInAsync(user, isPersistent: false);

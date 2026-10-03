@@ -1,0 +1,49 @@
+@model List<StudySphere.Models.Quiz>
+@{
+    var course = ViewBag.Course as StudySphere.Models.Course;
+    ViewData["Title"] = "Quizzes";
+}
+
+<div class="container py-4">
+    <a asp-action="CourseDetails" asp-route-id="@course?.CourseId"
+       class="text-decoration-none">Back to course</a>
+    <h1 class="h3 mt-3">Quizzes</h1>
+    <p class="text-muted">@course?.Title</p>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">No quizzes are currently available.</div>
+    }
+    else
+    {
+        @foreach (var quiz in Model)
+        {
+            <div class="card border-0 shadow-sm mb-3">
+                <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <div>
+                        <h2 class="h5 mb-1">@quiz.Title</h2>
+                        <p class="text-muted mb-1">@quiz.Description</p>
+                        <span class="small text-muted">
+                            @quiz.Attempts.Count / @quiz.MaxAttempts attempts used
+                        </span>
+                        @if (quiz.DueAt.HasValue)
+                        {
+                            <span class="small text-muted ms-2">
+                                Closes @quiz.DueAt.Value.ToLocalTime().ToString("dd MMM yyyy, hh:mm tt")
+                            </span>
+                        }
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a asp-action="QuizResultHistory" asp-route-quizId="@quiz.QuizId"
+                           class="btn btn-outline-secondary">History</a>
+                        @if (quiz.Attempts.Count < quiz.MaxAttempts)
+                        {
+                            <a asp-action="AttemptQuiz" asp-route-quizId="@quiz.QuizId"
+                               class="btn btn-primary">Attempt quiz</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

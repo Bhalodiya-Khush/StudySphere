@@ -8,11 +8,14 @@ namespace StudySphere.Controllers
     public class LiveLectureController : Controller
     {
         private readonly IInstructorDashboardRepository _repository;
+        private readonly IStudentDashboardRepository _studentRepository;
 
         public LiveLectureController(
-            IInstructorDashboardRepository repository)
+            IInstructorDashboardRepository repository,
+            IStudentDashboardRepository studentRepository)
         {
             _repository = repository;
+            _studentRepository = studentRepository;
         }
 
         public IActionResult Test(int lectureId)
@@ -23,6 +26,38 @@ namespace StudySphere.Controllers
             if (lecture == null)
             {
                 return NotFound();
+            }
+
+            if (User.IsInRole("Student"))
+            {
+                var email = User.Identity?.Name;
+                var student = string.IsNullOrWhiteSpace(email)
+                    ? null
+                    : _studentRepository.GetStudentByEmail(email);
+                if (student is null ||
+                    !_studentRepository.IsEnrolled(
+                        student.StudentId,
+                        lecture.CourseId))
+                {
+                    return Forbid();
+                }
+
+                if (lecture.Status != "Live")
+                {
+                    return NotFound();
+                }
+            }
+            else
+            {
+                var email = User.Identity?.Name;
+                var instructor = string.IsNullOrWhiteSpace(email)
+                    ? null
+                    : _repository.GetInstructorByEmail(email);
+                if (instructor is null ||
+                    instructor.InstructorId != lecture.InstructorId)
+                {
+                    return Forbid();
+                }
             }
 
             ViewBag.LectureId =

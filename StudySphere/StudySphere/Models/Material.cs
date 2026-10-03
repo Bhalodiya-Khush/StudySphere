@@ -38,5 +38,8 @@ namespace StudySphere.Models
         // Navigation property
         [ForeignKey(nameof(CourseId))]
         public Course Course { get; set; } = null!;
+
+        public ICollection<LessonProgress> LessonProgress { get; set; } =
+            new List<LessonProgress>();
     }
 }

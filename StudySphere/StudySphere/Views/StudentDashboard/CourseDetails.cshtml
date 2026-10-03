@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = Model.Title;
+    var completedMaterialIds =
+        ViewBag.CompletedMaterialIds as HashSet<int> ?? new HashSet<int>();
 }
 
 <div class="container py-4">
@@ -35,14 +37,67 @@
                 @Model.Description
             </p>
 
+            <p class="text-muted">
+                Instructor: @(Model.Instructor?.User?.FullName ?? "StudySphere Instructor")
+            </p>
+
+            @if (TempData["EnrollmentMessage"] is string enrollmentMessage)
+            {
+                <div class="alert alert-info" role="status">@enrollmentMessage</div>
+            }
+            @if (TempData["ProgressMessage"] is string progressMessage)
+            {
+                <div class="alert alert-success" role="status">@progressMessage</div>
+            }
+
             <hr>
 
             <div class="d-flex gap-2">
-
-                <a href="#"
-                   class="btn btn-success">
-                    Start Learning
-                </a>
+                @if (ViewBag.IsEnrolled == true)
+                {
+                    <a asp-controller="StudentDashboard"
+                       asp-action="MyCourses"
+                       class="btn btn-success">
+                        Continue learning
+                    </a>
+                    <a asp-controller="StudentDashboard"
+                       asp-action="Assignments"
+                       asp-route-courseId="@Model.CourseId"
+                       class="btn btn-outline-primary">
+                        View assignments
+                    </a>
+                    <a asp-controller="StudentDashboard"
+                       asp-action="Quizzes"
+                       asp-route-courseId="@Model.CourseId"
+                       class="btn btn-outline-primary">
+                        View quizzes
+                    </a>
+                }
+                else if (User.IsInRole("Student"))
+                {
+                    <form asp-controller="StudentDashboard"
+                          asp-action="Enroll"
+                          method="post">
+                        <input type="hidden" name="courseId" value="@Model.CourseId" />
+                        <button type="submit" class="btn btn-success">Enroll in course</button>
+                    </form>
+                }
+                else if (User.Identity?.IsAuthenticated != true)
+                {
+                    <a asp-controller="Account"
+                       asp-action="Login"
+                       class="btn btn-success">
+                        Sign in to enroll
+                    </a>
+                }
+                @if (ViewBag.CertificateAvailable == true)
+                {
+                    <a asp-action="Certificate"
+                       asp-route-courseId="@Model.CourseId"
+                       class="btn btn-outline-success">
+                        View certificate
+                    </a>
+                }
 
                 <a asp-controller="StudentDashboard"
                    asp-action="Index"
@@ -68,9 +123,74 @@
         </h3>
 
         <p class="text-muted mb-4">
-            Your course videos, PDF materials and live lectures
-            will appear here.
+            @if (ViewBag.IsEnrolled == true)
+            {
+                <span>Your course videos, documents and live lectures appear below.</span>
+            }
+            else
+            {
+                <span>Enroll in this course to unlock learning materials and live lectures.</span>
+            }
         </p>
+
+        @if (ViewBag.IsEnrolled == true)
+        {
+            <div class="mb-4">
+                <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-semibold">Course progress</span>
+                    <span>@ViewBag.CourseProgress%</span>
+                </div>
+                <div class="progress" role="progressbar"
+                     aria-valuenow="@ViewBag.CourseProgress" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: @ViewBag.CourseProgress%"></div>
+                </div>
+            </div>
+
+            var materials = ViewBag.Materials as List<StudySphere.Models.Material>;
+            if (materials is { Count: > 0 })
+            {
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h4 class="fw-bold mb-3">Learning materials</h4>
+                        @foreach (var material in materials)
+                        {
+                            <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+                                <div>
+                                    <h5 class="mb-1">@material.Title</h5>
+                                    <p class="text-muted small mb-0">@material.Description</p>
+                                </div>
+                                <a asp-controller="StudentDashboard"
+                                   asp-action="DownloadMaterial"
+                                   asp-route-id="@material.MaterialId"
+                                   class="btn btn-outline-primary">
+                                    Download
+                                </a>
+                                @if (completedMaterialIds.Contains(material.MaterialId))
+                                {
+                                    <span class="badge bg-success ms-2">Completed</span>
+                                }
+                                else
+                                {
+                                    <form asp-controller="StudentDashboard"
+                                          asp-action="CompleteLesson"
+                                          method="post"
+                                          class="d-inline ms-2">
+                                        <input type="hidden" name="materialId" value="@material.MaterialId" />
+                                        <button type="submit" class="btn btn-sm btn-outline-success">
+                                            Mark complete
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-secondary">No learning materials have been published yet.</div>
+            }
+        }
 
 
         <!-- =====================================================

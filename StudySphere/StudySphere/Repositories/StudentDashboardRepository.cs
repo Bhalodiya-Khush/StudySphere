@@ -1,203 +1,226 @@
-﻿using StudySphere.Models;
+using Microsoft.EntityFrameworkCore;
+using StudySphere.Data;
+using StudySphere.Models;
 using StudySphere.Repositories.Interfaces;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace StudySphere.Repositories
 {
     public class StudentDashboardRepository : IStudentDashboardRepository
     {
-        // =========================================================
-        // STATIC COURSE DATA
-        // =========================================================
+        private readonly StudySphereDbContext _dbContext;
 
-        private readonly List<Course> _courses = new()
+        public StudentDashboardRepository(StudySphereDbContext dbContext)
         {
-            new Course
-            {
-                CourseId = 1,
-                Title = "C# Programming",
-                Description = "Learn C# programming from basics to advanced concepts.",
-                ThumbnailUrl = "/images/courses/csharp.jpg",
-                Category = "Development"
-            },
-
-            new Course
-            {
-                CourseId = 2,
-                Title = "ASP.NET Core MVC",
-                Description = "Build modern web applications using ASP.NET Core MVC.",
-                ThumbnailUrl = "/images/courses/aspnet.jpg",
-                Category = "Development"
-            },
-
-            new Course
-            {
-                CourseId = 3,
-                Title = "Python for Beginners",
-                Description = "Learn Python programming with practical examples.",
-                ThumbnailUrl = "/images/courses/python.jpg",
-                Category = "Development"
-            },
-
-            new Course
-            {
-                CourseId = 4,
-                Title = "Artificial Intelligence",
-                Description = "Understand the fundamentals of Artificial Intelligence.",
-                ThumbnailUrl = "/images/courses/ai.jpg",
-                Category = "AI"
-            },
-
-            new Course
-            {
-                CourseId = 5,
-                Title = "Machine Learning",
-                Description = "Learn machine learning algorithms and applications.",
-                ThumbnailUrl = "/images/courses/ml.jpg",
-                Category = "AI"
-            },
-
-            new Course
-            {
-                CourseId = 6,
-                Title = "Project Management",
-                Description = "Learn how to manage projects effectively.",
-                ThumbnailUrl = "/images/courses/project-management.jpg",
-                Category = "Management"
-            },
-
-            new Course
-            {
-                CourseId = 7,
-                Title = "UI/UX Design",
-                Description = "Learn the principles of modern UI and UX design.",
-                ThumbnailUrl = "/images/courses/uiux.jpg",
-                Category = "Design"
-            }
-        };
-
-
-        // =========================================================
-        // STATIC ENROLLED COURSE IDs
-        // =========================================================
-
-        private readonly List<int> _enrolledCourseIds = new()
-        {
-            1,
-            2,
-            5
-        };
-
-
-        // =========================================================
-        // STATIC LIVE LECTURE DATA
-        // =========================================================
-
-        private readonly List<LiveLecture> _liveLectures = new()
-        {
-            new LiveLecture
-            {
-                LiveLectureId = 1,
-                CourseId = 1,
-                InstructorId = 1,
-                Title = "C# Programming - Introduction",
-                Description = "Live session about C# programming fundamentals.",
-                StartTime = DateTime.Now.AddDays(1).AddHours(2),
-                EndTime = DateTime.Now.AddDays(1).AddHours(3),
-                MeetingUrl = "https://meet.example.com/csharp",
-                Status = "Scheduled",
-                CreatedAt = DateTime.UtcNow
-            },
-
-            new LiveLecture
-            {
-                LiveLectureId = 2,
-                CourseId = 2,
-                InstructorId = 1,
-                Title = "ASP.NET Core MVC - Controllers",
-                Description = "Live session about controllers and routing.",
-                StartTime = DateTime.Now.AddDays(1).AddHours(2),
-                EndTime = DateTime.Now.AddDays(1).AddHours(3),
-                MeetingUrl = "https://meet.example.com/aspnet",
-                Status = "Scheduled",
-                CreatedAt = DateTime.UtcNow
-            }
-        };
-
-
-        // =========================================================
-        // GET ALL COURSES
-        // =========================================================
+            _dbContext = dbContext;
+        }
 
         public List<Course> GetAllCourses()
         {
-            return _courses;
-        }
-
-
-        // =========================================================
-        // GET ENROLLED COURSES
-        // =========================================================
-
-        public List<Course> GetEnrolledCourses()
-        {
-            return _courses
-                .Where(course =>
-                    _enrolledCourseIds.Contains(course.CourseId))
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Where(course => course.Status == "Approved")
+                .OrderByDescending(course => course.CreatedAt)
                 .ToList();
         }
 
+        public List<Course> SearchCourses(
+            string? keyword,
+            string? category,
+            string? level,
+            decimal? minimumPrice,
+            decimal? maximumPrice)
+        {
+            var courses = _dbContext.Courses
+                .AsNoTracking()
+                .Include(course => course.Instructor)
+                    .ThenInclude(instructor => instructor.User)
+                .Where(course => course.Status == "Approved");
 
-        // =========================================================
-        // GET CATEGORIES
-        // =========================================================
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                var normalizedKeyword = keyword.Trim().ToLower();
+                courses = courses.Where(course =>
+                    course.Title.ToLower().Contains(normalizedKeyword) ||
+                    course.Description.ToLower().Contains(normalizedKeyword));
+            }
+
+            if (!string.IsNullOrWhiteSpace(category))
+            {
+                var normalizedCategory = category.Trim().ToLower();
+                courses = courses.Where(course =>
+                    course.Category != null &&
+                    course.Category.ToLower() == normalizedCategory);
+            }
+
+            if (!string.IsNullOrWhiteSpace(level))
+            {
+                var normalizedLevel = level.Trim().ToLower();
+                courses = courses.Where(course =>
+                    course.Level != null &&
+                    course.Level.ToLower() == normalizedLevel);
+            }
+
+            if (minimumPrice.HasValue)
+            {
+                courses = courses.Where(course =>
+                    course.Price >= minimumPrice.Value);
+            }
+
+            if (maximumPrice.HasValue)
+            {
+                courses = courses.Where(course =>
+                    course.Price <= maximumPrice.Value);
+            }
+
+            return courses
+                .OrderByDescending(course => course.CreatedAt)
+                .ToList();
+        }
+
+        public List<Course> GetEnrolledCourses(int studentId)
+        {
+            return _dbContext.Enrollments
+                .AsNoTracking()
+                .Where(enrollment =>
+                    enrollment.StudentId == studentId &&
+                    enrollment.Status != "Withdrawn")
+                .Select(enrollment => enrollment.Course)
+                .Where(course => course.Status == "Approved")
+                .OrderByDescending(course => course.CreatedAt)
+                .ToList();
+        }
 
         public List<string> GetCategories()
         {
-            return _courses
-                .Select(course => course.Category)
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Where(course =>
+                    course.Status == "Approved" &&
+                    course.Category != null)
+                .Select(course => course.Category!)
                 .Distinct()
+                .OrderBy(category => category)
                 .ToList();
         }
 
-
-        // =========================================================
-        // GET COURSE BY ID
-        // =========================================================
-
         public Course? GetCourseById(int id)
         {
-            return _courses
-                .FirstOrDefault(course => course.CourseId == id);
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Include(course => course.Instructor)
+                    .ThenInclude(instructor => instructor.User)
+                .FirstOrDefault(course =>
+                    course.CourseId == id &&
+                    course.Status == "Approved");
         }
-
-
-        // =========================================================
-        // GET LIVE LECTURES
-        // =========================================================
 
         public List<LiveLecture> GetLiveLectures(int courseId)
         {
-            return _liveLectures
+            return _dbContext.LiveLectures
+                .AsNoTracking()
                 .Where(lecture =>
-                    lecture.CourseId == courseId)
+                    lecture.CourseId == courseId &&
+                    lecture.Status != "Cancelled")
                 .OrderBy(lecture => lecture.StartTime)
                 .ToList();
         }
 
+        public List<Material> GetPublishedMaterials(int courseId)
+        {
+            return _dbContext.Materials
+                .AsNoTracking()
+                .Where(material =>
+                    material.CourseId == courseId &&
+                    material.IsPublished)
+                .OrderBy(material => material.DisplayOrder)
+                .ThenBy(material => material.MaterialId)
+                .ToList();
+        }
 
-        // =========================================================
-        // GET COURSES BY CATEGORY
-        // =========================================================
+        public Material? GetMaterialById(int materialId)
+        {
+            return _dbContext.Materials
+                .AsNoTracking()
+                .FirstOrDefault(material => material.MaterialId == materialId);
+        }
 
         public List<Course> GetCoursesByCategory(string category)
         {
-            return _courses
+            if (string.IsNullOrWhiteSpace(category))
+            {
+                return new List<Course>();
+            }
+
+            var normalizedCategory = category.Trim();
+            return _dbContext.Courses
+                .AsNoTracking()
                 .Where(course =>
-                    course.Category.Equals(
-                        category,
-                        StringComparison.OrdinalIgnoreCase))
+                    course.Status == "Approved" &&
+                    course.Category != null &&
+                    course.Category.ToLower() == normalizedCategory.ToLower())
+                .OrderByDescending(course => course.CreatedAt)
                 .ToList();
+        }
+
+        public Student? GetStudentByEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return null;
+            }
+
+            var normalizedEmail = email.Trim().ToLowerInvariant();
+            return _dbContext.Students
+                .Include(student => student.User)
+                .FirstOrDefault(student =>
+                    student.User.Email.ToLower() == normalizedEmail);
+        }
+
+        public bool IsEnrolled(int studentId, int courseId)
+        {
+            return _dbContext.Enrollments.Any(enrollment =>
+                enrollment.StudentId == studentId &&
+                enrollment.CourseId == courseId &&
+                enrollment.Status != "Withdrawn" &&
+                enrollment.Course.Status == "Approved");
+        }
+
+        public bool TryEnroll(int studentId, int courseId)
+        {
+            if (IsEnrolled(studentId, courseId) ||
+                !_dbContext.Courses.Any(course =>
+                    course.CourseId == courseId &&
+                    course.Status == "Approved"))
+            {
+                return false;
+            }
+
+            var enrollment = new Enrollment
+            {
+                StudentId = studentId,
+                CourseId = courseId,
+                EnrolledAt = DateTime.UtcNow,
+                Status = "Active",
+                Progress = 0
+            };
+            _dbContext.Enrollments.Add(enrollment);
+
+            try
+            {
+                _dbContext.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                _dbContext.Entry(enrollment).State = EntityState.Detached;
+                if (IsEnrolled(studentId, courseId))
+                {
+                    return false;
+                }
+
+                throw;
+            }
+
+            return true;
         }
     }
 }

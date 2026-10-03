@@ -1,569 +1,264 @@
-﻿using StudySphere.Models;
+using Microsoft.EntityFrameworkCore;
+using StudySphere.Data;
+using StudySphere.Models;
 using StudySphere.Repositories.Interfaces;
 
 namespace StudySphere.Repositories
 {
-    public class InstructorDashboardRepository
-        : IInstructorDashboardRepository
+    public class InstructorDashboardRepository : IInstructorDashboardRepository
     {
-        // =========================================================
-        // STATIC DATA
-        // =========================================================
+        private readonly StudySphereDbContext _dbContext;
 
-        private readonly Instructor _instructor;
-
-        private readonly List<Course> _courses;
-
-        private readonly List<Material> _materials;
-
-        private readonly List<Enrollment> _enrollments;
-
-        private readonly List<Announcement> _announcements;
-
-        // Static so newly created repository instances
-        // can access lectures added by previous requests.
-        private static readonly List<LiveLecture> _liveLectures =
-            new List<LiveLecture>
-            {
-                new LiveLecture
-                {
-                    LiveLectureId = 1,
-                    CourseId = 1,
-                    InstructorId = 1,
-                    Title = "ASP.NET Core MVC - Controllers",
-                    Description = "Live session about controllers and routing.",
-                    StartTime = DateTime.Now.AddDays(1).AddHours(2),
-                    EndTime = DateTime.Now.AddDays(1).AddHours(3),
-                    MeetingUrl = "https://meet.example.com/aspnet",
-                    Status = "Scheduled",
-                    CreatedAt = DateTime.UtcNow
-                },
-
-                new LiveLecture
-                {
-                    LiveLectureId = 2,
-                    CourseId = 2,
-                    InstructorId = 1,
-                    Title = "Spring Boot REST API",
-                    Description = "Live session about REST API development.",
-                    StartTime = DateTime.Now.AddDays(2).AddHours(3),
-                    EndTime = DateTime.Now.AddDays(2).AddHours(4),
-                    MeetingUrl = "https://meet.example.com/spring",
-                    Status = "Scheduled",
-                    CreatedAt = DateTime.UtcNow
-                }
-            };
-
-
-        // =========================================================
-        // CONSTRUCTOR
-        // =========================================================
-
-        public InstructorDashboardRepository()
+        public InstructorDashboardRepository(StudySphereDbContext dbContext)
         {
-            // -----------------------------------------------------
-            // Instructor
-            // -----------------------------------------------------
-
-            _instructor = new Instructor
-            {
-                InstructorId = 1,
-                ProfessionalTitle = "Senior Software Developer",
-                AreaOfExpertise = "Web Development",
-                Qualification = "B.Tech Computer Engineering",
-                Bio = "Experienced instructor in web and backend development."
-            };
-
-
-            // -----------------------------------------------------
-            // Courses
-            // -----------------------------------------------------
-
-            _courses = new List<Course>
-            {
-                new Course
-                {
-                    CourseId = 1,
-                    InstructorId = 1,
-                    Title = "ASP.NET Core MVC",
-                    Description = "Learn ASP.NET Core MVC from basic to advanced concepts.",
-                    Category = "Web Development",
-                    Level = "Intermediate",
-                    ThumbnailUrl = "/images/courses/aspnet.jpg",
-                    Price = 999,
-                    Status = "Published",
-                    CreatedAt = DateTime.UtcNow.AddDays(-30)
-                },
-
-                new Course
-                {
-                    CourseId = 2,
-                    InstructorId = 1,
-                    Title = "Java Spring Boot",
-                    Description = "Learn backend development using Java and Spring Boot.",
-                    Category = "Backend Development",
-                    Level = "Intermediate",
-                    ThumbnailUrl = "/images/courses/java.jpg",
-                    Price = 1199,
-                    Status = "Published",
-                    CreatedAt = DateTime.UtcNow.AddDays(-25)
-                },
-
-                new Course
-                {
-                    CourseId = 3,
-                    InstructorId = 1,
-                    Title = "Database Management",
-                    Description = "Learn SQL and database management concepts.",
-                    Category = "Database",
-                    Level = "Beginner",
-                    ThumbnailUrl = "/images/courses/database.jpg",
-                    Price = 799,
-                    Status = "Published",
-                    CreatedAt = DateTime.UtcNow.AddDays(-20)
-                },
-
-                new Course
-                {
-                    CourseId = 4,
-                    InstructorId = 1,
-                    Title = "Web Development",
-                    Description = "Learn HTML, CSS and JavaScript for modern web development.",
-                    Category = "Web Development",
-                    Level = "Beginner",
-                    ThumbnailUrl = "/images/courses/web.jpg",
-                    Price = 699,
-                    Status = "Draft",
-                    CreatedAt = DateTime.UtcNow.AddDays(-10)
-                }
-            };
-
-
-            // -----------------------------------------------------
-            // Materials
-            // -----------------------------------------------------
-
-            _materials = new List<Material>
-            {
-                new Material
-                {
-                    MaterialId = 1,
-                    CourseId = 1,
-                    Title = "Introduction to ASP.NET Core MVC",
-                    Description = "Introduction to MVC architecture.",
-                    MaterialType = "Video",
-                    FileUrl = "/materials/aspnet/introduction.mp4",
-                    DurationInMinutes = 25,
-                    DisplayOrder = 1,
-                    IsPublished = true,
-                    UploadedAt = DateTime.UtcNow.AddDays(-20)
-                },
-
-                new Material
-                {
-                    MaterialId = 2,
-                    CourseId = 1,
-                    Title = "MVC Architecture Notes",
-                    Description = "PDF notes about MVC architecture.",
-                    MaterialType = "PDF",
-                    FileUrl = "/materials/aspnet/mvc-notes.pdf",
-                    DurationInMinutes = null,
-                    DisplayOrder = 2,
-                    IsPublished = true,
-                    UploadedAt = DateTime.UtcNow.AddDays(-18)
-                },
-
-                new Material
-                {
-                    MaterialId = 3,
-                    CourseId = 1,
-                    Title = "Controllers in ASP.NET Core",
-                    Description = "Understanding controllers and actions.",
-                    MaterialType = "Video",
-                    FileUrl = "/materials/aspnet/controllers.mp4",
-                    DurationInMinutes = 30,
-                    DisplayOrder = 3,
-                    IsPublished = true,
-                    UploadedAt = DateTime.UtcNow.AddDays(-15)
-                },
-
-                new Material
-                {
-                    MaterialId = 4,
-                    CourseId = 2,
-                    Title = "Spring Boot Introduction",
-                    Description = "Introduction to Spring Boot.",
-                    MaterialType = "Video",
-                    FileUrl = "/materials/java/spring-introduction.mp4",
-                    DurationInMinutes = 35,
-                    DisplayOrder = 1,
-                    IsPublished = true,
-                    UploadedAt = DateTime.UtcNow.AddDays(-12)
-                },
-
-                new Material
-                {
-                    MaterialId = 5,
-                    CourseId = 2,
-                    Title = "Spring Boot Notes",
-                    Description = "Spring Boot study material.",
-                    MaterialType = "PDF",
-                    FileUrl = "/materials/java/spring-notes.pdf",
-                    DurationInMinutes = null,
-                    DisplayOrder = 2,
-                    IsPublished = false,
-                    UploadedAt = DateTime.UtcNow.AddDays(-10)
-                }
-            };
-
-
-            // -----------------------------------------------------
-            // Enrollments
-            // -----------------------------------------------------
-
-            _enrollments = new List<Enrollment>
-            {
-                new Enrollment
-                {
-                    EnrollmentId = 1,
-                    StudentId = 1,
-                    CourseId = 1,
-                    EnrolledAt = DateTime.UtcNow.AddDays(-20),
-                    Status = "Active",
-                    Progress = 75
-                },
-
-                new Enrollment
-                {
-                    EnrollmentId = 2,
-                    StudentId = 2,
-                    CourseId = 1,
-                    EnrolledAt = DateTime.UtcNow.AddDays(-15),
-                    Status = "Active",
-                    Progress = 50
-                },
-
-                new Enrollment
-                {
-                    EnrollmentId = 3,
-                    StudentId = 3,
-                    CourseId = 1,
-                    EnrolledAt = DateTime.UtcNow.AddDays(-10),
-                    Status = "Completed",
-                    Progress = 100,
-                    CompletedAt = DateTime.UtcNow.AddDays(-2)
-                },
-
-                new Enrollment
-                {
-                    EnrollmentId = 4,
-                    StudentId = 4,
-                    CourseId = 2,
-                    EnrolledAt = DateTime.UtcNow.AddDays(-8),
-                    Status = "Active",
-                    Progress = 40
-                }
-            };
-
-
-            // -----------------------------------------------------
-            // Announcements
-            // -----------------------------------------------------
-
-            _announcements = new List<Announcement>
-            {
-                new Announcement
-                {
-                    AnnouncementId = 1,
-                    CourseId = 1,
-                    InstructorId = 1,
-                    Title = "Welcome to ASP.NET Core MVC",
-                    Message = "Welcome everyone. Please complete the first module this week.",
-                    CreatedAt = DateTime.UtcNow.AddDays(-5),
-                    IsPublished = true
-                },
-
-                new Announcement
-                {
-                    AnnouncementId = 2,
-                    CourseId = 1,
-                    InstructorId = 1,
-                    Title = "Assignment 1",
-                    Message = "Assignment 1 has been uploaded. Submit it before the deadline.",
-                    CreatedAt = DateTime.UtcNow.AddDays(-2),
-                    IsPublished = true
-                },
-
-                new Announcement
-                {
-                    AnnouncementId = 3,
-                    CourseId = 2,
-                    InstructorId = 1,
-                    Title = "Spring Boot Practice",
-                    Message = "Practice the REST API examples covered in the latest lecture.",
-                    CreatedAt = DateTime.UtcNow.AddDays(-1),
-                    IsPublished = true
-                }
-            };
+            _dbContext = dbContext;
         }
-
-
-        // =========================================================
-        // INSTRUCTOR
-        // =========================================================
 
         public Instructor GetInstructor(int instructorId)
         {
-            return _instructor;
+            return _dbContext.Instructors
+                .Include(instructor => instructor.User)
+                .First(instructor => instructor.InstructorId == instructorId);
         }
 
+        public Instructor? GetInstructorByEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return null;
+            }
 
-        // =========================================================
-        // COURSES
-        // =========================================================
+            var normalizedEmail = email.Trim().ToLowerInvariant();
+            return _dbContext.Instructors
+                .Include(instructor => instructor.User)
+                .FirstOrDefault(instructor =>
+                    instructor.User.Email.ToLower() == normalizedEmail);
+        }
 
         public List<Course> GetCourses(int instructorId)
         {
-            return _courses
-                .Where(x => x.InstructorId == instructorId)
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Where(course => course.InstructorId == instructorId)
+                .OrderByDescending(course => course.CreatedAt)
                 .ToList();
         }
-
 
         public Course? GetCourseById(int courseId)
         {
-            return _courses
-                .FirstOrDefault(x => x.CourseId == courseId);
+            return _dbContext.Courses
+                .Include(course => course.Instructor)
+                    .ThenInclude(instructor => instructor.User)
+                .FirstOrDefault(course => course.CourseId == courseId);
         }
-
 
         public void AddCourse(Course course)
         {
-            course.CourseId = _courses.Count == 0
-                ? 1
-                : _courses.Max(x => x.CourseId) + 1;
-
-            _courses.Add(course);
+            _dbContext.Courses.Add(course);
+            _dbContext.SaveChanges();
         }
-
 
         public void UpdateCourse(Course course)
         {
-            var existingCourse = GetCourseById(course.CourseId);
-
-            if (existingCourse == null)
+            var existing = _dbContext.Courses.FirstOrDefault(item =>
+                item.CourseId == course.CourseId &&
+                item.InstructorId == course.InstructorId);
+            if (existing is null)
+            {
                 return;
+            }
 
-            existingCourse.Title = course.Title;
-            existingCourse.Description = course.Description;
-            existingCourse.Category = course.Category;
-            existingCourse.Level = course.Level;
-            existingCourse.ThumbnailUrl = course.ThumbnailUrl;
-            existingCourse.Price = course.Price;
-            existingCourse.Status = course.Status;
-            existingCourse.UpdatedAt = DateTime.UtcNow;
+            existing.Title = course.Title;
+            existing.Description = course.Description;
+            existing.Category = course.Category;
+            existing.Level = course.Level;
+            existing.ThumbnailUrl = course.ThumbnailUrl;
+            existing.Price = course.Price;
+            existing.Status = "Pending";
+            existing.UpdatedAt = DateTime.UtcNow;
+            _dbContext.SaveChanges();
         }
-
-
-        // =========================================================
-        // MATERIALS
-        // =========================================================
 
         public List<Material> GetMaterials(int courseId)
         {
-            return _materials
-                .Where(x => x.CourseId == courseId)
-                .OrderBy(x => x.DisplayOrder)
+            return _dbContext.Materials
+                .AsNoTracking()
+                .Where(material => material.CourseId == courseId)
+                .OrderBy(material => material.DisplayOrder)
+                .ThenBy(material => material.MaterialId)
                 .ToList();
         }
-
 
         public Material? GetMaterialById(int materialId)
         {
-            return _materials
-                .FirstOrDefault(x => x.MaterialId == materialId);
+            return _dbContext.Materials
+                .Include(material => material.Course)
+                .FirstOrDefault(material => material.MaterialId == materialId);
         }
-
 
         public void AddMaterial(Material material)
         {
-            material.MaterialId = _materials.Count == 0
-                ? 1
-                : _materials.Max(x => x.MaterialId) + 1;
-
-            _materials.Add(material);
+            _dbContext.Materials.Add(material);
+            _dbContext.SaveChanges();
         }
-
 
         public void UpdateMaterial(Material material)
         {
-            var existingMaterial = GetMaterialById(material.MaterialId);
-
-            if (existingMaterial == null)
+            var existing = _dbContext.Materials.FirstOrDefault(item =>
+                item.MaterialId == material.MaterialId &&
+                item.CourseId == material.CourseId);
+            if (existing is null)
+            {
                 return;
+            }
 
-            existingMaterial.Title = material.Title;
-            existingMaterial.Description = material.Description;
-            existingMaterial.MaterialType = material.MaterialType;
-            existingMaterial.FileUrl = material.FileUrl;
-            existingMaterial.DurationInMinutes = material.DurationInMinutes;
-            existingMaterial.DisplayOrder = material.DisplayOrder;
-            existingMaterial.IsPublished = material.IsPublished;
+            existing.Title = material.Title;
+            existing.Description = material.Description;
+            existing.MaterialType = material.MaterialType;
+            existing.FileUrl = material.FileUrl;
+            existing.DurationInMinutes = material.DurationInMinutes;
+            existing.DisplayOrder = material.DisplayOrder;
+            existing.IsPublished = material.IsPublished;
+            _dbContext.SaveChanges();
         }
-
 
         public void DeleteMaterial(int materialId)
         {
-            var material = GetMaterialById(materialId);
-
-            if (material == null)
+            var material = _dbContext.Materials.Find(materialId);
+            if (material is null)
+            {
                 return;
+            }
 
-            _materials.Remove(material);
+            _dbContext.Materials.Remove(material);
+            _dbContext.SaveChanges();
         }
-
-
-        // =========================================================
-        // ENROLLMENTS
-        // =========================================================
 
         public List<Enrollment> GetEnrollments(int courseId)
         {
-            return _enrollments
-                .Where(x => x.CourseId == courseId)
+            return _dbContext.Enrollments
+                .AsNoTracking()
+                .Include(enrollment => enrollment.Student)
+                    .ThenInclude(student => student.User)
+                .Where(enrollment => enrollment.CourseId == courseId)
+                .OrderByDescending(enrollment => enrollment.EnrolledAt)
                 .ToList();
         }
-
-
-        // =========================================================
-        // ANNOUNCEMENTS
-        // =========================================================
 
         public List<Announcement> GetAnnouncements(int courseId)
         {
-            return _announcements
-                .Where(x => x.CourseId == courseId)
-                .OrderByDescending(x => x.CreatedAt)
+            return _dbContext.Announcements
+                .AsNoTracking()
+                .Where(announcement => announcement.CourseId == courseId)
+                .OrderByDescending(announcement => announcement.CreatedAt)
                 .ToList();
         }
-
 
         public Announcement? GetAnnouncementById(int announcementId)
         {
-            return _announcements
-                .FirstOrDefault(x => x.AnnouncementId == announcementId);
+            return _dbContext.Announcements
+                .Include(announcement => announcement.Course)
+                .FirstOrDefault(announcement =>
+                    announcement.AnnouncementId == announcementId);
         }
-
 
         public void AddAnnouncement(Announcement announcement)
         {
-            announcement.AnnouncementId = _announcements.Count == 0
-                ? 1
-                : _announcements.Max(x => x.AnnouncementId) + 1;
-
-            _announcements.Add(announcement);
+            _dbContext.Announcements.Add(announcement);
+            _dbContext.SaveChanges();
         }
-
 
         public void UpdateAnnouncement(Announcement announcement)
         {
-            var existingAnnouncement =
-                GetAnnouncementById(announcement.AnnouncementId);
-
-            if (existingAnnouncement == null)
+            var existing = _dbContext.Announcements.FirstOrDefault(item =>
+                item.AnnouncementId == announcement.AnnouncementId &&
+                item.CourseId == announcement.CourseId &&
+                item.InstructorId == announcement.InstructorId);
+            if (existing is null)
+            {
                 return;
+            }
 
-            existingAnnouncement.Title = announcement.Title;
-            existingAnnouncement.Message = announcement.Message;
-            existingAnnouncement.IsPublished = announcement.IsPublished;
+            existing.Title = announcement.Title;
+            existing.Message = announcement.Message;
+            existing.IsPublished = announcement.IsPublished;
+            _dbContext.SaveChanges();
         }
-
 
         public void DeleteAnnouncement(int announcementId)
         {
-            var announcement =
-                GetAnnouncementById(announcementId);
-
-            if (announcement == null)
+            var announcement = _dbContext.Announcements.Find(announcementId);
+            if (announcement is null)
+            {
                 return;
+            }
 
-            _announcements.Remove(announcement);
+            _dbContext.Announcements.Remove(announcement);
+            _dbContext.SaveChanges();
         }
-
-
-        // =========================================================
-        // LIVE LECTURES
-        // =========================================================
 
         public List<LiveLecture> GetLiveLectures(int courseId)
         {
-            return _liveLectures
-                .Where(x => x.CourseId == courseId)
-                .OrderBy(x => x.StartTime)
+            return _dbContext.LiveLectures
+                .AsNoTracking()
+                .Where(lecture => lecture.CourseId == courseId)
+                .OrderBy(lecture => lecture.StartTime)
                 .ToList();
         }
-
 
         public LiveLecture? GetLiveLectureById(int liveLectureId)
         {
-            return _liveLectures
-                .FirstOrDefault(x => x.LiveLectureId == liveLectureId);
+            return _dbContext.LiveLectures
+                .Include(lecture => lecture.Course)
+                .FirstOrDefault(lecture =>
+                    lecture.LiveLectureId == liveLectureId);
         }
-
 
         public void AddLiveLecture(LiveLecture lecture)
         {
-            lecture.LiveLectureId = _liveLectures.Count == 0
-                ? 1
-                : _liveLectures.Max(x => x.LiveLectureId) + 1;
-
-            _liveLectures.Add(lecture);
+            _dbContext.LiveLectures.Add(lecture);
+            _dbContext.SaveChanges();
         }
-
 
         public void UpdateLiveLecture(LiveLecture lecture)
         {
-            var existingLecture =
-                GetLiveLectureById(lecture.LiveLectureId);
-
-            if (existingLecture == null)
+            var existing = _dbContext.LiveLectures.FirstOrDefault(item =>
+                item.LiveLectureId == lecture.LiveLectureId &&
+                item.CourseId == lecture.CourseId &&
+                item.InstructorId == lecture.InstructorId);
+            if (existing is null)
+            {
                 return;
+            }
 
-            existingLecture.Title = lecture.Title;
-            existingLecture.Description = lecture.Description;
-            existingLecture.StartTime = lecture.StartTime;
-            existingLecture.EndTime = lecture.EndTime;
-            existingLecture.MeetingUrl = lecture.MeetingUrl;
-            existingLecture.Status = lecture.Status;
+            existing.Title = lecture.Title;
+            existing.Description = lecture.Description;
+            existing.StartTime = lecture.StartTime;
+            existing.EndTime = lecture.EndTime;
+            existing.MeetingUrl = lecture.MeetingUrl;
+            existing.Status = lecture.Status;
+            _dbContext.SaveChanges();
         }
-
 
         public void DeleteLiveLecture(int liveLectureId)
         {
-            var lecture =
-                GetLiveLectureById(liveLectureId);
-
-            if (lecture == null)
+            var lecture = _dbContext.LiveLectures.Find(liveLectureId);
+            if (lecture is null)
+            {
                 return;
+            }
 
-            _liveLectures.Remove(lecture);
+            _dbContext.LiveLectures.Remove(lecture);
+            _dbContext.SaveChanges();
         }
-
-
-        // =========================================================
-        // DASHBOARD
-        // =========================================================
 
         public int GetTotalStudents(int instructorId)
         {
-            var courseIds = _courses
-                .Where(x => x.InstructorId == instructorId)
-                .Select(x => x.CourseId)
-                .ToList();
-
-            return _enrollments
-                .Where(x => courseIds.Contains(x.CourseId))
-                .Select(x => x.StudentId)
+            return _dbContext.Enrollments
+                .Where(enrollment =>
+                    enrollment.Course.InstructorId == instructorId &&
+                    enrollment.Status == "Active")
+                .Select(enrollment => enrollment.StudentId)
                 .Distinct()
                 .Count();
         }

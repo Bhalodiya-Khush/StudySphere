@@ -26,5 +26,17 @@ namespace StudySphere.Models
 
         public ICollection<LiveLecture> LiveLectures { get; set; }
             = new List<LiveLecture>();
+
+        public ICollection<AssignmentSubmission> AssignmentSubmissions { get; set; }
+            = new List<AssignmentSubmission>();
+
+        public ICollection<QuizAttempt> QuizAttempts { get; set; }
+            = new List<QuizAttempt>();
+
+        public ICollection<LessonProgress> LessonProgress { get; set; }
+            = new List<LessonProgress>();
+
+        public ICollection<CourseCertificate> Certificates { get; set; }
+            = new List<CourseCertificate>();
     }
 }

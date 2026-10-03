@@ -122,8 +122,8 @@
 
                                     <!-- Status -->
                                     <td>
-                                        <span class="badge bg-success">
-                                            Active
+                                        <span class="badge @(instructor.User.IsActive ? "bg-success" : "bg-secondary")">
+                                            @(instructor.User.IsActive ? "Active" : "Pending approval / inactive")
                                         </span>
                                     </td>
 
@@ -137,6 +137,18 @@
                                            class="btn btn-outline-primary btn-sm">
                                             View
                                         </a>
+                                        <form asp-controller="AdminDashboard"
+                                              asp-action="SetInstructorActive"
+                                              method="post"
+                                              class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@instructor.InstructorId" />
+                                            <input type="hidden" name="isActive" value="@(!instructor.User.IsActive)" />
+                                            <button type="submit"
+                                                    class="btn btn-sm @(instructor.User.IsActive ? "btn-outline-danger" : "btn-outline-success")">
+                                                @(instructor.User.IsActive ? "Deactivate" : "Approve / activate")
+                                            </button>
+                                        </form>
 
                                     </td>
 

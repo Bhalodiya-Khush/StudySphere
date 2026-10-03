@@ -34,9 +34,11 @@
 
             <form asp-controller="InstructorDashboard"
                   asp-action="EditMaterial"
-                  method="post">
+                  method="post"
+                  enctype="multipart/form-data">
 
                 @Html.AntiForgeryToken()
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                 <!-- Hidden IDs -->
                 <input type="hidden"
@@ -101,9 +103,8 @@
                             Video
                         </option>
 
-                        <option value="PDF">
-                            PDF
-                        </option>
+                        <option value="PDF">PDF</option>
+                        <option value="Document">Document</option>
 
                     </select>
 
@@ -114,24 +115,25 @@
                 </div>
 
 
-                <!-- File URL -->
                 <div class="mb-3">
 
-                    <label asp-for="FileUrl"
+                    <label for="upload"
                            class="form-label fw-semibold">
-                        File URL
+                        Replace file (optional)
                     </label>
 
-                    <input asp-for="FileUrl"
+                    <input id="upload"
+                           name="upload"
+                           type="file"
                            class="form-control"
-                           placeholder="/materials/course/file.mp4" />
+                           accept=".mp4,.webm,.mov,.pdf,.doc,.docx,.ppt,.pptx,.txt" />
 
                     <div class="form-text">
-                        Actual file upload will be connected later.
+                        Leave empty to keep the existing file. Maximum size: 500 MB.
                     </div>
 
-                    <span asp-validation-for="FileUrl"
-                          class="text-danger">
+                    <span class="text-danger"
+                          data-valmsg-for="upload">
                     </span>
 
                 </div>

@@ -1,13 +1,58 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
+using StudySphere.Repositories.Interfaces;
 
 namespace StudySphere.Hubs
 {
     [Authorize(Roles = "Student,Instructor")]
     public class LectureHub : Hub
     {
+        private readonly IStudentDashboardRepository _studentRepository;
+        private readonly IInstructorDashboardRepository _instructorRepository;
+
+        public LectureHub(
+            IStudentDashboardRepository studentRepository,
+            IInstructorDashboardRepository instructorRepository)
+        {
+            _studentRepository = studentRepository;
+            _instructorRepository = instructorRepository;
+        }
+
         public async Task JoinLecture(int lectureId)
         {
+            var lecture =
+                _instructorRepository.GetLiveLectureById(lectureId);
+            var email = Context.User?.Identity?.Name;
+            if (lecture is null || lecture.Status != "Live" ||
+                string.IsNullOrWhiteSpace(email))
+            {
+                throw new HubException("This live lecture is unavailable.");
+            }
+
+            if (Context.User!.IsInRole("Student"))
+            {
+                var student = _studentRepository.GetStudentByEmail(email);
+                if (student is null ||
+                    !_studentRepository.IsEnrolled(
+                        student.StudentId,
+                        lecture.CourseId))
+                {
+                    throw new HubException(
+                        "You must be enrolled in this course to join.");
+                }
+            }
+            else
+            {
+                var instructor =
+                    _instructorRepository.GetInstructorByEmail(email);
+                if (instructor is null ||
+                    instructor.InstructorId != lecture.InstructorId)
+                {
+                    throw new HubException(
+                        "Only the course instructor can join as an instructor.");
+                }
+            }
+
             string groupName = $"Lecture_{lectureId}";
 
             await Groups.AddToGroupAsync(

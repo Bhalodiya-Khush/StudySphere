@@ -1,0 +1,57 @@
+@model StudySphere.Models.Assignment
+@{
+    var submission = ViewBag.Submission as StudySphere.Models.AssignmentSubmission;
+    ViewData["Title"] = "Submit assignment";
+}
+
+<div class="container py-4">
+    <a asp-action="Assignments" asp-route-courseId="@Model.CourseId"
+       class="text-decoration-none">Back to assignments</a>
+    <h1 class="h3 mt-3">@Model.Title</h1>
+    <p class="text-muted">
+        Due @Model.DueAt.ToLocalTime().ToString("dd MMM yyyy, hh:mm tt")
+        · @Model.MaxMarks marks
+    </p>
+
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="h5">Instructions</h2>
+            <p class="mb-0">@Model.Instructions</p>
+        </div>
+    </div>
+
+    @if (submission is not null)
+    {
+        <div class="alert alert-info">
+            Submitted @submission.SubmittedAt.ToLocalTime().ToString("dd MMM yyyy, hh:mm tt").
+            @if (submission.MarksAwarded.HasValue)
+            {
+                <span>Grade: @submission.MarksAwarded / @Model.MaxMarks.</span>
+            }
+            @if (!string.IsNullOrWhiteSpace(submission.Feedback))
+            {
+                <span>Instructor feedback: @submission.Feedback</span>
+            }
+        </div>
+    }
+
+    <form asp-action="SubmitAssignment" method="post"
+          enctype="multipart/form-data" class="card card-body shadow-sm">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+        <input type="hidden" name="assignmentId" value="@Model.AssignmentId" />
+        <div class="mb-3">
+            <label for="upload" class="form-label">Assignment file</label>
+            <input id="upload" name="upload" type="file" required
+                   accept=".pdf,.doc,.docx,.txt" class="form-control" />
+            <div class="form-text">PDF, Word, or plain text. Maximum size: 25 MB.</div>
+            <span class="text-danger" data-valmsg-for="upload"></span>
+        </div>
+        <div class="mb-3">
+            <label for="studentComment" class="form-label">Comment (optional)</label>
+            <textarea id="studentComment" name="studentComment" maxlength="2000"
+                      rows="3" class="form-control">@submission?.StudentComment</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary align-self-start">Submit assignment</button>
+    </form>
+</div>

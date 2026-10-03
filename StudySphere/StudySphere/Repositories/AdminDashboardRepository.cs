@@ -1,383 +1,211 @@
-﻿using StudySphere.Models;
+using Microsoft.EntityFrameworkCore;
+using StudySphere.Data;
+using StudySphere.Models;
 using StudySphere.Repositories.Interfaces;
 
 namespace StudySphere.Repositories
 {
     public class AdminDashboardRepository : IAdminDashboardRepository
     {
-        // =========================================================
-        // STATIC STUDENT DATA
-        // =========================================================
+        private readonly StudySphereDbContext _dbContext;
 
-        private static readonly List<Student> StudentsList = new()
+        public AdminDashboardRepository(StudySphereDbContext dbContext)
         {
-            new Student
-            {
-                StudentId = 1
-            },
-
-            new Student
-            {
-                StudentId = 2
-            },
-
-            new Student
-            {
-                StudentId = 3
-            },
-
-            new Student
-            {
-                StudentId = 4
-            },
-
-            new Student
-            {
-                StudentId = 5
-            }
-        };
-
-
-        // =========================================================
-        // STATIC INSTRUCTOR DATA
-        // =========================================================
-
-        private static readonly List<Instructor> InstructorsList = new()
-        {
-            new Instructor
-            {
-                InstructorId = 1,
-                ProfessionalTitle = "Senior Software Developer",
-                AreaOfExpertise = "Web Development",
-                Qualification = "B.Tech Computer Engineering",
-                Bio = "Experienced instructor in web and backend development."
-            },
-
-            new Instructor
-            {
-                InstructorId = 2,
-                ProfessionalTitle = "Java Developer",
-                AreaOfExpertise = "Java and Spring Boot",
-                Qualification = "M.Tech Computer Science",
-                Bio = "Instructor specializing in Java backend development."
-            },
-
-            new Instructor
-            {
-                InstructorId = 3,
-                ProfessionalTitle = "Database Specialist",
-                AreaOfExpertise = "Database Management",
-                Qualification = "M.Tech Information Technology",
-                Bio = "Instructor specializing in SQL and database systems."
-            }
-        };
-
-
-        // =========================================================
-        // STATIC COURSE DATA
-        // =========================================================
-
-        private static readonly List<Course> CoursesList = new()
-        {
-            // -----------------------------------------------------
-            // APPROVED COURSE
-            // -----------------------------------------------------
-
-            new Course
-            {
-                CourseId = 1,
-                Title = "ASP.NET Core MVC",
-                Description =
-                    "Learn ASP.NET Core MVC from fundamentals to advanced concepts.",
-                Category = "Web Development",
-                Level = "Intermediate",
-                ThumbnailUrl = "/images/courses/aspnet.jpg",
-                Price = 1499,
-                Status = "Approved",
-                CreatedAt = DateTime.UtcNow.AddDays(-20),
-                InstructorId = 1
-            },
-
-
-            // -----------------------------------------------------
-            // APPROVED COURSE
-            // -----------------------------------------------------
-
-            new Course
-            {
-                CourseId = 2,
-                Title = "Java Programming",
-                Description =
-                    "Learn Java programming, OOP concepts and application development.",
-                Category = "Programming",
-                Level = "Beginner",
-                ThumbnailUrl = "/images/courses/java.jpg",
-                Price = 999,
-                Status = "Approved",
-                CreatedAt = DateTime.UtcNow.AddDays(-18),
-                InstructorId = 2
-            },
-
-
-            // -----------------------------------------------------
-            // PENDING COURSE
-            // -----------------------------------------------------
-
-            new Course
-            {
-                CourseId = 3,
-                Title = "Complete C# Programming",
-                Description =
-                    "Learn C# programming from basic syntax to object oriented programming.",
-                Category = "Programming",
-                Level = "Beginner",
-                ThumbnailUrl = "/images/courses/csharp.jpg",
-                Price = 799,
-                Status = "Pending",
-                CreatedAt = DateTime.UtcNow.AddDays(-2),
-                InstructorId = 1
-            },
-
-
-            // -----------------------------------------------------
-            // PENDING COURSE
-            // -----------------------------------------------------
-
-            new Course
-            {
-                CourseId = 4,
-                Title = "Database Management System",
-                Description =
-                    "Learn database concepts, SQL, normalization and database design.",
-                Category = "Database",
-                Level = "Intermediate",
-                ThumbnailUrl = "/images/courses/database.jpg",
-                Price = 1199,
-                Status = "Pending",
-                CreatedAt = DateTime.UtcNow.AddDays(-1),
-                InstructorId = 3
-            },
-
-
-            // -----------------------------------------------------
-            // REJECTED COURSE
-            // -----------------------------------------------------
-
-            new Course
-            {
-                CourseId = 5,
-                Title = "Basic Web Design",
-                Description =
-                    "Learn HTML and CSS fundamentals for creating websites.",
-                Category = "Web Development",
-                Level = "Beginner",
-                ThumbnailUrl = "/images/courses/webdesign.jpg",
-                Price = 599,
-                Status = "Rejected",
-                CreatedAt = DateTime.UtcNow.AddDays(-10),
-                InstructorId = 2
-            }
-        };
-
-
-        // =========================================================
-        // STATIC ENROLLMENT DATA
-        // =========================================================
-
-        private static readonly List<Enrollment> EnrollmentsList = new()
-        {
-            new Enrollment
-            {
-                EnrollmentId = 1,
-                StudentId = 1,
-                CourseId = 1,
-                EnrolledAt = DateTime.UtcNow.AddDays(-20),
-                Status = "Active",
-                Progress = 75
-            },
-
-            new Enrollment
-            {
-                EnrollmentId = 2,
-                StudentId = 2,
-                CourseId = 1,
-                EnrolledAt = DateTime.UtcNow.AddDays(-15),
-                Status = "Active",
-                Progress = 50
-            },
-
-            new Enrollment
-            {
-                EnrollmentId = 3,
-                StudentId = 3,
-                CourseId = 2,
-                EnrolledAt = DateTime.UtcNow.AddDays(-10),
-                Status = "Completed",
-                Progress = 100,
-                CompletedAt = DateTime.UtcNow.AddDays(-2)
-            },
-
-            new Enrollment
-            {
-                EnrollmentId = 4,
-                StudentId = 4,
-                CourseId = 1,
-                EnrolledAt = DateTime.UtcNow.AddDays(-8),
-                Status = "Active",
-                Progress = 40
-            }
-        };
-
-
-        // =========================================================
-        // STUDENT METHODS
-        // =========================================================
+            _dbContext = dbContext;
+        }
 
         public List<Student> GetAllStudents()
         {
-            return StudentsList;
+            return _dbContext.Students
+                .AsNoTracking()
+                .Include(student => student.User)
+                .OrderBy(student => student.User.FullName)
+                .ToList();
         }
-
 
         public Student? GetStudentById(int id)
         {
-            return StudentsList
-                .FirstOrDefault(s => s.StudentId == id);
+            return _dbContext.Students
+                .AsNoTracking()
+                .Include(student => student.User)
+                .FirstOrDefault(student => student.StudentId == id);
         }
-
-
-        // =========================================================
-        // INSTRUCTOR METHODS
-        // =========================================================
 
         public List<Instructor> GetAllInstructors()
         {
-            return InstructorsList;
+            return _dbContext.Instructors
+                .AsNoTracking()
+                .Include(instructor => instructor.User)
+                .OrderBy(instructor => instructor.User.FullName)
+                .ToList();
         }
-
 
         public Instructor? GetInstructorById(int id)
         {
-            return InstructorsList
-                .FirstOrDefault(i => i.InstructorId == id);
+            return _dbContext.Instructors
+                .AsNoTracking()
+                .Include(instructor => instructor.User)
+                .FirstOrDefault(instructor => instructor.InstructorId == id);
         }
-
-
-        // =========================================================
-        // COURSE METHODS
-        // =========================================================
 
         public List<Course> GetAllCourses()
         {
-            return CoursesList
-                .OrderByDescending(c => c.CreatedAt)
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Include(course => course.Instructor)
+                    .ThenInclude(instructor => instructor.User)
+                .OrderByDescending(course => course.CreatedAt)
                 .ToList();
         }
-
 
         public Course? GetCourseById(int id)
         {
-            return CoursesList
-                .FirstOrDefault(c => c.CourseId == id);
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Include(course => course.Instructor)
+                    .ThenInclude(instructor => instructor.User)
+                .Include(course => course.Materials)
+                .Include(course => course.LiveLectures)
+                .Include(course => course.Enrollments)
+                .FirstOrDefault(course => course.CourseId == id);
         }
-
 
         public List<Course> GetPendingCourses()
         {
-            return CoursesList
-                .Where(c => c.Status == "Pending")
-                .OrderByDescending(c => c.CreatedAt)
-                .ToList();
+            return GetCoursesByStatus("Pending");
         }
-
 
         public List<Course> GetApprovedCourses()
         {
-            return CoursesList
-                .Where(c => c.Status == "Approved")
-                .OrderByDescending(c => c.CreatedAt)
-                .ToList();
+            return GetCoursesByStatus("Approved");
         }
-
 
         public List<Course> GetRejectedCourses()
         {
-            return CoursesList
-                .Where(c => c.Status == "Rejected")
-                .OrderByDescending(c => c.CreatedAt)
-                .ToList();
+            return GetCoursesByStatus("Rejected");
         }
-
 
         public List<Course> GetCoursesByInstructorId(int instructorId)
         {
-            return CoursesList
-                .Where(c => c.InstructorId == instructorId)
-                .OrderByDescending(c => c.CreatedAt)
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Where(course => course.InstructorId == instructorId)
+                .OrderByDescending(course => course.CreatedAt)
                 .ToList();
         }
-
-
-        // =========================================================
-        // ENROLLMENT METHODS
-        // =========================================================
 
         public List<Enrollment> GetAllEnrollments()
         {
-            return EnrollmentsList;
+            return _dbContext.Enrollments
+                .AsNoTracking()
+                .Include(enrollment => enrollment.Student)
+                    .ThenInclude(student => student.User)
+                .Include(enrollment => enrollment.Course)
+                .OrderByDescending(enrollment => enrollment.EnrolledAt)
+                .ToList();
         }
-
 
         public List<Enrollment> GetEnrollmentsByStudentId(int studentId)
         {
-            return EnrollmentsList
-                .Where(e => e.StudentId == studentId)
+            return _dbContext.Enrollments
+                .AsNoTracking()
+                .Include(enrollment => enrollment.Course)
+                .Where(enrollment => enrollment.StudentId == studentId)
+                .OrderByDescending(enrollment => enrollment.EnrolledAt)
                 .ToList();
         }
-
 
         public List<Enrollment> GetEnrollmentsByCourseId(int courseId)
         {
-            return EnrollmentsList
-                .Where(e => e.CourseId == courseId)
+            return _dbContext.Enrollments
+                .AsNoTracking()
+                .Include(enrollment => enrollment.Student)
+                    .ThenInclude(student => student.User)
+                .Where(enrollment => enrollment.CourseId == courseId)
+                .OrderByDescending(enrollment => enrollment.EnrolledAt)
                 .ToList();
         }
 
-
-        // =========================================================
-        // COURSE APPROVAL METHODS
-        // =========================================================
-
         public bool ApproveCourse(int id)
         {
-            var course = CoursesList
-                .FirstOrDefault(c => c.CourseId == id);
-
-            if (course == null)
-            {
-                return false;
-            }
-
-            course.Status = "Approved";
-            course.UpdatedAt = DateTime.UtcNow;
-
-            return true;
+            return UpdateCourseStatus(id, "Approved");
         }
-
 
         public bool RejectCourse(int id)
         {
-            var course = CoursesList
-                .FirstOrDefault(c => c.CourseId == id);
+            return UpdateCourseStatus(id, "Rejected");
+        }
 
-            if (course == null)
+        public bool SetCourseActive(int id, bool isActive)
+        {
+            var course = _dbContext.Courses.FirstOrDefault(item =>
+                item.CourseId == id &&
+                item.Status == (isActive ? "Deactivated" : "Approved"));
+            if (course is null)
             {
                 return false;
             }
 
-            course.Status = "Rejected";
+            course.Status = isActive ? "Approved" : "Deactivated";
             course.UpdatedAt = DateTime.UtcNow;
+            _dbContext.SaveChanges();
+            return true;
+        }
 
+        public bool SetStudentActive(int id, bool isActive)
+        {
+            var student = _dbContext.Students
+                .Include(item => item.User)
+                .FirstOrDefault(item => item.StudentId == id);
+            if (student is null)
+            {
+                return false;
+            }
+
+            student.User.IsActive = isActive;
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+        public bool SetInstructorActive(int id, bool isActive)
+        {
+            var instructor = _dbContext.Instructors
+                .Include(item => item.User)
+                .FirstOrDefault(item => item.InstructorId == id);
+            if (instructor is null)
+            {
+                return false;
+            }
+
+            instructor.User.IsActive = isActive;
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+        private List<Course> GetCoursesByStatus(string status)
+        {
+            return _dbContext.Courses
+                .AsNoTracking()
+                .Include(course => course.Instructor)
+                    .ThenInclude(instructor => instructor.User)
+                .Where(course => course.Status == status)
+                .OrderByDescending(course => course.CreatedAt)
+                .ToList();
+        }
+
+        private bool UpdateCourseStatus(int id, string status)
+        {
+            var course = _dbContext.Courses.FirstOrDefault(course =>
+                course.CourseId == id &&
+                course.Status == "Pending");
+            if (course is null)
+            {
+                return false;
+            }
+
+            course.Status = status;
+            course.UpdatedAt = DateTime.UtcNow;
+            _dbContext.SaveChanges();
             return true;
         }
     }

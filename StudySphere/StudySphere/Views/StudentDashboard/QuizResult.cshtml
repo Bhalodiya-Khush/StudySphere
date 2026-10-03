@@ -1,0 +1,17 @@
+@model StudySphere.Models.QuizAttempt
+@{
+    ViewData["Title"] = "Quiz result";
+}
+
+<div class="container py-5">
+    <div class="card border-0 shadow-sm mx-auto text-center" style="max-width: 42rem;">
+        <div class="card-body p-5">
+            <h1 class="h3">@Model.Quiz.Title</h1>
+            <p class="text-muted">Attempt @Model.AttemptNumber</p>
+            <div class="display-5 fw-bold my-4">@Model.Score / @Model.MaxScore</div>
+            <p>Submitted @Model.SubmittedAt.ToLocalTime().ToString("dd MMM yyyy, hh:mm tt")</p>
+            <a asp-action="QuizResultHistory" asp-route-quizId="@Model.QuizId"
+               class="btn btn-primary">View quiz history</a>
+        </div>
+    </div>
+</div>
