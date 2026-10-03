@@ -3177,23 +3177,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+    "C:\\Users\\yashb\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
+      "projectUniqueName": "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
       "projectName": "StudySphere",
-      "projectPath": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\B.Tech\\SEM5\\WAD\\Github project\\StudySphere\\StudySphere\\StudySphere\\obj\\",
+      "projectPath": "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
+      "packagesPath": "C:\\Users\\yashb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yashb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

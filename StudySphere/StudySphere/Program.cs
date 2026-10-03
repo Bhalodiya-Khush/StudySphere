@@ -77,11 +77,13 @@ using (var scope = app.Services.CreateScope())
 
     var adminEmail = builder.Configuration["BootstrapAdmin:Email"];
     var adminPassword = builder.Configuration["BootstrapAdmin:Password"];
+    // If bootstrap admin settings are partially configured, log a warning and skip creation.
     if (string.IsNullOrWhiteSpace(adminEmail) !=
         string.IsNullOrWhiteSpace(adminPassword))
     {
-        throw new InvalidOperationException(
-            "Configure both BootstrapAdmin:Email and BootstrapAdmin:Password to create the initial administrator.");
+        // Avoid throwing at startup; inform the operator and skip bootstrap admin creation.
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        logger.LogWarning("BootstrapAdmin settings are partially configured. Skipping automatic bootstrap administrator creation. Configure both BootstrapAdmin:Email and BootstrapAdmin:Password to enable creation.");
     }
 
     if (!string.IsNullOrWhiteSpace(adminEmail) &&

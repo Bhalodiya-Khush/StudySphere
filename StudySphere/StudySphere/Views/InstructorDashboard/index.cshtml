@@ -158,21 +158,15 @@
     </div>
 
 
-    <!-- Horizontal Course Cards -->
-    <div class="d-flex overflow-auto gap-3 pb-3">
+    <!-- Responsive Course Cards -->
+    <div class="row g-4">
 
         @if (courses != null)
         {
             foreach (var course in courses)
             {
-                <div style="min-width: 280px; max-width: 280px;">
+                <div class="col-12 col-md-6 col-lg-4">
                     <partial name="_CourseCard" model="course" />
-                    <div class="instructor-course-links">
-                        <a asp-action="Materials" asp-route-courseId="@course.CourseId">Materials</a>
-                        <a asp-action="Assignments" asp-route-courseId="@course.CourseId">Assignments</a>
-                        <a asp-action="Quizzes" asp-route-courseId="@course.CourseId">Quizzes</a>
-                        <a asp-action="LiveLectures" asp-route-courseId="@course.CourseId">Lectures</a>
-                    </div>
                 </div>
             }
         }
