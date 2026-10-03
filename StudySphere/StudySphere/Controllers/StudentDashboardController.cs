@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StudySphere.Models.ViewModels;
 using StudySphere.Repositories.Interfaces;
 
@@ -24,6 +25,7 @@ namespace StudySphere.Controllers
         // STUDENT DASHBOARD
         // =========================================================
 
+        [Authorize(Roles = "Student")]
         public IActionResult Index()
         {
             var model = new StudentDashboardViewModel
@@ -48,6 +50,7 @@ namespace StudySphere.Controllers
         // MY COURSES
         // =========================================================
 
+        [Authorize(Roles = "Student")]
         public IActionResult MyCourses()
         {
             var enrolledCourses =

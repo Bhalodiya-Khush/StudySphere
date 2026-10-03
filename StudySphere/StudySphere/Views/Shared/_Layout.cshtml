@@ -109,18 +109,20 @@
                     </button>
 
 
-                    <!-- Temporary Profile -->
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                    <!-- Profile -->
 
                     <a asp-controller="Profile"
                        asp-action="Index"
                        class="profile-button">
 
                         <span class="profile-avatar">
-                            S
+                            @(User.Identity.Name?.FirstOrDefault() ?? 'U')
                         </span>
 
                         <span class="profile-name">
-                            Student
+                            @User.Identity.Name
                         </span>
 
                         <svg class="profile-arrow"
@@ -136,7 +138,7 @@
                     </a>
 
 
-                    <!-- Temporary Profile Dropdown -->
+                    <!-- Profile Dropdown -->
 
                     <div id="profileMenu"
                          class="profile-menu">
@@ -144,12 +146,12 @@
                         <div class="profile-menu-header">
 
                             <div class="profile-avatar large">
-                                S
+                                @(User.Identity.Name?.FirstOrDefault() ?? 'U')
                             </div>
 
                             <div>
-                                <strong>Student</strong>
-                                <small>student@studysphere.com</small>
+                                <strong>@User.Identity.Name</strong>
+                                <small>@User.Identity.Name</small>
                             </div>
 
                         </div>
@@ -173,18 +175,22 @@
 
                         <div class="profile-divider"></div>
 
-                        <!-- Temporary logout -->
-
-                        <a href="#logout"
-                           class="logout-link"
-                           onclick="showComingSoon('Logout')">
-                            Sign Out
-                        </a>
+                        <form asp-controller="Account" asp-action="Logout" method="post">
+                            <button type="submit" class="logout-link">
+                                Sign Out
+                            </button>
+                        </form>
 
                     </div>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="btn-primary">
+                            Sign In
+                        </a>
+                    }
 
                 </div>
-
 
                 <!-- Mobile Menu Button -->
 

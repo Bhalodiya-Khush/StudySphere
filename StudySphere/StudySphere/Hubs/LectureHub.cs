@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
 
 namespace StudySphere.Hubs
 {
+    [Authorize(Roles = "Student,Instructor")]
     public class LectureHub : Hub
     {
         public async Task JoinLecture(int lectureId)

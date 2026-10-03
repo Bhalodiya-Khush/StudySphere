@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Access denied";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<main class="auth-container">
+    <section class="form-section">
+        <div class="form-wrapper">
+            <h2>Access denied</h2>
+            <p>Your account does not have permission to view this page.</p>
+            <a asp-controller="Home" asp-action="Index" class="primary-btn">
+                <span>Return home</span>
+            </a>
+        </div>
+    </section>
+</main>

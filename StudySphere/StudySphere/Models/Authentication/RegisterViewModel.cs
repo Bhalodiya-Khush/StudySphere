@@ -30,7 +30,7 @@ namespace StudySphere.ViewModels.Authentication
 
 
         [Required(ErrorMessage = "Please select a role.")]
-        public string Role { get; set; } = string.Empty;
+        public string Role { get; set; } = "Student";
 
 
         // Instructor-specific fields

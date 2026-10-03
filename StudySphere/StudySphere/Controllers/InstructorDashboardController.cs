@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StudySphere.Models;
 using StudySphere.Repositories.Interfaces;
 
 namespace StudySphere.Controllers
 {
+    [Authorize(Roles = "Instructor")]
     public class InstructorDashboardController : Controller
     {
         // =========================================================

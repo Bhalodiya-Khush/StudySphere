@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using StudySphere.Models;
 
 namespace StudySphere.Data
 {
-    public class StudySphereDbContext : DbContext
+    public class StudySphereDbContext : IdentityDbContext<ApplicationUser>
     {
         public StudySphereDbContext(
             DbContextOptions<StudySphereDbContext> options)
@@ -15,7 +16,7 @@ namespace StudySphere.Data
         // DbSets
         // =========================================================
 
-        public DbSet<User> Users { get; set; } = null!;
+        public new DbSet<User> Users { get; set; } = null!;
         public DbSet<Student> Students { get; set; } = null!;
         public DbSet<Instructor> Instructors { get; set; } = null!;
         public DbSet<Admin> Admins { get; set; } = null!;

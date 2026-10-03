@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StudySphere.Repositories.Interfaces;
 
 namespace StudySphere.Controllers
 {
+    [Authorize(Roles = "Student,Instructor")]
     public class LiveLectureController : Controller
     {
         private readonly IInstructorDashboardRepository _repository;
