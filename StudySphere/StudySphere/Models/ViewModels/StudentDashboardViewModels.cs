@@ -11,5 +11,13 @@ namespace StudySphere.Models.ViewModels
         public List<Course> AllCourses { get; set; } = new();
 
         public List<string> Categories { get; set; } = new();
+
+        public Dictionary<int, decimal> CourseProgress { get; set; } = new();
+
+        public decimal OverallProgress { get; set; }
+
+        public int CompletedCourses { get; set; }
+
+        public int UpcomingAssignments { get; set; }
     }
 }

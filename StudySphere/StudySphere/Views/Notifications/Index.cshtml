@@ -1,0 +1,50 @@
+﻿@model StudySphere.Models.ViewModels.NotificationViewModel
+
+@{
+    ViewData["Title"] = "Notifications";
+}
+
+<div class="dashboard-shell">
+    <section class="dashboard-welcome">
+        <div>
+            <span class="eyebrow">STAY IN THE LOOP</span>
+            <h1>Notifications</h1>
+            <p>Updates and reminders connected to your StudySphere activity.</p>
+        </div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-brand">Home</a>
+    </section>
+
+    @if (Model.Items.Count == 0)
+    {
+        <div class="empty-state">
+            <span class="empty-state-icon">♧</span>
+            <h2>You're all caught up</h2>
+            <p>New course updates, reviews, and reminders will appear here.</p>
+        </div>
+    }
+    else
+    {
+        <div class="notification-list">
+            @foreach (var item in Model.Items)
+            {
+                <article class="notification-card">
+                    <span class="notification-marker" aria-hidden="true"></span>
+                    <div class="notification-content">
+                        <div class="notification-heading">
+                            <span class="notification-category">@item.Category</span>
+                            <time datetime="@item.CreatedAt.ToString("O")">@item.CreatedAt.ToLocalTime().ToString("MMM d, yyyy · h:mm tt")</time>
+                        </div>
+                        <h2>@item.Title</h2>
+                        <p>@item.Message</p>
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(item.Url))
+                    {
+                        <a href="@item.Url" class="notification-open" aria-label="Open @item.Title">
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    }
+                </article>
+            }
+        </div>
+    }
+</div>

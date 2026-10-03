@@ -12,12 +12,24 @@
     <!-- Header -->
     <div class="mb-4">
         <h2 class="fw-bold">
-            Welcome, Instructor 👋
+            Welcome, @(instructor?.User?.FullName ?? "Instructor")
         </h2>
 
         <p class="text-muted">
-            Manage your courses, students and learning content.
+            Create engaging courses and support your students. Learn · Grow · Succeed.
         </p>
+    </div>
+
+    <div class="dashboard-quicklinks mb-4">
+        <a asp-controller="InstructorDashboard" asp-action="CreateCourse" class="dashboard-quicklink">
+            <span>＋</span><strong>Create a course</strong><small>Start building a new course</small>
+        </a>
+        <a asp-controller="InstructorDashboard" asp-action="Courses" class="dashboard-quicklink">
+            <span>▣</span><strong>Manage courses</strong><small>Edit courses and learning content</small>
+        </a>
+        <a asp-controller="Notifications" asp-action="Index" class="dashboard-quicklink">
+            <span>♧</span><strong>Notifications</strong><small>Reviews and student activity</small>
+        </a>
     </div>
 
 
@@ -155,6 +167,12 @@
             {
                 <div style="min-width: 280px; max-width: 280px;">
                     <partial name="_CourseCard" model="course" />
+                    <div class="instructor-course-links">
+                        <a asp-action="Materials" asp-route-courseId="@course.CourseId">Materials</a>
+                        <a asp-action="Assignments" asp-route-courseId="@course.CourseId">Assignments</a>
+                        <a asp-action="Quizzes" asp-route-courseId="@course.CourseId">Quizzes</a>
+                        <a asp-action="LiveLectures" asp-route-courseId="@course.CourseId">Lectures</a>
+                    </div>
                 </div>
             }
         }

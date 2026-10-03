@@ -44,18 +44,93 @@ namespace StudySphere.Controllers
                 return Forbid();
             }
 
+            var enrollments = _dbContext.Enrollments
+                .Include(enrollment => enrollment.Course)
+                .Where(enrollment =>
+                    enrollment.StudentId == student.StudentId &&
+                    enrollment.Status != "Withdrawn" &&
+                    enrollment.Course.Status == "Approved")
+                .OrderByDescending(enrollment => enrollment.EnrolledAt)
+                .ToList();
+            var courseIds = enrollments
+                .Select(enrollment => enrollment.CourseId)
+                .ToList();
+            var totalLessonsByCourse = _dbContext.Materials
+                .Where(material =>
+                    courseIds.Contains(material.CourseId) &&
+                    material.IsPublished)
+                .GroupBy(material => material.CourseId)
+                .Select(group => new
+                {
+                    CourseId = group.Key,
+                    Count = group.Count()
+                })
+                .ToDictionary(item => item.CourseId, item => item.Count);
+            var completedLessonsByCourse = _dbContext.LessonProgress
+                .Where(progress =>
+                    progress.StudentId == student.StudentId &&
+                    courseIds.Contains(progress.Material.CourseId) &&
+                    progress.Material.IsPublished)
+                .GroupBy(progress => progress.Material.CourseId)
+                .Select(group => new
+                {
+                    CourseId = group.Key,
+                    Count = group.Count()
+                })
+                .ToDictionary(item => item.CourseId, item => item.Count);
+
+            var courseProgress = new Dictionary<int, decimal>();
+            foreach (var enrollment in enrollments)
+            {
+                var total = totalLessonsByCourse.GetValueOrDefault(
+                    enrollment.CourseId);
+                var completed = completedLessonsByCourse.GetValueOrDefault(
+                    enrollment.CourseId);
+                var progress = total == 0
+                    ? 0
+                    : Math.Round(Math.Min(completed, total) * 100m / total, 2);
+
+                courseProgress[enrollment.CourseId] = progress;
+                if (enrollment.Progress != progress)
+                {
+                    enrollment.Progress = progress;
+                }
+
+                if (total > 0 && completed >= total)
+                {
+                    enrollment.Status = "Completed";
+                    enrollment.CompletedAt ??= DateTime.UtcNow;
+                }
+            }
+
+            if (_dbContext.ChangeTracker.HasChanges())
+            {
+                _dbContext.SaveChanges();
+            }
+
             var model = new StudentDashboardViewModel
             {
                 StudentName = student.User.FullName,
-
-                EnrolledCourses =
-                    _repository.GetEnrolledCourses(student.StudentId),
-
+                EnrolledCourses = enrollments
+                    .Select(enrollment => enrollment.Course)
+                    .ToList(),
                 AllCourses =
                     _repository.GetAllCourses(),
-
                 Categories =
-                    _repository.GetCategories()
+                    _repository.GetCategories(),
+                CourseProgress = courseProgress,
+                OverallProgress = courseProgress.Count == 0
+                    ? 0
+                    : Math.Round(courseProgress.Values.Average(), 1),
+                CompletedCourses = enrollments.Count(enrollment =>
+                    enrollment.Status == "Completed"),
+                UpcomingAssignments = _dbContext.Assignments.Count(assignment =>
+                    assignment.IsPublished &&
+                    assignment.DueAt > DateTime.UtcNow &&
+                    courseIds.Contains(assignment.CourseId) &&
+                    !_dbContext.AssignmentSubmissions.Any(submission =>
+                        submission.AssignmentId == assignment.AssignmentId &&
+                        submission.StudentId == student.StudentId))
             };
 
             return View(model);
@@ -86,6 +161,7 @@ namespace StudySphere.Controllers
         // ALL COURSES
         // =========================================================
 
+        [Authorize(Roles = "Student")]
         public IActionResult AllCourses(
             string? search,
             string? category,
@@ -114,6 +190,7 @@ namespace StudySphere.Controllers
         // COURSES BY CATEGORY
         // =========================================================
 
+        [Authorize(Roles = "Student")]
         public IActionResult CategoryCourses(string category)
         {
             if (string.IsNullOrWhiteSpace(category))
@@ -138,6 +215,7 @@ namespace StudySphere.Controllers
         // COURSE DETAILS
         // =========================================================
 
+        [Authorize(Roles = "Student")]
         public IActionResult CourseDetails(int id)
         {
             var course =

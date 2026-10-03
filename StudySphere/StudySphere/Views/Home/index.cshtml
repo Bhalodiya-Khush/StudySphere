@@ -1,4 +1,6 @@
-﻿@{
+﻿@model StudySphere.Models.ViewModels.HomeViewModel
+
+@{
     ViewData["Title"] = "Home";
 }
 
@@ -15,7 +17,7 @@
 
             <span class="hero-badge">
                 <span class="badge-dot"></span>
-                Learn smarter. Grow faster.
+                Learn. Grow. Succeed.
             </span>
 
             <h1>
@@ -43,29 +45,6 @@
 
             </div>
 
-            <div class="hero-stats">
-
-                <div class="stat-item">
-                    <strong>50+</strong>
-                    <span>Courses</span>
-                </div>
-
-                <div class="stat-divider"></div>
-
-                <div class="stat-item">
-                    <strong>10K+</strong>
-                    <span>Students</span>
-                </div>
-
-                <div class="stat-divider"></div>
-
-                <div class="stat-item">
-                    <strong>25+</strong>
-                    <span>Instructors</span>
-                </div>
-
-            </div>
-
         </div>
 
 
@@ -75,35 +54,10 @@
             <div class="hero-circle circle-one"></div>
             <div class="hero-circle circle-two"></div>
 
-            <div class="floating-card students-card">
-                <div class="floating-icon">🎓</div>
-
-                <div>
-                    <strong>10K+</strong>
-                    <span>Active Students</span>
-                </div>
-            </div>
-
-            <!-- Temporary image -->
             <div class="student-image-wrapper">
                 <img src="~/images/student-hero.png"
                      alt="Student learning online"
                      class="student-image" />
-            </div>
-
-            <div class="floating-card progress-card">
-
-                <div class="progress-header">
-                    <span>Learning Progress</span>
-                    <strong>78%</strong>
-                </div>
-
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-
-                <small>Keep going! You're doing great.</small>
-
             </div>
 
         </div>
@@ -133,85 +87,78 @@
         </div>
 
 
-        <div class="category-grid">
-
-            @* TODO: Link category cards to public course/category browsing. *@
-            <a href="#" class="category-card category-web reveal">
-
-                <div class="category-icon">
-                    &lt;/&gt;
-                </div>
-
-                <div class="category-info">
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript & more</p>
-                </div>
-
-                <span class="category-arrow">→</span>
-
-            </a>
-
-
-            <a href="#" class="category-card category-java reveal">
-
-                <div class="category-icon">
-                    ☕
-                </div>
-
-                <div class="category-info">
-                    <h3>Java Programming</h3>
-                    <p>Java, OOP & backend development</p>
-                </div>
-
-                <span class="category-arrow">→</span>
-
-            </a>
-
-
-            <a href="#" class="category-card category-db reveal">
-
-                <div class="category-icon">
-                    ◈
-                </div>
-
-                <div class="category-info">
-                    <h3>Database Systems</h3>
-                    <p>SQL, DBMS & data management</p>
-                </div>
-
-                <span class="category-arrow">→</span>
-
-            </a>
-
-
-            <a href="#" class="category-card category-design reveal">
-
-                <div class="category-icon">
-                    ✦
-                </div>
-
-                <div class="category-info">
-                    <h3>UI / UX Design</h3>
-                    <p>Design beautiful user experiences</p>
-                </div>
-
-                <span class="category-arrow">→</span>
-
-            </a>
-
-        </div>
+        @if (Model.Categories.Count > 0)
+        {
+            <div class="category-grid">
+                @foreach (var category in Model.Categories)
+                {
+                    <a asp-controller="StudentDashboard"
+                       asp-action="CategoryCourses"
+                       asp-route-category="@category.Name"
+                       class="category-card reveal">
+                        <div class="category-icon" aria-hidden="true">✦</div>
+                        <div class="category-info">
+                            <h3>@category.Name</h3>
+                            <p>@category.CourseCount course@(category.CourseCount == 1 ? "" : "s")</p>
+                        </div>
+                        <span class="category-arrow" aria-hidden="true">→</span>
+                    </a>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="empty-courses">New learning categories are on their way.</p>
+        }
 
 
         <div class="view-all-wrapper reveal">
 
-            @* TODO: Link to a public all-courses page. *@
-            <a href="#" class="view-all-btn">
+            <a asp-controller="StudentDashboard"
+               asp-action="AllCourses"
+               class="view-all-btn">
                 View All Courses
                 <span>→</span>
             </a>
 
         </div>
 
+    </section>
+
+    <section class="home-courses-section" aria-labelledby="featured-courses-title">
+        <div class="section-heading reveal">
+            <div>
+                <span class="section-label">LEARN SOMETHING NEW</span>
+                <h2 id="featured-courses-title">Featured <span>Courses.</span></h2>
+            </div>
+            <p>Explore courses published by our instructors. Sign in to open a course and start learning.</p>
+        </div>
+
+        @if (Model.Courses.Count > 0)
+        {
+            <div class="row g-4">
+                @foreach (var course in Model.Courses)
+                {
+                    <div class="col-sm-6 col-xl-4 reveal">
+                        <partial name="_CourseCard" model="course" />
+                    </div>
+                }
+            </div>
+            <div class="view-all-wrapper reveal">
+                <a asp-controller="StudentDashboard"
+                   asp-action="AllCourses"
+                   class="view-all-btn">
+                    Browse all courses <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="empty-courses">
+                <h3>Courses are on the way</h3>
+                <p>Approved courses will appear here as instructors publish them.</p>
+            </div>
+        }
     </section>
 
 

@@ -77,11 +77,16 @@ environment. Existing accounts are not reset when the seeder runs again.
 
 ### 3. Try the learner and instructor workflows
 
+- The public home page lists approved courses and categories. Sign in as a
+  student to open course pages and enroll; lesson completion updates the
+  progress shown on the student dashboard.
 - Register a student and enroll in an approved course to unlock its materials,
   assignments, quizzes, and live lectures.
 - Register an instructor; an admin must activate the account before its first
   sign-in. Once active, the instructor can submit courses for admin approval,
   then manage course content and activities.
+- Signed-in users can open Notifications to see relevant course, assignment,
+  lecture, submission, and review updates for their role.
 - Live video, microphone, and screen sharing require browser media permissions.
   Test using the HTTPS local URL.
 

@@ -1,0 +1,129 @@
+.mobile-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.logo img {
+    width: 132px;
+    height: 132px;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+.logo > span,
+.mobile-logo > span {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo strong,
+.mobile-logo strong {
+    font-size: 1.15rem;
+    letter-spacing: -0.04em;
+}
+
+.logo small,
+.mobile-logo small {
+    margin-top: 4px;
+    color: #52665f;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.auth-brand-promise {
+    max-width: 390px;
+    margin-top: 36px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(16, 102, 83, 0.08);
+    border-radius: 16px;
+}
+
+.auth-brand-promise p {
+    margin: 0;
+    color: #38574e;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.promise-dot {
+    width: 9px;
+    height: 9px;
+    margin-top: 6px;
+    flex: 0 0 auto;
+    background: #16866f;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(22, 134, 111, 0.12);
+}
+
+.validation-summary {
+    margin-top: 14px;
+}
+
+.validation-summary:empty {
+    display: none;
+}
+
+.validation-summary.validation-summary-errors,
+.validation-summary:not(:empty) {
+    padding: 12px 15px;
+    color: #842029 !important;
+    background: #fff0f0;
+    border: 1px solid #f1c2c5;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.validation-summary ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.input-validation-error {
+    border-color: #cb4e59 !important;
+    box-shadow: 0 0 0 3px rgba(203, 78, 89, 0.12) !important;
+}
+
+.field-validation-error {
+    display: block;
+    margin-top: 6px;
+    color: #a3313b;
+    font-size: 0.8rem;
+}
+
+.auth-form .primary-btn {
+    border: 0;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.auth-form .primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(24, 122, 98, 0.18);
+}
+
+.auth-form .input-wrapper:focus-within {
+    border-color: #16866f;
+    box-shadow: 0 0 0 3px rgba(22, 134, 111, 0.12);
+}
+
+@media (max-width: 760px) {
+    .mobile-logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo img {
+        width: 94px;
+        height: 94px;
+    }
+
+    .auth-brand-promise {
+        margin-top: 22px;
+    }
+}

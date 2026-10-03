@@ -1,156 +1,157 @@
 ﻿@model StudySphere.Models.ViewModels.StudentDashboardViewModel
 
 @{
-    ViewData["Title"] = "Student Dashboard";
+    ViewData["Title"] = "My Learning";
 }
 
-<div class="container py-4">
-
-    <!-- Welcome -->
-    <div class="mb-4">
-        <h2 class="fw-bold">
-            Welcome back, @Model.StudentName 👋
-        </h2>
-
-        <p class="text-muted">
-            Continue learning and explore new courses.
-        </p>
-    </div>
-
-
-    <!-- ============================= -->
-    <!-- MY ENROLLED COURSES -->
-    <!-- ============================= -->
-
-    <section class="mb-5">
-
-        <div class="d-flex justify-content-between align-items-center mb-3">
-
-            <div>
-                <h3 class="fw-bold mb-1">
-                    My Courses
-                </h3>
-
-                <p class="text-muted mb-0">
-                    Continue where you left off
-                </p>
-            </div>
-
-            <a asp-controller="StudentDashboard"
-               asp-action="MyCourses"
-               class="btn btn-outline-success btn-sm">
-                View All
+<div class="dashboard-shell">
+    <section class="dashboard-welcome">
+        <div>
+            <span class="eyebrow">YOUR LEARNING SPACE</span>
+            <h1>Welcome back, @Model.StudentName</h1>
+            <p>Learn. Grow. Succeed. Pick up where you left off or discover your next course.</p>
+        </div>
+        <div class="welcome-actions">
+            <a asp-action="AllCourses" class="btn btn-brand">Explore courses</a>
+            <a asp-controller="Notifications" asp-action="Index" class="btn btn-outline-brand">
+                Notifications
             </a>
-
         </div>
-
-
-        <div class="course-scroll">
-
-            @foreach (var course in Model.EnrolledCourses)
-            {
-                <partial name="_CourseCard" model="course" />
-            }
-
-        </div>
-
     </section>
 
-
-
-    <!-- ============================= -->
-    <!-- ALL COURSES -->
-    <!-- ============================= -->
-
-    <section class="mb-5">
-
-        <div class="d-flex justify-content-between align-items-center mb-3">
-
-            <div>
-                <h3 class="fw-bold mb-1">
-                    Explore Courses
-                </h3>
-
-                <p class="text-muted mb-0">
-                    Discover something new to learn
-                </p>
-            </div>
-
-            <a asp-controller="StudentDashboard"
-               asp-action="AllCourses"
-               class="btn btn-outline-success btn-sm">
-                View All
-            </a>
-
+    <section class="row g-4 mb-4" aria-label="Learning summary">
+        <div class="col-sm-6 col-xl-3">
+            <article class="summary-card">
+                <span class="summary-icon">▣</span>
+                <div><p>Enrolled courses</p><strong>@Model.EnrolledCourses.Count</strong></div>
+            </article>
         </div>
-
-
-        <div class="course-scroll">
-
-            @foreach (var course in Model.AllCourses)
-            {
-                <partial name="_CourseCard" model="course" />
-            }
-
+        <div class="col-sm-6 col-xl-3">
+            <article class="summary-card">
+                <span class="summary-icon">✓</span>
+                <div><p>Completed courses</p><strong>@Model.CompletedCourses</strong></div>
+            </article>
         </div>
-
-    </section>
-
-
-
-    <!-- ============================= -->
-    <!-- CATEGORIES -->
-    <!-- ============================= -->
-
-    <section>
-
-        <div class="mb-3">
-
-            <h3 class="fw-bold mb-1">
-                Browse by Category
-            </h3>
-
-            <p class="text-muted">
-                Find courses based on your interests
-            </p>
-
+        <div class="col-sm-6 col-xl-3">
+            <article class="summary-card">
+                <span class="summary-icon">◷</span>
+                <div><p>Upcoming assignments</p><strong>@Model.UpcomingAssignments</strong></div>
+            </article>
         </div>
-
-
-        <div class="row g-3">
-
-            @foreach (var category in Model.Categories)
-            {
-                <div class="col-6 col-md-3">
-
-                    <a asp-controller="StudentDashboard"
-                       asp-action="CategoryCourses"
-                       asp-route-category="@category"
-                       class="text-decoration-none">
-
-                        <div class="category-card">
-
-                            <div class="category-icon">
-                                📚
-                            </div>
-
-                            <h5 class="mb-0">
-                                @category
-                            </h5>
-
-                            <small class="text-muted">
-                                Explore courses
-                            </small>
-
-                        </div>
-
-                    </a>
-
+        <div class="col-sm-6 col-xl-3">
+            <article class="summary-card summary-progress">
+                <span class="summary-icon">↗</span>
+                <div class="w-100">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="mb-1">Overall progress</p>
+                        <strong>@Model.OverallProgress.ToString("0.#")%</strong>
+                    </div>
+                    <div class="progress" role="progressbar"
+                         aria-label="Overall course progress"
+                         aria-valuenow="@Model.OverallProgress.ToString("0.#")"
+                         aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: @Model.OverallProgress.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture)%"></div>
+                    </div>
                 </div>
-            }
-
+            </article>
         </div>
-
     </section>
 
+    <section class="dashboard-section">
+        <div class="dashboard-section-heading">
+            <div>
+                <span class="eyebrow">KEEP YOUR MOMENTUM</span>
+                <h2>Continue learning</h2>
+            </div>
+            <a asp-action="MyCourses" class="section-link">All my courses <span aria-hidden="true">→</span></a>
+        </div>
+
+        @if (Model.EnrolledCourses.Count > 0)
+        {
+            <div class="row g-4">
+                @foreach (var course in Model.EnrolledCourses)
+                {
+                    var progress = Model.CourseProgress.GetValueOrDefault(course.CourseId);
+                    <div class="col-sm-6 col-xl-4">
+                        <article class="learning-course-card">
+                            <partial name="_CourseCard" model="course" />
+                            <div class="learning-course-progress">
+                                <div class="d-flex justify-content-between">
+                                    <span>Course progress</span><strong>@progress.ToString("0.#")%</strong>
+                                </div>
+                                <div class="progress" role="progressbar"
+                                     aria-label="@course.Title progress"
+                                     aria-valuenow="@progress.ToString("0.#")"
+                                     aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: @progress.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture)%"></div>
+                                </div>
+                                <div class="course-quicklinks">
+                                    <a asp-action="Assignments" asp-route-courseId="@course.CourseId">Assignments</a>
+                                    <a asp-action="Quizzes" asp-route-courseId="@course.CourseId">Quizzes</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="empty-state">
+                <span class="empty-state-icon">✦</span>
+                <h3>Your learning journey starts here</h3>
+                <p>Browse approved courses and enroll to unlock lessons, assignments, and quizzes.</p>
+                <a asp-action="AllCourses" class="btn btn-brand">Find a course</a>
+            </div>
+        }
+    </section>
+
+    <section class="dashboard-section">
+        <div class="dashboard-section-heading">
+            <div>
+                <span class="eyebrow">FIND YOUR NEXT SKILL</span>
+                <h2>Explore courses</h2>
+            </div>
+            <a asp-action="AllCourses" class="section-link">Browse all <span aria-hidden="true">→</span></a>
+        </div>
+
+        @if (Model.AllCourses.Count > 0)
+        {
+            <div class="row g-4">
+                @foreach (var course in Model.AllCourses.Take(6))
+                {
+                    <div class="col-sm-6 col-xl-4">
+                        <partial name="_CourseCard" model="course" />
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="empty-state compact-empty">
+                <h3>No approved courses yet</h3>
+                <p>Check back later for new courses from our instructors.</p>
+            </div>
+        }
+    </section>
+
+    @if (Model.Categories.Count > 0)
+    {
+        <section class="dashboard-section">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="eyebrow">BROWSE BY INTEREST</span>
+                    <h2>Course categories</h2>
+                </div>
+            </div>
+            <div class="category-chip-list">
+                @foreach (var category in Model.Categories)
+                {
+                    <a asp-action="CategoryCourses"
+                       asp-route-category="@category"
+                       class="category-chip">@category <span aria-hidden="true">→</span></a>
+                }
+            </div>
+        </section>
+    }
 </div>

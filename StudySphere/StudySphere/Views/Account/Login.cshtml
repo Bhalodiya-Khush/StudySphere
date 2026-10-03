@@ -13,11 +13,7 @@
         <div class="brand-content">
 
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-
-                <span>StudySphere</span>
+                <img src="~/images/StudySphereLogo.png" alt="StudySphere — Learn, Grow, Succeed" />
             </div>
 
             <div class="brand-text">
@@ -35,35 +31,9 @@
                 </p>
             </div>
 
-            <!-- Decorative course cards -->
-            <div class="floating-cards">
-
-                <div class="mini-card card-one">
-                    <div class="mini-icon">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-
-                    <div>
-                        <strong>Web Development</strong>
-                        <small>Continue learning</small>
-                    </div>
-
-                    <span class="progress">72%</span>
-                </div>
-
-                <div class="mini-card card-two">
-                    <div class="mini-icon">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-
-                    <div>
-                        <strong>Database Systems</strong>
-                        <small>8 lessons completed</small>
-                    </div>
-
-                    <span class="progress">64%</span>
-                </div>
-
+            <div class="auth-brand-promise">
+                <span class="promise-dot"></span>
+                <p>A place to learn new skills, make steady progress, and build what comes next.</p>
             </div>
 
         </div>
@@ -87,11 +57,8 @@
 
             <!-- Mobile Logo -->
             <div class="mobile-logo">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-
-                <span>StudySphere</span>
+                <img src="~/images/StudySphereIcon.png" alt="" />
+                <span><strong>StudySphere</strong><small>Learn · Grow · Succeed</small></span>
             </div>
 
 
@@ -141,7 +108,7 @@
                         Sign in to continue your learning journey.
                     </p>
 
-                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div asp-validation-summary="All" class="validation-summary text-danger" role="alert"></div>
 
                 </div>
 
@@ -270,7 +237,7 @@
                         Join StudySphere and start learning today.
                     </p>
 
-                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div asp-validation-summary="All" class="validation-summary text-danger" role="alert"></div>
 
                 </div>
 
