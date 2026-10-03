@@ -406,7 +406,6 @@ D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\f2pryvcx7r-{0}-o8tjupnk2e-o8tjupnk2e.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\gipk86so3w-{0}-61n19gt1b8-61n19gt1b8.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\u1ks1bkv9q-{0}-7lo37smpfq-7lo37smpfq.gz
-D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\x5b3s1dwa1-{0}-ccthx2fs15-ccthx2fs15.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\vueluulcw1-{0}-s78wrqw5o4-s78wrqw5o4.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\g0la1yhq4n-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\rvpnkh5gl6-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -481,3 +480,4 @@ D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.pdb
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.genruntimeconfig.cache
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\ref\StudySphere.dll
+D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\x5b3s1dwa1-{0}-5jzwrwy34a-5jzwrwy34a.gz

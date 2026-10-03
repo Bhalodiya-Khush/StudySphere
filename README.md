@@ -56,6 +56,25 @@ Open the HTTPS URL printed by `dotnet run`. Sign in with the admin credentials
 configured above, then approve instructor accounts and course submissions from
 the admin dashboard.
 
+When running in the Development environment, the application also seeds demo
+accounts and learning-workflow records after the database has been migrated.
+The demo accounts use the same password, `StudySphere@123`:
+
+| Role | Email |
+| --- | --- |
+| Admin | `admin@studysphere.com` |
+| Instructor | `instructor1@studysphere.com` |
+| Instructor | `instructor2@studysphere.com` |
+| Instructor | `instructor3@studysphere.com` |
+| Student | `student1@studysphere.com` |
+| Student | `student2@studysphere.com` |
+| Student | `student3@studysphere.com` |
+| Student | `student4@studysphere.com` |
+| Student | `student5@studysphere.com` |
+
+These accounts are for local development only. Do not use them in a deployed
+environment. Existing accounts are not reset when the seeder runs again.
+
 ### 3. Try the learner and instructor workflows
 
 - Register a student and enroll in an approved course to unlock its materials,
