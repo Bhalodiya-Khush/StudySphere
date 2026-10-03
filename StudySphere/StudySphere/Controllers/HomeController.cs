@@ -60,6 +60,12 @@ namespace StudySphere.Controllers
 
             return View(new HomeViewModel
             {
+                CourseCount = _dbContext.Courses.Count(course =>
+                    course.Status == "Approved"),
+                InstructorCount = _dbContext.Instructors.Count(instructor =>
+                    instructor.User.IsActive),
+                StudentCount = _dbContext.Students.Count(student =>
+                    student.User.IsActive),
                 Courses = courses,
                 Categories = categories
             });

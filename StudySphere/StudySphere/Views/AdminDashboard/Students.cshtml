@@ -56,114 +56,21 @@
     </div>
 
 
-    <!-- Student List -->
-    <div class="card border-0 shadow-sm">
-
-        <div class="card-header bg-white py-3">
-
-            <h5 class="fw-bold mb-0">
-                Student List
-            </h5>
-
-        </div>
-
-        <div class="card-body p-0">
-
-            @if (Model.Any())
+    @if (Model.Any())
+    {
+        <div class="admin-user-grid">
+            @foreach (var student in Model)
             {
-                <div class="table-responsive">
-
-                    <table class="table table-hover align-middle mb-0">
-
-                        <thead class="table-light">
-
-                            <tr>
-                                <th>Student ID</th>
-                                <th>User ID</th>
-                                <th>Status</th>
-                                <th class="text-end">Action</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                            @foreach (var student in Model)
-                            {
-                                <tr>
-
-                                    <!-- Student ID -->
-                                    <td>
-                                        <span class="fw-semibold">
-                                            #@student.StudentId
-                                        </span>
-                                    </td>
-
-
-                                    <!-- User ID -->
-                                    <td>
-                                        @student.StudentId
-                                    </td>
-
-
-                                    <!-- Status -->
-                                    <td>
-                                        <span class="badge @(student.User.IsActive ? "bg-success" : "bg-secondary")">
-                                            @(student.User.IsActive ? "Active" : "Inactive")
-                                        </span>
-                                    </td>
-
-
-                                    <!-- Action -->
-                                    <td class="text-end">
-
-                                        <a asp-controller="AdminDashboard"
-                                           asp-action="ViewStudent"
-                                           asp-route-id="@student.StudentId"
-                                           class="btn btn-outline-primary btn-sm">
-                                            View
-                                        </a>
-                                        <form asp-controller="AdminDashboard"
-                                              asp-action="SetStudentActive"
-                                              method="post"
-                                              class="d-inline">
-                                            @Html.AntiForgeryToken()
-                                            <input type="hidden" name="id" value="@student.StudentId" />
-                                            <input type="hidden" name="isActive" value="@(!student.User.IsActive)" />
-                                            <button type="submit"
-                                                    class="btn btn-sm @(student.User.IsActive ? "btn-outline-danger" : "btn-outline-success")">
-                                                @(student.User.IsActive ? "Deactivate" : "Activate")
-                                            </button>
-                                        </form>
-
-                                    </td>
-
-                                </tr>
-                            }
-
-                        </tbody>
-
-                    </table>
-
-                </div>
+                <partial name="_AdminStudentCard" model="student" />
             }
-            else
-            {
-                <div class="text-center py-5">
-
-                    <h5 class="fw-bold">
-                        No Students Found
-                    </h5>
-
-                    <p class="text-muted mb-0">
-                        There are currently no registered students.
-                    </p>
-
-                </div>
-            }
-
         </div>
-
-    </div>
+    }
+    else
+    {
+        <div class="empty-state">
+            <h3>No students yet</h3>
+            <p>Registered student accounts will appear here.</p>
+        </div>
+    }
 
 </div>

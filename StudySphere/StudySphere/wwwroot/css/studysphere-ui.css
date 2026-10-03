@@ -496,7 +496,29 @@ body {
     border-radius: 18px;
 }
 
+.student-course-card,
+.instructor-course-card {
+    overflow: hidden;
+    border: 1px solid var(--ss-line) !important;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(22, 66, 54, 0.055) !important;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.student-course-card:hover,
+.instructor-course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 38px rgba(22, 66, 54, 0.1) !important;
+}
+
 .home-courses-section .course-thumbnail {
+    height: 190px;
+    object-fit: cover;
+}
+
+.student-course-card .course-thumbnail,
+.instructor-course-card .course-thumbnail {
+    width: 100%;
     height: 190px;
     object-fit: cover;
 }
@@ -656,6 +678,282 @@ body {
     background: rgba(255, 255, 255, 0.75);
     border: 1px dashed #cbded5;
     border-radius: 18px;
+}
+
+.course-category-badge {
+    padding: 7px 10px;
+    color: var(--ss-brand-dark);
+    background: var(--ss-brand-soft);
+    border-radius: 30px;
+    font-weight: 700;
+}
+
+.course-level {
+    color: var(--ss-muted);
+    font-size: 0.75rem;
+}
+
+.course-card-title {
+    min-height: 2.8em;
+    margin-bottom: 8px;
+    color: var(--ss-ink);
+    font-size: 1.12rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.course-card-description {
+    display: -webkit-box;
+    min-height: 3.9em;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.course-card-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--ss-muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+}
+
+.course-status-badge {
+    padding: 7px 10px;
+    color: #4b6259;
+    background: #edf3f0;
+    border-radius: 30px;
+    text-transform: capitalize;
+}
+
+.course-card-actions {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 14px;
+}
+
+.course-card-actions a {
+    color: var(--ss-brand-dark);
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.course-card-actions a:hover {
+    text-decoration: underline;
+}
+
+.instructor-course-actions {
+    justify-content: flex-start;
+}
+
+.admin-user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+    gap: 18px;
+}
+
+.admin-user-card {
+    min-width: 0;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #fff;
+    border: 1px solid var(--ss-line);
+    border-radius: 20px;
+    box-shadow: 0 10px 26px rgba(22, 66, 54, 0.05);
+}
+
+.admin-user-identity {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.admin-user-avatar {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    color: var(--ss-brand-dark);
+    background: var(--ss-brand-soft);
+    border-radius: 16px;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.instructor-user-avatar {
+    color: #634c9b;
+    background: #f0edfa;
+}
+
+.admin-user-identity h2 {
+    margin: 0 0 4px;
+    overflow: hidden;
+    color: var(--ss-ink);
+    font-size: 1rem;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-user-identity p {
+    margin: 0;
+    overflow: hidden;
+    color: var(--ss-muted);
+    font-size: 0.82rem;
+    text-overflow: ellipsis;
+}
+
+.admin-user-facts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--ss-muted);
+    font-size: 0.78rem;
+}
+
+.user-status {
+    padding: 5px 9px;
+    border-radius: 30px;
+    font-size: 0.72rem;
+    font-weight: 750;
+}
+
+.user-status.is-active {
+    color: #13654e;
+    background: #e4f7ef;
+}
+
+.user-status.is-inactive {
+    color: #805416;
+    background: #fff5dd;
+}
+
+.admin-user-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: auto;
+}
+
+.admin-user-actions form {
+    margin: 0;
+}
+
+.live-room-shell {
+    width: min(1240px, calc(100% - 40px));
+    margin: 32px auto 70px;
+}
+
+.live-room-header {
+    padding: clamp(22px, 4vw, 38px);
+    color: #fff;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(114, 221, 181, 0.35), transparent 30%),
+        linear-gradient(125deg, #0f5c4f, #16866f 62%, #38a982);
+    border-radius: 24px;
+    box-shadow: var(--ss-shadow);
+}
+
+.live-room-header h1 {
+    margin: 7px 0 6px;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
+.live-room-header p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.live-room-header .eyebrow {
+    color: #c3f4e1;
+}
+
+.live-room-status {
+    margin-top: 20px;
+    padding: 12px 16px;
+    color: var(--ss-ink);
+    background: #fff;
+    border-radius: 12px;
+}
+
+.live-room-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.live-room-panel {
+    height: 100%;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--ss-line);
+    border-radius: 20px;
+    box-shadow: 0 10px 26px rgba(22, 66, 54, 0.05);
+}
+
+.live-room-panel h2 {
+    margin-bottom: 16px;
+    color: var(--ss-ink);
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.live-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 16px;
+}
+
+.live-video-tile {
+    min-width: 0;
+    padding: 8px;
+    background: #172420;
+    border-radius: 16px;
+}
+
+.live-video-tile video {
+    width: 100%;
+    max-height: 420px;
+    aspect-ratio: 16 / 10;
+    display: block;
+    object-fit: cover;
+    background: #0b1511;
+    border-radius: 10px;
+}
+
+.live-video-label {
+    padding: 9px 4px 3px;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 650;
+}
+
+.live-empty-participants {
+    padding: 36px 16px;
+    color: var(--ss-muted);
+    text-align: center;
+    background: var(--ss-page);
+    border: 1px dashed #cbded5;
+    border-radius: 14px;
+}
+
+#learning-materials [id^="material-"] {
+    scroll-margin-top: 110px;
+}
+
+.live-room-header .btn-light {
+    color: var(--ss-brand-dark);
+    font-weight: 700;
 }
 
 .main-content > .home-page {

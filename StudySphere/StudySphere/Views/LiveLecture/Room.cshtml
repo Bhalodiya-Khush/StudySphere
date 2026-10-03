@@ -1,111 +1,62 @@
 ﻿@{
-    ViewData["Title"] = "Live Lecture";
+    ViewData["Title"] = "Live Lecture Room";
 
     int lectureId = ViewBag.LectureId;
     string lectureTitle = ViewBag.LectureTitle;
+    bool isInstructor = ViewBag.IsInstructor == true;
+    var courseDetailsUrl = Url.Action(
+        "CourseDetails",
+        isInstructor ? "InstructorDashboard" : "StudentDashboard",
+        new { id = ViewBag.CourseId });
 }
 
-<div class="container py-4">
-
-    <!-- =========================================================
-         LECTURE HEADER
-         ========================================================= -->
-
-    <div class="card border-0 shadow-sm mb-4">
-
-        <div class="card-body">
-
-            <h2 class="fw-bold mb-2">
-                @lectureTitle
-            </h2>
-
-            <p class="text-muted mb-3">
-                Live lecture
-            </p>
-
-            <!--
-                Lecture ID is supplied by the server.
-                User does not need to enter it.
-            -->
-            <input type="hidden"
-                   id="lectureId"
-                   value="@lectureId" />
-
-            <button id="joinButton"
-                    class="btn btn-success">
-                🎥 Join Lecture
-            </button>
-
-            <button id="leaveButton"
-                    class="btn btn-danger"
-                    disabled>
-                Leave Meeting
-            </button>
-
-            <button id="screenShareButton"
-                    class="btn btn-outline-primary"
-                    disabled>
-                Share Screen
-            </button>
-
-            <p id="status"
-               class="text-muted mt-3 mb-0">
-                Not connected
-            </p>
-
+<div class="live-room-shell">
+    <section class="live-room-header">
+        <span class="eyebrow">LIVE LEARNING SESSION</span>
+        <h1>@lectureTitle</h1>
+        <p>@(isInstructor ? "You are hosting this instructor-led session." : "Your instructor has started this session. Join to participate.")</p>
+        <input type="hidden" id="lectureId" value="@lectureId" />
+        <div class="live-room-toolbar mt-4">
+            <button id="joinButton" class="btn btn-light">Join live session</button>
+            <button id="leaveButton" class="btn btn-outline-light" disabled>Leave session</button>
+            <button id="screenShareButton" class="btn btn-outline-light" disabled>Share screen</button>
+            <a href="@courseDetailsUrl" class="btn btn-outline-light">
+                Back to course
+            </a>
+            @if (isInstructor)
+            {
+                <form asp-controller="InstructorDashboard"
+                      asp-action="EndLiveLecture"
+                      asp-route-id="@lectureId"
+                      method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger">End live session</button>
+                </form>
+            }
         </div>
-
-    </div>
-
-
-    <!-- =========================================================
-         LOCAL VIDEO
-         ========================================================= -->
-
-    <div class="card border-0 shadow-sm mb-4">
-
-        <div class="card-body">
-
-            <h4 class="fw-bold mb-3">
-                My Video
-            </h4>
-
-            <video id="localVideo"
-                   autoplay
-                   muted
-                   playsinline
-                   width="400"
-                   class="rounded border">
-            </video>
-
+        <div id="status" class="live-room-status" role="status" aria-live="polite">
+            Ready to join
         </div>
+    </section>
 
-    </div>
-
-
-    <!-- =========================================================
-         REMOTE VIDEOS
-         ========================================================= -->
-
-    <div class="card border-0 shadow-sm">
-
-        <div class="card-body">
-
-            <h4 class="fw-bold mb-3">
-                Students / Remote Videos
-            </h4>
-
-            <div id="remoteVideos"
-                 class="d-flex flex-wrap gap-3">
-
-                <!-- Remote videos will be created using JavaScript -->
-
+    <section class="row g-4 mt-1">
+        <div class="col-12">
+            <div class="live-room-panel">
+                <h2>Participants</h2>
+                <div class="live-video-grid">
+                    <div class="live-video-tile">
+                        <video id="localVideo" autoplay muted playsinline></video>
+                        <div class="live-video-label">You (@(isInstructor ? "Instructor" : "Student"))</div>
+                    </div>
+                    <div id="remoteVideos" class="live-video-grid">
+                        <div id="emptyParticipants" class="live-empty-participants">
+                            Other participants will appear after they join.
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
-
-    </div>
-
+    </section>
 </div>
 
 
@@ -145,9 +96,6 @@
         parseInt(
             document.getElementById("lectureId").value
         );
-
-
-    console.log("Lecture ID:", lectureId);
 
 
     // =========================================================
@@ -287,6 +235,17 @@
                 // Create video if it doesn't exist
                 if (!video)
                 {
+                    const emptyState =
+                        document.getElementById("emptyParticipants");
+                    if (emptyState)
+                    {
+                        emptyState.remove();
+                    }
+
+                    const tile =
+                        document.createElement("div");
+                    tile.className = "live-video-tile";
+
                     video =
                         document.createElement(
                             "video"
@@ -299,14 +258,15 @@
 
                     video.playsInline = true;
 
-                    video.width = 300;
+                    video.className = "";
+                    tile.appendChild(video);
 
-                    video.className =
-                        "rounded border";
-
-                    remoteVideos.appendChild(
-                        video
-                    );
+                    const label =
+                        document.createElement("div");
+                    label.className = "live-video-label";
+                    label.textContent = "Live participant";
+                    tile.appendChild(label);
+                    remoteVideos.appendChild(tile);
                 }
 
                 async function replaceVideoTrack(track)
@@ -364,6 +324,8 @@
                     {
                         await connection.invoke(
                             "SendIceCandidate",
+
+                            lectureId,
 
                             connectionId,
 
@@ -511,6 +473,8 @@
             await connection.invoke(
                 "SendAnswer",
 
+                lectureId,
+
                 senderConnectionId,
 
                 JSON.stringify(
@@ -656,7 +620,18 @@
 
             if (video)
             {
-                video.remove();
+                video.closest(".live-video-tile")?.remove();
+            }
+
+            if (!remoteVideos.querySelector(".live-video-tile"))
+            {
+                const emptyState =
+                    document.createElement("div");
+                emptyState.id = "emptyParticipants";
+                emptyState.className = "live-empty-participants";
+                emptyState.textContent =
+                    "Other participants will appear after they join.";
+                remoteVideos.appendChild(emptyState);
             }
 
 

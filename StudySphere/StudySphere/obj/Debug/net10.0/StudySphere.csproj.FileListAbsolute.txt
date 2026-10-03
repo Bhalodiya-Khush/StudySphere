@@ -483,5 +483,5 @@ D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\x5b3s1dwa1-{0}-5jzwrwy34a-5jzwrwy34a.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\tirhcn4zcg-{0}-wjjq0xmewk-wjjq0xmewk.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cqg85a11k3-{0}-gn9gtmp5c6-gn9gtmp5c6.gz
-D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cu6zq6w5hc-{0}-cuqovew5xv-cuqovew5xv.gz
+D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cu6zq6w5hc-{0}-uy3ptlwbl1-uy3ptlwbl1.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

@@ -1,0 +1,28 @@
+﻿@model StudySphere.Models.Student
+
+<article class="admin-user-card">
+    <div class="admin-user-identity">
+        <span class="admin-user-avatar">@(Model.User.FullName.FirstOrDefault().ToString().ToUpperInvariant())</span>
+        <div>
+            <h2>@Model.User.FullName</h2>
+            <p>@Model.User.Email</p>
+        </div>
+    </div>
+    <div class="admin-user-facts">
+        <span>Student #@Model.StudentId</span>
+        <span class="user-status @(Model.User.IsActive ? "is-active" : "is-inactive")">
+            @(Model.User.IsActive ? "Active" : "Inactive")
+        </span>
+    </div>
+    <div class="admin-user-actions">
+        <a asp-controller="AdminDashboard" asp-action="ViewStudent" asp-route-id="@Model.StudentId" class="btn btn-outline-brand btn-sm">View profile</a>
+        <form asp-controller="AdminDashboard" asp-action="SetStudentActive" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.StudentId" />
+            <input type="hidden" name="isActive" value="@(!Model.User.IsActive)" />
+            <button type="submit" class="btn btn-sm @(Model.User.IsActive ? "btn-outline-danger" : "btn-brand")">
+                @(Model.User.IsActive ? "Deactivate" : "Activate")
+            </button>
+        </form>
+    </div>
+</article>

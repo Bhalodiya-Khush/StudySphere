@@ -2,6 +2,13 @@
 
 @{
     ViewData["Title"] = Model.Title;
+    var materialsForLearning = ViewBag.Materials as List<StudySphere.Models.Material>
+        ?? new List<StudySphere.Models.Material>();
+    var completedMaterialIdsForLearning = ViewBag.CompletedMaterialIds
+        as HashSet<int> ?? new HashSet<int>();
+    var nextMaterial = materialsForLearning.FirstOrDefault(material =>
+        !completedMaterialIdsForLearning.Contains(material.MaterialId))
+        ?? materialsForLearning.FirstOrDefault();
     var completedMaterialIds =
         ViewBag.CompletedMaterialIds as HashSet<int> ?? new HashSet<int>();
 }
@@ -55,11 +62,18 @@
             <div class="d-flex gap-2">
                 @if (ViewBag.IsEnrolled == true)
                 {
-                    <a asp-controller="StudentDashboard"
-                       asp-action="MyCourses"
-                       class="btn btn-success">
-                        Continue learning
-                    </a>
+                    @if (nextMaterial is not null)
+                    {
+                        <a href="#material-@nextMaterial.MaterialId" class="btn btn-success">
+                            Continue learning
+                        </a>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-success" disabled>
+                            Learning materials coming soon
+                        </button>
+                    }
                     <a asp-controller="StudentDashboard"
                        asp-action="Assignments"
                        asp-route-courseId="@Model.CourseId"
@@ -146,15 +160,16 @@
                 </div>
             </div>
 
-            var materials = ViewBag.Materials as List<StudySphere.Models.Material>;
+            var materials = materialsForLearning;
             if (materials is { Count: > 0 })
             {
-                <div class="card border-0 shadow-sm mb-4">
+                <div class="card border-0 shadow-sm mb-4" id="learning-materials">
                     <div class="card-body">
                         <h4 class="fw-bold mb-3">Learning materials</h4>
                         @foreach (var material in materials)
                         {
-                            <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+                            <div class="d-flex justify-content-between align-items-center border-bottom py-3"
+                                 id="material-@material.MaterialId">
                                 <div>
                                     <h5 class="mb-1">@material.Title</h5>
                                     <p class="text-muted small mb-0">@material.Description</p>
@@ -280,7 +295,7 @@
                                     @if (lecture.Status == "Live")
                                     {
                                         <a asp-controller="LiveLecture"
-                                           asp-action="Test"
+                                           asp-action="Room"
                                            asp-route-lectureId="@lecture.LiveLectureId"
                                            class="btn btn-success">
 

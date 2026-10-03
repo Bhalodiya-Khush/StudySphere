@@ -62,7 +62,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Student ID</th>
+                                <th>Student</th>
                                 <th>Enrolled On</th>
                                 <th>Status</th>
                                 <th>Progress</th>
@@ -84,9 +84,8 @@
                                     </td>
 
                                     <td>
-                                        <strong>
-                                            Student #@enrollment.StudentId
-                                        </strong>
+                                        <strong>@enrollment.Student.User.FullName</strong>
+                                        <small class="d-block text-muted">@enrollment.Student.User.Email</small>
                                     </td>
 
                                     <td>
@@ -118,11 +117,12 @@
 
                                     <td style="min-width: 180px;">
 
-                                        <div class="d-flex justify-content-between">
+                                        <div class="d-flex justify-content-between mb-1">
 
-                                            <small>
-                                                @enrollment.Progress%
+                                            <small class="text-muted">
+                                                Lesson completion
                                             </small>
+                                            <strong>@enrollment.Progress.ToString("0.#")%</strong>
 
                                         </div>
 

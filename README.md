@@ -3,6 +3,15 @@ StudySphere is online learning platform project. We are building it using C# and
 
 ## Run locally (Windows)
 
+### UI smoke test
+
+With Node.js installed, run the focused mobile navigation UI test from the
+repository root:
+
+```powershell
+node --test tests/ui/studysphere-ui.test.js
+```
+
 ### Prerequisites
 
 - .NET 10 SDK.

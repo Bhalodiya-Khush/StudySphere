@@ -72,6 +72,7 @@
                 @foreach (var course in Model.EnrolledCourses)
                 {
                     var progress = Model.CourseProgress.GetValueOrDefault(course.CourseId);
+                    ViewData["IsEnrolledCourse"] = true;
                     <div class="col-sm-6 col-xl-4">
                         <article class="learning-course-card">
                             <partial name="_CourseCard" model="course" />
@@ -120,6 +121,7 @@
             <div class="row g-4">
                 @foreach (var course in Model.AllCourses.Take(6))
                 {
+                    ViewData["IsEnrolledCourse"] = Model.CourseProgress.ContainsKey(course.CourseId);
                     <div class="col-sm-6 col-xl-4">
                         <partial name="_CourseCard" model="course" />
                     </div>

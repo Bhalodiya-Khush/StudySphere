@@ -18,12 +18,14 @@ namespace StudySphere.Controllers
             _studentRepository = studentRepository;
         }
 
-        public IActionResult Test(int lectureId)
+        public IActionResult Room(int lectureId)
         {
             var lecture =
                 _repository.GetLiveLectureById(lectureId);
 
-            if (lecture == null)
+            if (lecture is null ||
+                lecture.Status != "Live" ||
+                lecture.EndTime <= DateTime.UtcNow)
             {
                 return NotFound();
             }
@@ -42,10 +44,6 @@ namespace StudySphere.Controllers
                     return Forbid();
                 }
 
-                if (lecture.Status != "Live")
-                {
-                    return NotFound();
-                }
             }
             else
             {
@@ -68,6 +66,9 @@ namespace StudySphere.Controllers
 
             ViewBag.LectureTitle =
                 lecture.Title;
+
+            ViewBag.IsInstructor =
+                User.IsInRole("Instructor");
 
             return View();
         }

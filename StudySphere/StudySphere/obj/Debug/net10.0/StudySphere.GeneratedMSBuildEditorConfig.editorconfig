@@ -175,8 +175,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvckRhc2hib2FyZFxTdHVkZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/LiveLecture/Test.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGl2ZUxlY3R1cmVcVGVzdC5jc2h0bWw=
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/LiveLecture/Room.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGl2ZUxlY3R1cmVcUm9vbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Notifications/Index.cshtml]
@@ -189,6 +189,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_AdminInstructorCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkluc3RydWN0b3JDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_AdminStudentCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pblN0dWRlbnRDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_InstructorCourseCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JbnN0cnVjdG9yQ291cnNlQ2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_StudentCourseCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdHVkZW50Q291cnNlQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/B.Tech/SEM5/WAD/Github project/StudySphere/StudySphere/StudySphere/Views/Shared/_ValidationScriptsPartial.cshtml]

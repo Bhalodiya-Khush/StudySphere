@@ -208,7 +208,7 @@ namespace StudySphere.Controllers
             if (existingLecture != null)
             {
                 return RedirectToAction(
-                    "Test",
+                    "Room",
                     "LiveLecture",
                     new { lectureId = existingLecture.LiveLectureId }
                 );
@@ -231,7 +231,7 @@ namespace StudySphere.Controllers
 
             // lecture.LiveLectureId is now available
             return RedirectToAction(
-                "Test",
+                "Room",
                 "LiveLecture",
                 new { lectureId = lecture.LiveLectureId }
             );
