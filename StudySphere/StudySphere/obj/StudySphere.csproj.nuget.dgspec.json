@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj": {}
+    "C:\\Projects\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj": {
+    "C:\\Projects\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
+        "projectUniqueName": "C:\\Projects\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
         "projectName": "StudySphere",
-        "projectPath": "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
+        "projectPath": "C:\\Projects\\StudySphere\\StudySphere\\StudySphere\\StudySphere.csproj",
         "packagesPath": "C:\\Users\\yashb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\obj\\",
+        "outputPath": "C:\\Projects\\StudySphere\\StudySphere\\StudySphere\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
