@@ -896,7 +896,6 @@ C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\mjq
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\r3gmsukk35-{0}-0syvjb5bnn-0syvjb5bnn.gz
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\skjy962was-{0}-9a3ad10kyx-9a3ad10kyx.gz
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\f2pryvcx7r-{0}-o8tjupnk2e-o8tjupnk2e.gz
-C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cu6zq6w5hc-{0}-uy3ptlwbl1-uy3ptlwbl1.gz
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\gipk86so3w-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\u1ks1bkv9q-{0}-7lo37smpfq-7lo37smpfq.gz
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\x5b3s1dwa1-{0}-5jzwrwy34a-5jzwrwy34a.gz
@@ -975,3 +974,4 @@ C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\refint\StudySp
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.pdb
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.genruntimeconfig.cache
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\ref\StudySphere.dll
+C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cu6zq6w5hc-{0}-u7tw5ofzk5-u7tw5ofzk5.gz

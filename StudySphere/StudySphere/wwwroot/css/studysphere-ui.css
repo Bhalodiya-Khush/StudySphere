@@ -171,8 +171,8 @@ body {
 }
 
 .footer-brand img {
-    width: 36px;
-    height: 36px;
+    width: 56px;
+    height: 56px;
 }
 
 .footer-brand strong {
@@ -614,8 +614,8 @@ body {
 }
 
 .dashboard-quicklink > span {
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
     grid-row: span 2;
     display: grid;
     place-items: center;

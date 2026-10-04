@@ -1,4 +1,4 @@
-@model StudySphere.Models.Quiz
+@model StudySphere.Models.ViewModels.CreateQuizViewModel
 @{
     var course = ViewBag.Course as StudySphere.Models.Course;
     ViewData["Title"] = "Create quiz";
@@ -10,10 +10,10 @@
     <h1 class="h3 mt-3">Create quiz</h1>
     <p class="text-muted">@course?.Title</p>
 
-    <form asp-action="CreateQuiz" method="post" class="card card-body shadow-sm">
+    <form asp-action="CreateQuiz" asp-route-courseId="@course?.CourseId"
+          method="post" class="card card-body shadow-sm">
         @Html.AntiForgeryToken()
         <div asp-validation-summary="All" class="text-danger mb-3"></div>
-        <input asp-for="CourseId" type="hidden" value="@course?.CourseId" />
         <div class="mb-3">
             <label asp-for="Title" class="form-label">Quiz title</label>
             <input asp-for="Title" class="form-control" />
@@ -26,11 +26,13 @@
         <div class="row">
             <div class="col-md-4 mb-3">
                 <label asp-for="OpensAt" class="form-label">Opens at</label>
-                <input asp-for="OpensAt" type="datetime-local" class="form-control" />
+                <input asp-for="OpensAt" type="datetime-local" step="60" class="form-control" />
+                <span asp-validation-for="OpensAt" class="text-danger"></span>
             </div>
             <div class="col-md-4 mb-3">
                 <label asp-for="DueAt" class="form-label">Closes at (optional)</label>
-                <input asp-for="DueAt" type="datetime-local" class="form-control" />
+                <input asp-for="DueAt" type="datetime-local" step="60" class="form-control" />
+                <span asp-validation-for="DueAt" class="text-danger"></span>
             </div>
             <div class="col-md-4 mb-3">
                 <label asp-for="MaxAttempts" class="form-label">Maximum attempts</label>

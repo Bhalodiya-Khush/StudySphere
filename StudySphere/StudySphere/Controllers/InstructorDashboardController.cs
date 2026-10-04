@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StudySphere.Data;
 using StudySphere.Models;
+using StudySphere.Models.ViewModels;
 using StudySphere.Repositories.Interfaces;
 
 namespace StudySphere.Controllers
@@ -954,39 +955,57 @@ namespace StudySphere.Controllers
             }
 
             ViewBag.Course = course;
-            return View(new Quiz
+            var now = DateTime.UtcNow;
+            return View(new CreateQuizViewModel
             {
-                CourseId = courseId,
-                OpensAt = DateTime.UtcNow,
+                OpensAt = new DateTime(
+                    now.Year,
+                    now.Month,
+                    now.Day,
+                    now.Hour,
+                    now.Minute,
+                    0,
+                    DateTimeKind.Utc),
                 MaxAttempts = 1
             });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateQuiz(Quiz quiz)
+        public IActionResult CreateQuiz(int courseId, CreateQuizViewModel model)
         {
-            var course = GetOwnedCourse(quiz.CourseId);
+            var course = GetOwnedCourse(courseId);
             if (course is null)
             {
                 return NotFound();
             }
 
-            if (quiz.DueAt.HasValue && quiz.DueAt <= quiz.OpensAt)
+            if (model.DueAt.HasValue && model.DueAt <= model.OpensAt)
             {
                 ModelState.AddModelError(
-                    nameof(quiz.DueAt),
+                    nameof(model.DueAt),
                     "The closing time must be later than the opening time.");
             }
 
             if (!ModelState.IsValid)
             {
                 ViewBag.Course = course;
-                return View(quiz);
+                return View(model);
             }
 
-            quiz.IsPublished = false;
-            quiz.CreatedAt = DateTime.UtcNow;
+            var quiz = new Quiz
+            {
+                CourseId = course.CourseId,
+                Course = course,
+                Title = model.Title,
+                Description = model.Description,
+                OpensAt = model.OpensAt,
+                DueAt = model.DueAt,
+                MaxAttempts = model.MaxAttempts,
+                IsPublished = false,
+                CreatedAt = DateTime.UtcNow
+            };
+
             _dbContext.Quizzes.Add(quiz);
             _dbContext.SaveChanges();
             return RedirectToAction(nameof(Quizzes), new { courseId = course.CourseId });
