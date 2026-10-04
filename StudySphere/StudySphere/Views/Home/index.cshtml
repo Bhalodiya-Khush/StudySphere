@@ -45,23 +45,6 @@
 
             </div>
 
-            <div class="hero-stats" aria-label="StudySphere community">
-                <div class="stat-item">
-                    <strong>@Model.CourseCount.ToString("N0")</strong>
-                    <span>Published courses</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <strong>@Model.InstructorCount.ToString("N0")</strong>
-                    <span>Instructors</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <strong>@Model.StudentCount.ToString("N0")</strong>
-                    <span>Learners</span>
-                </div>
-            </div>
-
         </div>
 
 
@@ -75,6 +58,19 @@
                 <img src="~/images/student-hero.png"
                      alt="Student learning online"
                      class="student-image" />
+            </div>
+
+            <div class="hero-stat-card hero-stat-courses">
+                <strong>@Model.CourseCount.ToString("N0")</strong>
+                <span>Published courses</span>
+            </div>
+            <div class="hero-stat-card hero-stat-students">
+                <strong>@Model.StudentCount.ToString("N0")</strong>
+                <span>Students</span>
+            </div>
+            <div class="hero-stat-card hero-stat-instructors">
+                <strong>@Model.InstructorCount.ToString("N0")</strong>
+                <span>Instructors</span>
             </div>
 
         </div>

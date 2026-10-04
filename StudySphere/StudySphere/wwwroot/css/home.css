@@ -163,42 +163,6 @@
 
 
 /* =========================================================
-   STATS
-   ========================================================= */
-
-.hero-stats {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-
-    .stat-item strong {
-        font-size: 22px;
-    }
-
-
-    .stat-item span {
-        color: var(--secondary-text);
-        font-size: 12px;
-    }
-
-
-.stat-divider {
-    height: 35px;
-    width: 1px;
-    background: var(--border);
-}
-
-
-/* =========================================================
    HERO VISUAL
    ========================================================= */
 
@@ -258,13 +222,14 @@
 }
 
 
-/* =========================================================
-   FLOATING CARDS
-   ========================================================= */
-
-.floating-card {
+.hero-stat-card {
     position: absolute;
     z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 148px;
+    padding: 13px 17px;
     background: var(--white);
     border: 1px solid rgba(227, 229, 232, 0.8);
     border-radius: 15px;
@@ -272,87 +237,33 @@
 }
 
 
-.students-card {
-    top: 90px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    padding: 13px 17px;
+.hero-stat-card strong {
+    font-size: 19px;
+    line-height: 1.2;
 }
 
 
-.floating-icon {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary);
-    border-radius: 10px;
-}
-
-
-.students-card div:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-
-.students-card strong {
-    font-size: 16px;
-}
-
-
-.students-card span {
-    font-size: 10px;
+.hero-stat-card span {
     color: var(--secondary-text);
-}
-
-
-.progress-card {
-    bottom: 55px;
-    right: 5px;
-    width: 215px;
-    padding: 18px;
-}
-
-
-.progress-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 11px;
     font-size: 11px;
 }
 
 
-    .progress-header strong {
-        color: var(--primary-dark);
-    }
-
-
-.progress-bar {
-    width: 100%;
-    height: 7px;
-    background: #EDF0F1;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 10px;
+.hero-stat-courses {
+    top: 55px;
+    left: calc(50% + 92px);
 }
 
 
-.progress-fill {
-    width: 78%;
-    height: 100%;
-    background: var(--primary-dark);
-    border-radius: inherit;
+.hero-stat-students {
+    top: 46%;
+    left: calc(50% - 260px);
 }
 
 
-.progress-card small {
-    color: var(--secondary-text);
-    font-size: 9px;
+.hero-stat-instructors {
+    right: calc(50% - 260px);
+    bottom: 55px;
 }
 
 
@@ -797,16 +708,6 @@
     }
 
 
-    .hero-stats {
-        gap: 15px;
-    }
-
-
-    .stat-item strong {
-        font-size: 18px;
-    }
-
-
     .hero-visual {
         min-height: 400px;
     }
@@ -830,17 +731,37 @@
     }
 
 
-    .students-card {
-        left: 0;
-        top: 45px;
-        transform: scale(0.85);
+    .hero-stat-card {
+        min-width: 132px;
+        padding: 10px 12px;
     }
 
 
-    .progress-card {
+    .hero-stat-card strong {
+        font-size: 17px;
+    }
+
+
+    .hero-stat-card span {
+        font-size: 10px;
+    }
+
+
+    .hero-stat-courses {
+        top: 14px;
+        left: calc(50% + 8px);
+    }
+
+
+    .hero-stat-students {
+        top: 46%;
+        left: 0;
+    }
+
+
+    .hero-stat-instructors {
         right: 0;
-        bottom: 25px;
-        transform: scale(0.85);
+        bottom: 10px;
     }
 
 

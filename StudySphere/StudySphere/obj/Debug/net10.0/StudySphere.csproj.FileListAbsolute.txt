@@ -646,7 +646,6 @@ C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debu
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\bundle\StudySphere.styles.css
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\projectbundle\StudySphere.bundle.scp.css
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cqg85a11k3-{0}-gn9gtmp5c6-gn9gtmp5c6.gz
-C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\3zqngxwe0d-{0}-na0pwp6zxs-na0pwp6zxs.gz
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\mjqsb27vjs-{0}-tmnnd5jxyy-tmnnd5jxyy.gz
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\r3gmsukk35-{0}-0syvjb5bnn-0syvjb5bnn.gz
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\skjy962was-{0}-9a3ad10kyx-9a3ad10kyx.gz
@@ -730,3 +729,4 @@ C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debu
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.pdb
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.genruntimeconfig.cache
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\ref\StudySphere.dll
+C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\3zqngxwe0d-{0}-k8cjdw0t97-k8cjdw0t97.gz

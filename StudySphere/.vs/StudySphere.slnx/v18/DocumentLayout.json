@@ -282,7 +282,7 @@
               "RelativeDocumentMoniker": "StudySphere\\Data\\StudySphereDbContext.cs",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Desktop\\xyz\\StudySphere\\StudySphere\\StudySphere\\Data\\StudySphereDbContext.cs",
               "RelativeToolTip": "StudySphere\\Data\\StudySphereDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-17T16:07:21.722Z",
               "EditorCaption": ""
@@ -297,8 +297,7 @@
               "RelativeToolTip": "StudySphere\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-17T16:09:37.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-17T16:09:37.718Z"
             },
             {
               "$type": "Document",
@@ -310,8 +309,7 @@
               "RelativeToolTip": "StudySphere\\Program.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAkwDsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:05:09.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T16:05:09.341Z"
             },
             {
               "$type": "Document",
@@ -359,8 +357,7 @@
               "RelativeToolTip": "StudySphere\\Controllers\\StudentDashboardController.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAcwHUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T16:17:19.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T16:17:19.237Z"
             },
             {
               "$type": "Document",
@@ -372,8 +369,7 @@
               "RelativeToolTip": "StudySphere\\Views\\StudentDashboard\\CourseDetails.cshtml",
               "ViewState": "AgIAAKIAAAAAAAAAAAAAANMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-15T18:08:35.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T18:08:35.617Z"
             },
             {
               "$type": "Document",
