@@ -17,13 +17,22 @@
     </div>
     <div class="admin-user-actions">
         <a asp-controller="AdminDashboard" asp-action="ViewInstructor" asp-route-id="@Model.InstructorId" class="btn btn-outline-brand btn-sm">View profile</a>
-        <form asp-controller="AdminDashboard" asp-action="SetInstructorActive" method="post">
-            @Html.AntiForgeryToken()
-            <input type="hidden" name="id" value="@Model.InstructorId" />
-            <input type="hidden" name="isActive" value="@(!Model.User.IsActive)" />
-            <button type="submit" class="btn btn-sm @(Model.User.IsActive ? "btn-outline-danger" : "btn-brand")">
-                @(Model.User.IsActive ? "Deactivate" : "Approve / activate")
-            </button>
-        </form>
+        @if (Model.User.IsActive)
+        {
+            <form asp-controller="AdminDashboard" asp-action="SetInstructorActive" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="id" value="@Model.InstructorId" />
+                <input type="hidden" name="isActive" value="false" />
+                <button type="submit" class="btn btn-sm btn-outline-danger">Deactivate</button>
+            </form>
+        }
+        else
+        {
+            <form asp-controller="AdminDashboard" asp-action="ApproveInstructor" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="id" value="@Model.InstructorId" />
+                <button type="submit" class="btn btn-sm btn-brand">Approve / activate</button>
+            </form>
+        }
     </div>
 </article>

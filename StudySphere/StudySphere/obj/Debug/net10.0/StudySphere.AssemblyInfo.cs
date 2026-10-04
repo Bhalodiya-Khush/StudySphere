@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudySphere")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f388ba0cddbe5d78e956dc1d3cb142ef62d1504d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+faee1fabc626b9a9dd71eddad932ca2861d434fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudySphere")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudySphere")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

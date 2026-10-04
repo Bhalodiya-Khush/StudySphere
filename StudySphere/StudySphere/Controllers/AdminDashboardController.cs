@@ -313,6 +313,20 @@ namespace StudySphere.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SetInstructorActive(int id, bool isActive)
         {
+            return await UpdateInstructorStatusAsync(id, isActive);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ApproveInstructor(int id)
+        {
+            return await UpdateInstructorStatusAsync(id, isActive: true);
+        }
+
+        private async Task<IActionResult> UpdateInstructorStatusAsync(
+            int id,
+            bool isActive)
+        {
             var instructor = _adminRepository.GetInstructorById(id);
             if (instructor is null)
             {
@@ -328,6 +342,9 @@ namespace StudySphere.Controllers
                 return failure;
             }
 
+            TempData["AdminStatusMessage"] = isActive
+                ? $"Instructor {instructor.User.FullName} was approved and can now sign in."
+                : $"Instructor {instructor.User.FullName} was deactivated.";
             return RedirectToAction(nameof(Instructors));
         }
 
@@ -358,38 +375,43 @@ namespace StudySphere.Controllers
             }
 
             var identityUser = await _userManager.FindByEmailAsync(email);
-            if (identityUser is not null)
+            if (identityUser is null)
             {
-                var lockoutEnabledResult =
-                    await _userManager.SetLockoutEnabledAsync(identityUser, true);
-                if (!lockoutEnabledResult.Succeeded)
-                {
-                    await transaction.RollbackAsync();
-                    return Problem(
-                        "The account lockout status could not be updated.",
-                        statusCode: StatusCodes.Status500InternalServerError);
-                }
+                await transaction.RollbackAsync();
+                return Problem(
+                    "The account's authentication record could not be found.",
+                    statusCode: StatusCodes.Status500InternalServerError);
+            }
 
-                var lockoutResult = await _userManager.SetLockoutEndDateAsync(
-                    identityUser,
-                    isActive ? null : DateTimeOffset.MaxValue);
-                if (!lockoutResult.Succeeded)
-                {
-                    await transaction.RollbackAsync();
-                    return Problem(
-                        "The account status could not be updated in the authentication store.",
-                        statusCode: StatusCodes.Status500InternalServerError);
-                }
+            var lockoutEnabledResult =
+                await _userManager.SetLockoutEnabledAsync(identityUser, true);
+            if (!lockoutEnabledResult.Succeeded)
+            {
+                await transaction.RollbackAsync();
+                return Problem(
+                    "The account lockout status could not be updated.",
+                    statusCode: StatusCodes.Status500InternalServerError);
+            }
 
-                var stampResult =
-                    await _userManager.UpdateSecurityStampAsync(identityUser);
-                if (!stampResult.Succeeded)
-                {
-                    await transaction.RollbackAsync();
-                    return Problem(
-                        "The account sessions could not be revoked.",
-                        statusCode: StatusCodes.Status500InternalServerError);
-                }
+            var lockoutResult = await _userManager.SetLockoutEndDateAsync(
+                identityUser,
+                isActive ? null : DateTimeOffset.MaxValue);
+            if (!lockoutResult.Succeeded)
+            {
+                await transaction.RollbackAsync();
+                return Problem(
+                    "The account status could not be updated in the authentication store.",
+                    statusCode: StatusCodes.Status500InternalServerError);
+            }
+
+            var stampResult =
+                await _userManager.UpdateSecurityStampAsync(identityUser);
+            if (!stampResult.Succeeded)
+            {
+                await transaction.RollbackAsync();
+                return Problem(
+                    "The account sessions could not be revoked.",
+                    statusCode: StatusCodes.Status500InternalServerError);
             }
 
             await transaction.CommitAsync();

@@ -27,6 +27,10 @@
 
     </div>
 
+    @if (TempData["AdminStatusMessage"] is string statusMessage)
+    {
+        <div class="alert alert-success" role="status">@statusMessage</div>
+    }
 
     <!-- Summary -->
     <div class="card border-0 shadow-sm mb-4">
