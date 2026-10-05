@@ -399,7 +399,6 @@ D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\bundle\StudySphere.styles.css
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\scopedcss\projectbundle\StudySphere.bundle.scp.css
-D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\3zqngxwe0d-{0}-na0pwp6zxs-na0pwp6zxs.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\mjqsb27vjs-{0}-tmnnd5jxyy-tmnnd5jxyy.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\r3gmsukk35-{0}-0syvjb5bnn-0syvjb5bnn.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\skjy962was-{0}-9a3ad10kyx-9a3ad10kyx.gz
@@ -483,8 +482,6 @@ D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\x5b3s1dwa1-{0}-5jzwrwy34a-5jzwrwy34a.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\tirhcn4zcg-{0}-wjjq0xmewk-wjjq0xmewk.gz
 D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cqg85a11k3-{0}-gn9gtmp5c6-gn9gtmp5c6.gz
-D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cu6zq6w5hc-{0}-uy3ptlwbl1-uy3ptlwbl1.gz
-D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\bin\Debug\net10.0\appsettings.json
 C:\Users\yashb\OneDrive\Desktop\xyz\StudySphere\StudySphere\StudySphere\bin\Debug\net10.0\StudySphere.staticwebassets.runtime.json
@@ -975,3 +972,6 @@ C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.pd
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\StudySphere.genruntimeconfig.cache
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\ref\StudySphere.dll
 C:\Projects\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cu6zq6w5hc-{0}-u7tw5ofzk5-u7tw5ofzk5.gz
+D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\3zqngxwe0d-{0}-k8cjdw0t97-k8cjdw0t97.gz
+D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\compressed\cu6zq6w5hc-{0}-u7tw5ofzk5-u7tw5ofzk5.gz
+D:\B.Tech\SEM5\WAD\Github project\StudySphere\StudySphere\StudySphere\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

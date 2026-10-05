@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StudySphere.Data;
@@ -117,12 +117,33 @@ namespace StudySphere.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateCourse(Course course)
+        public async Task<IActionResult> CreateCourse(
+            Course course,
+            IFormFile? thumbnailFile)
         {
             var instructorId = CurrentInstructorId();
             if (instructorId is null)
             {
                 return Forbid();
+            }
+
+            ModelState.Remove(nameof(course.Instructor));
+            ModelState.Remove(nameof(course.ThumbnailUrl));
+
+            if (thumbnailFile is not null && thumbnailFile.Length > 0)
+            {
+                if (!IsAllowedImageFile(thumbnailFile))
+                {
+                    ModelState.AddModelError(
+                        nameof(thumbnailFile),
+                        "Please select a valid image file (.jpg, .jpeg, .png, .webp, .gif).");
+                }
+                else if (thumbnailFile.Length > 10L * 1024 * 1024)
+                {
+                    ModelState.AddModelError(
+                        nameof(thumbnailFile),
+                        "The maximum image upload size is 10 MB.");
+                }
             }
 
             if (!ModelState.IsValid)
@@ -131,6 +152,15 @@ namespace StudySphere.Controllers
                     _repository.GetInstructor(instructorId.Value);
 
                 return View(course);
+            }
+
+            if (thumbnailFile is not null && thumbnailFile.Length > 0)
+            {
+                course.ThumbnailUrl = await SaveCourseThumbnailAsync(thumbnailFile);
+            }
+            else
+            {
+                course.ThumbnailUrl = "/course-thumbnails/default-course.jpg";
             }
 
             course.InstructorId = instructorId.Value;
@@ -201,7 +231,7 @@ namespace StudySphere.Controllers
                 return NotFound();
             }
 
-            // Check whether a live lecture is already running
+            // Check whether a live lecture is already running in this course
             var existingLecture = _repository
                 .GetLiveLectures(courseId)
                 .FirstOrDefault(x => x.Status == "Live");
@@ -213,6 +243,18 @@ namespace StudySphere.Controllers
                     "LiveLecture",
                     new { lectureId = existingLecture.LiveLectureId }
                 );
+            }
+
+            // Check whether any other live lecture is currently running across any course
+            var otherLiveLecture = _dbContext.LiveLectures
+                .Include(x => x.Course)
+                .FirstOrDefault(x => x.Status == "Live" && x.CourseId != courseId && x.EndTime > DateTime.UtcNow);
+
+            if (otherLiveLecture != null)
+            {
+                TempData["ErrorMessage"] =
+                    $"Another live lecture is currently live ('{otherLiveLecture.Title}' for {otherLiveLecture.Course?.Title}). Only one live lecture can run at a time to prevent student schedule conflicts.";
+                return RedirectToAction(nameof(CourseDetails), new { id = courseId });
             }
 
             // Create a new live lecture
@@ -258,7 +300,9 @@ namespace StudySphere.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditCourse(Course course)
+        public async Task<IActionResult> EditCourse(
+            Course course,
+            IFormFile? thumbnailFile)
         {
             var instructorId = CurrentInstructorId();
             var existing = GetOwnedCourse(course.CourseId);
@@ -267,10 +311,39 @@ namespace StudySphere.Controllers
                 return NotFound();
             }
 
+            ModelState.Remove(nameof(course.Instructor));
+            ModelState.Remove(nameof(course.ThumbnailUrl));
+
+            if (thumbnailFile is not null && thumbnailFile.Length > 0)
+            {
+                if (!IsAllowedImageFile(thumbnailFile))
+                {
+                    ModelState.AddModelError(
+                        nameof(thumbnailFile),
+                        "Please select a valid image file (.jpg, .jpeg, .png, .webp, .gif).");
+                }
+                else if (thumbnailFile.Length > 10L * 1024 * 1024)
+                {
+                    ModelState.AddModelError(
+                        nameof(thumbnailFile),
+                        "The maximum image upload size is 10 MB.");
+                }
+            }
+
             if (!ModelState.IsValid)
             {
                 ViewBag.Instructor = _repository.GetInstructor(instructorId.Value);
+                course.ThumbnailUrl = existing.ThumbnailUrl;
                 return View(course);
+            }
+
+            if (thumbnailFile is not null && thumbnailFile.Length > 0)
+            {
+                course.ThumbnailUrl = await SaveCourseThumbnailAsync(thumbnailFile);
+            }
+            else
+            {
+                course.ThumbnailUrl = existing.ThumbnailUrl;
             }
 
             course.InstructorId = instructorId.Value;
@@ -344,6 +417,8 @@ namespace StudySphere.Controllers
                 return NotFound();
             }
 
+            ModelState.Remove(nameof(material.Course));
+            ModelState.Remove("Course");
             ModelState.Remove(nameof(material.FileUrl));
             if (upload is null || upload.Length == 0)
             {
@@ -419,6 +494,8 @@ namespace StudySphere.Controllers
                 return NotFound();
             }
 
+            ModelState.Remove(nameof(material.Course));
+            ModelState.Remove("Course");
             ModelState.Remove(nameof(material.FileUrl));
             if (upload is not null && upload.Length > 500L * 1024 * 1024)
             {
@@ -479,6 +556,48 @@ namespace StudySphere.Controllers
                 nameof(Materials),
                 new { courseId = courseId }
             );
+        }
+
+        [HttpGet]
+        public IActionResult ViewMaterial(int id)
+        {
+            var material = _repository.GetMaterialById(id);
+            if (material is null || GetOwnedCourse(material.CourseId) is null)
+            {
+                return NotFound();
+            }
+
+            var filePath = ResolveMaterialFilePath(material.FileUrl);
+            if (filePath is null || !System.IO.File.Exists(filePath))
+            {
+                return NotFound();
+            }
+
+            return PhysicalFile(
+                filePath,
+                GetMaterialContentType(filePath),
+                enableRangeProcessing: true);
+        }
+
+        [HttpGet]
+        public IActionResult DownloadMaterial(int id)
+        {
+            var material = _repository.GetMaterialById(id);
+            if (material is null || GetOwnedCourse(material.CourseId) is null)
+            {
+                return NotFound();
+            }
+
+            var filePath = ResolveMaterialFilePath(material.FileUrl);
+            if (filePath is null || !System.IO.File.Exists(filePath))
+            {
+                return NotFound();
+            }
+
+            return PhysicalFile(
+                filePath,
+                GetMaterialContentType(filePath),
+                Path.GetFileName(filePath));
         }
 
 
@@ -735,17 +854,30 @@ namespace StudySphere.Controllers
                 return NotFound();
             }
 
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Course = course;
-                return View(lecture);
-            }
+            ModelState.Remove(nameof(lecture.Course));
+            ModelState.Remove(nameof(lecture.Instructor));
 
             if (lecture.EndTime <= lecture.StartTime)
             {
                 ModelState.AddModelError(
                     nameof(lecture.EndTime),
                     "The lecture end time must be later than its start time.");
+            }
+
+            var conflict = _repository.GetConflictingLiveLecture(
+                lecture.StartTime,
+                lecture.EndTime);
+
+            if (conflict != null)
+            {
+                var courseTitle = conflict.Course?.Title ?? "another course";
+                ModelState.AddModelError(
+                    nameof(lecture.StartTime),
+                    $"Schedule conflict: Another live lecture ('{conflict.Title}' for course '{courseTitle}') is already scheduled from {conflict.StartTime:MMM dd, yyyy h:mm tt} to {conflict.EndTime:h:mm tt}. Only one instructor may schedule a live lecture at a particular time so students can attend without conflict.");
+            }
+
+            if (!ModelState.IsValid)
+            {
                 ViewBag.Course = course;
                 return View(lecture);
             }
@@ -754,9 +886,7 @@ namespace StudySphere.Controllers
             lecture.Status = "Scheduled";
             lecture.CreatedAt = DateTime.UtcNow;
 
-
             _repository.AddLiveLecture(lecture);
-
 
             return RedirectToAction(
                 nameof(LiveLectures),
@@ -781,7 +911,6 @@ namespace StudySphere.Controllers
                 return NotFound();
             }
 
-
             ViewBag.Course =
                 _repository.GetCourseById(
                     lecture.CourseId);
@@ -805,6 +934,29 @@ namespace StudySphere.Controllers
                 return NotFound();
             }
 
+            ModelState.Remove(nameof(lecture.Course));
+            ModelState.Remove(nameof(lecture.Instructor));
+
+            if (lecture.EndTime <= lecture.StartTime)
+            {
+                ModelState.AddModelError(
+                    nameof(lecture.EndTime),
+                    "The lecture end time must be later than its start time.");
+            }
+
+            var conflict = _repository.GetConflictingLiveLecture(
+                lecture.StartTime,
+                lecture.EndTime,
+                lecture.LiveLectureId);
+
+            if (conflict != null)
+            {
+                var courseTitle = conflict.Course?.Title ?? "another course";
+                ModelState.AddModelError(
+                    nameof(lecture.StartTime),
+                    $"Schedule conflict: Another live lecture ('{conflict.Title}' for course '{courseTitle}') is already scheduled from {conflict.StartTime:MMM dd, yyyy h:mm tt} to {conflict.EndTime:h:mm tt}. Only one instructor may schedule a live lecture at a particular time so students can attend without conflict.");
+            }
+
             if (!ModelState.IsValid)
             {
                 ViewBag.Course =
@@ -815,21 +967,9 @@ namespace StudySphere.Controllers
                 return View(lecture);
             }
 
-            if (lecture.EndTime <= lecture.StartTime)
-            {
-                ModelState.AddModelError(
-                    nameof(lecture.EndTime),
-                    "The lecture end time must be later than its start time.");
-                lecture.CourseId = existing.CourseId;
-                ViewBag.Course = _repository.GetCourseById(existing.CourseId);
-                ViewBag.LiveLecture = lecture;
-                return View(lecture);
-            }
-
             lecture.CourseId = existing.CourseId;
             lecture.InstructorId = existing.InstructorId;
             _repository.UpdateLiveLecture(lecture);
-
 
             return RedirectToAction(
                 nameof(LiveLectures),
@@ -1315,6 +1455,77 @@ namespace StudySphere.Controllers
 
             return Path.Combine("course-materials", courseId.ToString(), storedName)
                 .Replace(Path.DirectorySeparatorChar, '/');
+        }
+
+        private async Task<string> SaveCourseThumbnailAsync(IFormFile upload)
+        {
+            var extension = Path.GetExtension(upload.FileName).ToLowerInvariant();
+            var storedName = $"{Guid.NewGuid():N}{extension}";
+            var thumbnailsDirectory = Path.Combine(
+                _environment.ContentRootPath,
+                "App_Data",
+                "course-thumbnails");
+            Directory.CreateDirectory(thumbnailsDirectory);
+
+            var destination = Path.Combine(thumbnailsDirectory, storedName);
+            await using (var fileStream = System.IO.File.Create(destination))
+            {
+                await upload.CopyToAsync(fileStream);
+            }
+
+            return $"/course-thumbnails/{storedName}";
+        }
+
+        private static bool IsAllowedImageFile(IFormFile file)
+        {
+            var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+            return extension is ".jpg" or ".jpeg" or ".png" or ".webp" or ".gif";
+        }
+
+        private string? ResolveMaterialFilePath(string fileUrl)
+        {
+            if (string.IsNullOrWhiteSpace(fileUrl)) return null;
+
+            var cleanUrl = fileUrl.Trim().TrimStart('/', '\\').Replace('/', Path.DirectorySeparatorChar);
+            if (cleanUrl.StartsWith("materials" + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+            {
+                cleanUrl = "course-materials" + cleanUrl.Substring("materials".Length);
+            }
+
+            var fullPath = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, "App_Data", cleanUrl));
+            var materialsRoot = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, "App_Data", "course-materials"));
+
+            if (fullPath.StartsWith(materialsRoot + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase) &&
+                System.IO.File.Exists(fullPath))
+            {
+                return fullPath;
+            }
+
+            var directAppData = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, "App_Data", cleanUrl));
+            if (System.IO.File.Exists(directAppData))
+            {
+                return directAppData;
+            }
+
+            return null;
+        }
+
+        private static string GetMaterialContentType(string filePath)
+        {
+            var extension = Path.GetExtension(filePath).ToLowerInvariant();
+            return extension switch
+            {
+                ".pdf" => "application/pdf",
+                ".mp4" => "video/mp4",
+                ".webm" => "video/webm",
+                ".mov" => "video/quicktime",
+                ".avi" => "video/x-msvideo",
+                ".mkv" => "video/x-matroska",
+                ".jpg" or ".jpeg" => "image/jpeg",
+                ".png" => "image/png",
+                ".webp" => "image/webp",
+                _ => "application/octet-stream"
+            };
         }
 
         private string? GetPrivateFilePath(string folder, string relativePath)

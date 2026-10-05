@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace StudySphere.Models
 {
@@ -29,11 +30,14 @@ namespace StudySphere.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+        [ValidateNever]
         public Course Course { get; set; } = null!;
 
+        [ValidateNever]
         public ICollection<QuizQuestion> Questions { get; set; } =
             new List<QuizQuestion>();
 
+        [ValidateNever]
         public ICollection<QuizAttempt> Attempts { get; set; } =
             new List<QuizAttempt>();
     }

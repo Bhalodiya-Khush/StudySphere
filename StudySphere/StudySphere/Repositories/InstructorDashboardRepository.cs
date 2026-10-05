@@ -214,6 +214,24 @@ namespace StudySphere.Repositories
                     lecture.LiveLectureId == liveLectureId);
         }
 
+        public LiveLecture? GetConflictingLiveLecture(
+            DateTime startTime,
+            DateTime endTime,
+            int? excludeLiveLectureId = null)
+        {
+            return _dbContext.LiveLectures
+                .Include(lecture => lecture.Course)
+                .Include(lecture => lecture.Instructor)
+                    .ThenInclude(instructor => instructor.User)
+                .Where(lecture =>
+                    (excludeLiveLectureId == null || lecture.LiveLectureId != excludeLiveLectureId.Value) &&
+                    lecture.Status != "Cancelled" &&
+                    startTime < lecture.EndTime &&
+                    endTime > lecture.StartTime)
+                .OrderBy(lecture => lecture.StartTime)
+                .FirstOrDefault();
+        }
+
         public void AddLiveLecture(LiveLecture lecture)
         {
             _dbContext.LiveLectures.Add(lecture);

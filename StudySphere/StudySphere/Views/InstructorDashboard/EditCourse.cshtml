@@ -1,4 +1,4 @@
-﻿@model StudySphere.Models.Course
+@model StudySphere.Models.Course
 
 @{
     ViewData["Title"] = "Edit Course";
@@ -32,9 +32,11 @@
 
             <form asp-controller="InstructorDashboard"
                   asp-action="EditCourse"
-                  method="post">
+                  method="post"
+                  enctype="multipart/form-data">
 
                 @Html.AntiForgeryToken()
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                 <input type="hidden"
                        asp-for="CourseId" />
@@ -44,6 +46,9 @@
 
                 <input type="hidden"
                        asp-for="Status" />
+
+                <input type="hidden"
+                       asp-for="ThumbnailUrl" />
 
                 <!-- Title -->
                 <div class="mb-3">
@@ -146,18 +151,38 @@
                 <!-- Thumbnail -->
                 <div class="mb-3">
 
-                    <label asp-for="ThumbnailUrl"
-                           class="form-label fw-semibold">
-                        Thumbnail URL
+                    <label class="form-label fw-semibold">
+                        Course Thumbnail
                     </label>
 
-                    <input asp-for="ThumbnailUrl"
-                           class="form-control"
-                           placeholder="/images/courses/course.jpg" />
+                    @if (!string.IsNullOrEmpty(Model.ThumbnailUrl))
+                    {
+                        <div class="mb-2">
+                            <label class="small text-muted d-block mb-1">Current Thumbnail:</label>
+                            <img src="@Model.ThumbnailUrl"
+                                 alt="@Model.Title"
+                                 class="rounded border shadow-sm"
+                                 style="max-width: 260px; max-height: 160px; object-fit: cover;" />
+                        </div>
+                    }
 
-                    <span asp-validation-for="ThumbnailUrl"
-                          class="text-danger">
-                    </span>
+                    <input type="file"
+                           name="thumbnailFile"
+                           id="editThumbnailFileInput"
+                           class="form-control"
+                           accept="image/*" />
+                    <div class="form-text">
+                        Choose a new image (.jpg, .jpeg, .png, .webp) to update the thumbnail in App_Data, or leave empty to keep current image.
+                    </div>
+
+                    <div id="newThumbnailPreviewContainer" class="mt-2 d-none">
+                        <label class="small text-muted d-block mb-1">New Image Preview:</label>
+                        <img id="newThumbnailPreview"
+                             src="#"
+                             alt="New thumbnail preview"
+                             class="rounded border shadow-sm"
+                             style="max-width: 260px; max-height: 160px; object-fit: cover;" />
+                    </div>
 
                 </div>
 
@@ -211,4 +236,22 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('editThumbnailFileInput')?.addEventListener('change', function (e) {
+            const file = e.target.files?.[0];
+            const previewContainer = document.getElementById('newThumbnailPreviewContainer');
+            const previewImg = document.getElementById('newThumbnailPreview');
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    previewImg.src = event.target.result;
+                    previewContainer.classList.remove('d-none');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewContainer.classList.add('d-none');
+                previewImg.src = '#';
+            }
+        });
+    </script>
 }

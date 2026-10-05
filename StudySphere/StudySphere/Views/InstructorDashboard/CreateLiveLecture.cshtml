@@ -1,4 +1,4 @@
-﻿@using StudySphere.Models
+@using StudySphere.Models
 
 @{
     ViewData["Title"] = "Schedule Live Lecture";
@@ -33,6 +33,8 @@
         <div class="card-body">
 
             <form asp-action="CreateLiveLecture" method="post">
+
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                 <!-- Course ID -->
                 <input type="hidden"

@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace StudySphere.Models
 {
@@ -37,8 +38,10 @@ namespace StudySphere.Models
 
         // Navigation property
         [ForeignKey(nameof(CourseId))]
+        [ValidateNever]
         public Course Course { get; set; } = null!;
 
+        [ValidateNever]
         public ICollection<LessonProgress> LessonProgress { get; set; } =
             new List<LessonProgress>();
     }

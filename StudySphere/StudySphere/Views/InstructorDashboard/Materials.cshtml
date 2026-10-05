@@ -1,4 +1,4 @@
-﻿@using StudySphere.Models
+@using StudySphere.Models
 
 @{
     ViewData["Title"] = "Course Materials";
@@ -136,9 +136,26 @@
                                     <td class="text-end">
 
                                         <a asp-controller="InstructorDashboard"
+                                           asp-action="ViewMaterial"
+                                           asp-route-id="@material.MaterialId"
+                                           target="_blank"
+                                           class="btn btn-sm btn-outline-info me-1"
+                                           title="Preview file in browser">
+                                            Preview
+                                        </a>
+
+                                        <a asp-controller="InstructorDashboard"
+                                           asp-action="DownloadMaterial"
+                                           asp-route-id="@material.MaterialId"
+                                           class="btn btn-sm btn-outline-secondary me-1"
+                                           title="Download file">
+                                            Download
+                                        </a>
+
+                                        <a asp-controller="InstructorDashboard"
                                            asp-action="EditMaterial"
                                            asp-route-id="@material.MaterialId"
-                                           class="btn btn-sm btn-outline-primary">
+                                           class="btn btn-sm btn-outline-primary me-1">
                                             Edit
                                         </a>
 

@@ -1,4 +1,4 @@
-﻿@using StudySphere.Models
+@using StudySphere.Models
 
 @{
     ViewData["Title"] = "Create Course";
@@ -30,7 +30,9 @@
 
         <div class="card-body">
 
-            <form asp-action="CreateCourse" method="post">
+            <form asp-action="CreateCourse" method="post" enctype="multipart/form-data">
+
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                 <!-- Instructor ID -->
                 <input type="hidden"
@@ -105,16 +107,29 @@
                     </select>
                 </div>
 
-                <!-- Thumbnail URL -->
+                <!-- Course Thumbnail Image -->
                 <div class="mb-3">
                     <label class="form-label fw-semibold">
-                        Thumbnail URL
+                        Course Thumbnail Image
                     </label>
 
-                    <input type="text"
-                           name="ThumbnailUrl"
+                    <input type="file"
+                           name="thumbnailFile"
+                           id="thumbnailFileInput"
                            class="form-control"
-                           placeholder="/images/courses/course.jpg" />
+                           accept="image/*" />
+                    <div class="form-text">
+                        Choose a thumbnail image (.jpg, .jpeg, .png, .webp) stored securely in App_Data.
+                    </div>
+
+                    <div id="thumbnailPreviewContainer" class="mt-2 d-none">
+                        <label class="small text-muted d-block mb-1">Preview:</label>
+                        <img id="thumbnailPreview"
+                             src="#"
+                             alt="Thumbnail preview"
+                             class="rounded border shadow-sm"
+                             style="max-width: 260px; max-height: 160px; object-fit: cover;" />
+                    </div>
                 </div>
 
                 <!-- Price -->
@@ -178,3 +193,24 @@
     </div>
 
 </div>
+
+@section Scripts {
+    <script>
+        document.getElementById('thumbnailFileInput')?.addEventListener('change', function (e) {
+            const file = e.target.files?.[0];
+            const previewContainer = document.getElementById('thumbnailPreviewContainer');
+            const previewImg = document.getElementById('thumbnailPreview');
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    previewImg.src = event.target.result;
+                    previewContainer.classList.remove('d-none');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewContainer.classList.add('d-none');
+                previewImg.src = '#';
+            }
+        });
+    </script>
+}

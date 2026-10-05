@@ -136,6 +136,25 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseHttpsRedirection();
+
+var courseThumbnailsDirectory = Path.Combine(
+    app.Environment.ContentRootPath,
+    "App_Data",
+    "course-thumbnails");
+Directory.CreateDirectory(courseThumbnailsDirectory);
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(courseThumbnailsDirectory),
+    RequestPath = "/course-thumbnails"
+});
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(courseThumbnailsDirectory),
+    RequestPath = "/images/courses"
+});
+
 app.UseRouting();
 
 app.MapHub<LectureHub>("/lectureHub");

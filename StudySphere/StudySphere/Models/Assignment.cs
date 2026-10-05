@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace StudySphere.Models
 {
@@ -30,8 +31,10 @@ namespace StudySphere.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+        [ValidateNever]
         public Course Course { get; set; } = null!;
 
+        [ValidateNever]
         public ICollection<AssignmentSubmission> Submissions { get; set; } =
             new List<AssignmentSubmission>();
     }

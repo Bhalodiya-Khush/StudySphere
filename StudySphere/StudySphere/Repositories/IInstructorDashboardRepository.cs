@@ -1,4 +1,4 @@
-﻿using StudySphere.Models;
+using StudySphere.Models;
 
 namespace StudySphere.Repositories.Interfaces
 {
@@ -70,6 +70,11 @@ namespace StudySphere.Repositories.Interfaces
         List<LiveLecture> GetLiveLectures(int courseId);
 
         LiveLecture? GetLiveLectureById(int liveLectureId);
+
+        LiveLecture? GetConflictingLiveLecture(
+            DateTime startTime,
+            DateTime endTime,
+            int? excludeLiveLectureId = null);
 
         void AddLiveLecture(LiveLecture lecture);
 

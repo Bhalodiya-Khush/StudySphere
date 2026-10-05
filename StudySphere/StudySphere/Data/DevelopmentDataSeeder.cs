@@ -77,6 +77,7 @@ public static class DevelopmentDataSeeder
         await SeedAssignmentSubmissionAsync(dbContext, contentRootPath);
         await SeedQuizAttemptAsync(dbContext);
         await SeedLessonProgressAndCertificateAsync(dbContext);
+        await SeedCourseMaterialsAndThumbnailsAsync(dbContext, contentRootPath);
     }
 
     private static async Task SeedAssignmentsAsync(
@@ -311,6 +312,61 @@ public static class DevelopmentDataSeeder
                 CertificateCode = "DEV-JAVA-CERT-0001",
                 IssuedAt = DateTime.UtcNow.AddDays(-1)
             });
+        }
+
+        await dbContext.SaveChangesAsync();
+    }
+
+    private static async Task SeedCourseMaterialsAndThumbnailsAsync(
+        StudySphereDbContext dbContext,
+        string contentRootPath)
+    {
+        var appData = Path.Combine(contentRootPath, "App_Data");
+        var thumbnailsDir = Path.Combine(appData, "course-thumbnails");
+        var materials1Dir = Path.Combine(appData, "course-materials", "1");
+        var materials2Dir = Path.Combine(appData, "course-materials", "2");
+
+        Directory.CreateDirectory(thumbnailsDir);
+        Directory.CreateDirectory(materials1Dir);
+        Directory.CreateDirectory(materials2Dir);
+
+        // Normalize Courses thumbnails in DB
+        var courses = await dbContext.Courses.ToListAsync();
+        foreach (var course in courses)
+        {
+            if (string.IsNullOrWhiteSpace(course.ThumbnailUrl) ||
+                course.ThumbnailUrl.StartsWith("/images/courses/", StringComparison.OrdinalIgnoreCase))
+            {
+                var fileName = course.CourseId switch
+                {
+                    1 => "aspnet.jpg",
+                    2 => "java.jpg",
+                    3 => "csharp.jpg",
+                    4 => "database.jpg",
+                    5 => "webdesign.jpg",
+                    _ => "default-course.jpg"
+                };
+                course.ThumbnailUrl = $"/course-thumbnails/{fileName}";
+            }
+        }
+
+        // Normalize Materials FileUrl in DB
+        var materials = await dbContext.Materials.ToListAsync();
+        foreach (var material in materials)
+        {
+            if (material.FileUrl.StartsWith("/materials/", StringComparison.OrdinalIgnoreCase) ||
+                material.FileUrl.StartsWith("materials/", StringComparison.OrdinalIgnoreCase))
+            {
+                material.FileUrl = material.MaterialId switch
+                {
+                    1 => "course-materials/1/introduction.mp4",
+                    2 => "course-materials/1/mvc-notes.pdf",
+                    3 => "course-materials/1/controllers.mp4",
+                    4 => "course-materials/2/spring-introduction.mp4",
+                    5 => "course-materials/2/spring-notes.pdf",
+                    _ => material.FileUrl.Replace("/materials/", "course-materials/").TrimStart('/')
+                };
+            }
         }
 
         await dbContext.SaveChangesAsync();

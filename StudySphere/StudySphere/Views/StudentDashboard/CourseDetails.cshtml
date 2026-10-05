@@ -1,4 +1,4 @@
-﻿@model StudySphere.Models.Course
+@model StudySphere.Models.Course
 
 @{
     ViewData["Title"] = Model.Title;
@@ -165,36 +165,96 @@
             {
                 <div class="card border-0 shadow-sm mb-4" id="learning-materials">
                     <div class="card-body">
-                        <h4 class="fw-bold mb-3">Learning materials</h4>
+                        <h4 class="fw-bold mb-3">Learning Materials</h4>
                         @foreach (var material in materials)
                         {
-                            <div class="d-flex justify-content-between align-items-center border-bottom py-3"
-                                 id="material-@material.MaterialId">
-                                <div>
-                                    <h5 class="mb-1">@material.Title</h5>
-                                    <p class="text-muted small mb-0">@material.Description</p>
+                            <div class="border-bottom py-3" id="material-@material.MaterialId">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-1">
+                                            @if (material.MaterialType == "Video")
+                                            {
+                                                <span class="badge bg-primary">▶ Video</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-danger">📄 PDF</span>
+                                            }
+                                            <h5 class="mb-0 fw-semibold">@material.Title</h5>
+                                            @if (material.DurationInMinutes.HasValue)
+                                            {
+                                                <span class="text-muted small">(@material.DurationInMinutes min)</span>
+                                            }
+                                        </div>
+                                        @if (!string.IsNullOrWhiteSpace(material.Description))
+                                        {
+                                            <p class="text-muted small mb-0">@material.Description</p>
+                                        }
+                                    </div>
+
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        @if (material.MaterialType == "Video")
+                                        {
+                                            <button type="button"
+                                                    class="btn btn-sm btn-primary"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#videoPlayer-@material.MaterialId"
+                                                    aria-expanded="false"
+                                                    aria-controls="videoPlayer-@material.MaterialId">
+                                                Watch Video
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <a asp-controller="StudentDashboard"
+                                               asp-action="ViewMaterial"
+                                               asp-route-id="@material.MaterialId"
+                                               target="_blank"
+                                               class="btn btn-sm btn-outline-info">
+                                                View PDF
+                                            </a>
+                                        }
+
+                                        <a asp-controller="StudentDashboard"
+                                           asp-action="DownloadMaterial"
+                                           asp-route-id="@material.MaterialId"
+                                           class="btn btn-sm btn-outline-secondary">
+                                            Download
+                                        </a>
+
+                                        @if (completedMaterialIds.Contains(material.MaterialId))
+                                        {
+                                            <span class="badge bg-success">Completed</span>
+                                        }
+                                        else
+                                        {
+                                            <form asp-controller="StudentDashboard"
+                                                  asp-action="CompleteLesson"
+                                                  method="post"
+                                                  class="d-inline">
+                                                <input type="hidden" name="materialId" value="@material.MaterialId" />
+                                                <button type="submit" class="btn btn-sm btn-outline-success">
+                                                    Mark complete
+                                                </button>
+                                            </form>
+                                        }
+                                    </div>
                                 </div>
-                                <a asp-controller="StudentDashboard"
-                                   asp-action="DownloadMaterial"
-                                   asp-route-id="@material.MaterialId"
-                                   class="btn btn-outline-primary">
-                                    Download
-                                </a>
-                                @if (completedMaterialIds.Contains(material.MaterialId))
+
+                                @if (material.MaterialType == "Video")
                                 {
-                                    <span class="badge bg-success ms-2">Completed</span>
-                                }
-                                else
-                                {
-                                    <form asp-controller="StudentDashboard"
-                                          asp-action="CompleteLesson"
-                                          method="post"
-                                          class="d-inline ms-2">
-                                        <input type="hidden" name="materialId" value="@material.MaterialId" />
-                                        <button type="submit" class="btn btn-sm btn-outline-success">
-                                            Mark complete
-                                        </button>
-                                    </form>
+                                    <div class="collapse mt-3" id="videoPlayer-@material.MaterialId">
+                                        <div class="card card-body bg-dark p-2 rounded">
+                                            <video controls
+                                                   playsinline
+                                                   preload="metadata"
+                                                   class="w-100 rounded"
+                                                   style="max-height: 480px; background-color: #000;"
+                                                   src="@Url.Action("ViewMaterial", "StudentDashboard", new { id = material.MaterialId })">
+                                                Your browser does not support HTML5 video streaming.
+                                            </video>
+                                        </div>
+                                    </div>
                                 }
                             </div>
                         }

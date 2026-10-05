@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StudySphere.Data;
@@ -328,35 +328,48 @@ namespace StudySphere.Controllers
                 return Forbid();
             }
 
-            if (string.IsNullOrWhiteSpace(material.FileUrl) ||
-                Path.IsPathRooted(material.FileUrl))
+            var filePath = ResolveMaterialFilePath(material.FileUrl);
+            if (filePath is null || !System.IO.File.Exists(filePath))
             {
                 return NotFound();
             }
 
-            var materialsRoot = Path.GetFullPath(Path.Combine(
-                _environment.ContentRootPath,
-                "App_Data",
-                "course-materials"));
-            var relativePath = material.FileUrl.Replace(
-                '/',
-                Path.DirectorySeparatorChar);
-            var filePath = Path.GetFullPath(Path.Combine(
-                _environment.ContentRootPath,
-                "App_Data",
-                relativePath));
-            if (!filePath.StartsWith(
-                    materialsRoot + Path.DirectorySeparatorChar,
-                    StringComparison.OrdinalIgnoreCase) ||
-                !System.IO.File.Exists(filePath))
-            {
-                return NotFound();
-            }
-
-            return File(
+            return PhysicalFile(
                 filePath,
                 GetMaterialContentType(filePath),
                 Path.GetFileName(filePath));
+        }
+
+        [Authorize(Roles = "Student")]
+        public IActionResult ViewMaterial(int id)
+        {
+            var student = CurrentStudent();
+            var material = _repository.GetMaterialById(id);
+            if (student is null)
+            {
+                return Forbid();
+            }
+
+            if (material is null || !material.IsPublished)
+            {
+                return NotFound();
+            }
+
+            if (!_repository.IsEnrolled(student.StudentId, material.CourseId))
+            {
+                return Forbid();
+            }
+
+            var filePath = ResolveMaterialFilePath(material.FileUrl);
+            if (filePath is null || !System.IO.File.Exists(filePath))
+            {
+                return NotFound();
+            }
+
+            return PhysicalFile(
+                filePath,
+                GetMaterialContentType(filePath),
+                enableRangeProcessing: true);
         }
 
         [Authorize(Roles = "Student")]
@@ -895,6 +908,34 @@ namespace StudySphere.Controllers
                 ".txt" => "text/plain",
                 _ => "application/octet-stream"
             };
+        }
+
+        private string? ResolveMaterialFilePath(string fileUrl)
+        {
+            if (string.IsNullOrWhiteSpace(fileUrl)) return null;
+
+            var cleanUrl = fileUrl.Trim().TrimStart('/', '\\').Replace('/', Path.DirectorySeparatorChar);
+            if (cleanUrl.StartsWith("materials" + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+            {
+                cleanUrl = "course-materials" + cleanUrl.Substring("materials".Length);
+            }
+
+            var fullPath = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, "App_Data", cleanUrl));
+            var materialsRoot = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, "App_Data", "course-materials"));
+
+            if (fullPath.StartsWith(materialsRoot + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase) &&
+                System.IO.File.Exists(fullPath))
+            {
+                return fullPath;
+            }
+
+            var directAppData = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, "App_Data", cleanUrl));
+            if (System.IO.File.Exists(directAppData))
+            {
+                return directAppData;
+            }
+
+            return null;
         }
     }
 }
